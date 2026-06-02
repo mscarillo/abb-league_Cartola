@@ -144,6 +144,105 @@ function buildBulletin(teams, lastRound, prevTable, blockSize = 4) {
   };
 }
 
+// ---------- Mata-mata: pontuação de um time num par de rodadas ----------
+let _SCORE_INDEX = null;
+function scoreName(teams, name) {
+  if (!_SCORE_INDEX || _SCORE_INDEX._teams !== teams) {
+    _SCORE_INDEX = { _teams: teams };
+    teams.forEach(t => { _SCORE_INDEX[t.name] = t.scores; });
+  }
+  return _SCORE_INDEX[name] || null;
+}
+
+// soma das rodadas [a,b] para um time (por nome). Retorna {sum, played, parts}
+function matchScore(teams, name, rounds) {
+  const sc = scoreName(teams, name);
+  const [a, b] = rounds;
+  const parts = [];
+  let sum = 0, played = 0;
+  if (sc) {
+    for (let r = a; r <= b; r++) {
+      const v = sc[r - 1];
+      parts.push(v);
+      if (v !== null && v !== undefined) { sum += v; played++; }
+    }
+  }
+  return { sum: Math.round(sum * 100) / 100, played, parts };
+}
+
+// uma fase já tem rodadas jogadas?
+function phasePlayed(lastRound, rounds) {
+  return lastRound >= rounds[0];
+}
+
+// ---------- Prêmios e meses ----------
+const PRIZE_ROUND = 35.26;   // R$ por vencedor de rodada
+const PRIZE_MONTH = 42.63;   // R$ por vencedor de mês
+const MONTH_NAMES = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+
+// Resultados das copas até uma dada rodada: por fase, lista de confrontos decididos
+// + classificados. Usado no boletim para "vencedores e classificados de cada etapa".
+function cupDigest(cups, teams, lastRound) {
+  if (!cups) return [];
+  const order = [
+    ['libertadores', 'ABB Libertadores'],
+    ['sulamericana', 'ABB Sul-Americana'],
+    ['champions', 'ABB Champions'],
+    ['uefa', 'ABB UEFA'],
+    ['mundial', 'ABB Mundial'],
+  ];
+  const phaseOrder = [
+    ['grupos', 'Fase de Grupos'],
+    ['oitavas', 'Oitavas de Final'],
+    ['quartas', 'Quartas de Final'],
+    ['semis', 'Semifinais'],
+    ['finais', 'Final'],
+  ];
+  const out = [];
+  for (const [key, label] of order) {
+    const cup = cups[key];
+    if (!cup) continue;
+    const phases = [];
+    // grupos: classificados (2 por grupo) se a fase já terminou
+    if (cup.grupos && cup.grupos.length) {
+      const [a, b] = cup.grupos[0].rounds;
+      if (lastRound >= b) {
+        const classif = [];
+        cup.grupos.forEach(g => {
+          const rk = g.teams.map(n => ({ name: n, ...matchScore(teams, n, g.rounds) }))
+            .sort((x, y) => y.sum - x.sum);
+          rk.slice(0, 2).forEach(t => classif.push({ name: t.name, sum: t.sum, group: g.group }));
+        });
+        phases.push({ phase: 'Fase de Grupos', status: 'Encerrada', classif });
+      } else if (lastRound >= a) {
+        phases.push({ phase: 'Fase de Grupos', status: 'Em andamento', classif: [] });
+      }
+    }
+    // mata-mata
+    for (const [pk, plabel] of phaseOrder) {
+      if (pk === 'grupos') continue;
+      if (!cup[pk] || !cup[pk].length) continue;
+      const rounds = cup[pk][0].rounds;
+      if (lastRound < rounds[0]) continue;
+      const done = lastRound >= rounds[1];
+      const winners = [];
+      cup[pk].forEach(m => {
+        if (!m.home && !m.away) return;
+        const a = m.home ? matchScore(teams, m.home, m.rounds) : { sum: 0, played: 0 };
+        const bb = m.away ? matchScore(teams, m.away, m.rounds) : { sum: 0, played: 0 };
+        if (a.played > 0 && bb.played > 0) {
+          const w = a.sum >= bb.sum ? m.home : m.away;
+          const ws = a.sum >= bb.sum ? a.sum : bb.sum;
+          winners.push({ tag: m.tag, name: w, sum: ws });
+        }
+      });
+      phases.push({ phase: plabel, status: done ? 'Encerrada' : 'Em andamento', classif: winners });
+    }
+    if (phases.length) out.push({ cup: label, phases });
+  }
+  return out;
+}
+
 if (typeof module !== 'undefined') {
-  module.exports = { abbLeagueTable, roundWinners, monthlyWinners, libertadoresClassif, championsClassif, buildBulletin, aggRanking };
+  module.exports = { abbLeagueTable, roundWinners, monthlyWinners, libertadoresClassif, championsClassif, buildBulletin, aggRanking, matchScore, scoreName, phasePlayed, cupDigest, PRIZE_ROUND, PRIZE_MONTH, MONTH_NAMES };
 }

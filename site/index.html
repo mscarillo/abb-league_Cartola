@@ -10,24 +10,24 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#0a0e0d; --bg2:#0f1513; --panel:#121a18; --panel2:#16201d;
-  --line:#23302c; --txt:#e8efe9; --muted:#7e928a; --dim:#56655e;
-  --gold:#e9b949; --gold2:#c9952e; --green:#2fbf71; --red:#e1574c;
-  --blue:#4aa6d8; --accent:#1ed79b;
-  --shadow:0 18px 50px -20px rgba(0,0,0,.8);
+  --bg:#eef1ee; --bg2:#e6eae6; --panel:#ffffff; --panel2:#f4f6f3;
+  --line:#dde3dd; --txt:#1c2622; --muted:#5f6f68; --dim:#90a096;
+  --gold:#b5862a; --gold2:#9a6f1f; --green:#1f9d5b; --red:#d24a40;
+  --blue:#2f86b8; --accent:#0f9e6e;
+  --shadow:0 12px 32px -16px rgba(28,38,34,.28);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   background:
-    radial-gradient(1200px 600px at 80% -10%, rgba(233,185,73,.06), transparent 60%),
-    radial-gradient(900px 500px at 0% 10%, rgba(30,215,155,.05), transparent 55%),
+    radial-gradient(1200px 600px at 80% -10%, rgba(181,134,42,.07), transparent 60%),
+    radial-gradient(900px 500px at 0% 10%, rgba(31,157,91,.06), transparent 55%),
     var(--bg);
   color:var(--txt); font-family:'Archivo',system-ui,sans-serif;
   -webkit-font-smoothing:antialiased; min-height:100vh; overflow-x:hidden;
 }
 body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");}
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.018'/%3E%3C/svg%3E");}
 .wrap{max-width:1180px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
 
 /* HERO */
@@ -37,7 +37,7 @@ header.hero{padding:46px 0 26px;border-bottom:1px solid var(--line);position:rel
 .herotext{min-width:0}
 .kicker{font-family:'Oswald';text-transform:uppercase;letter-spacing:.35em;font-size:11px;color:var(--gold);font-weight:600}
 h1.title{font-family:'Bebas Neue';font-size:clamp(54px,9vw,108px);line-height:.86;letter-spacing:.01em;margin:6px 0 4px;
-  background:linear-gradient(180deg,#fff 30%,var(--gold) 130%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  background:linear-gradient(180deg,var(--txt) 20%,var(--green) 130%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .sub{color:var(--muted);font-size:15px;max-width:640px}
 .metabar{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .chip{background:var(--panel);border:1px solid var(--line);border-radius:100px;padding:8px 16px;font-size:13px;display:flex;align-items:center;gap:8px}
@@ -50,7 +50,7 @@ nav.tabs{position:sticky;top:0;z-index:20;display:flex;gap:4px;flex-wrap:wrap;pa
 nav.tabs button{font-family:'Oswald';font-weight:500;letter-spacing:.08em;text-transform:uppercase;font-size:13px;
   background:transparent;color:var(--muted);border:1px solid transparent;border-radius:8px;padding:9px 16px;cursor:pointer;transition:.2s}
 nav.tabs button:hover{color:var(--txt)}
-nav.tabs button.active{color:#0a0e0d;background:linear-gradient(180deg,var(--gold),var(--gold2));border-color:var(--gold)}
+nav.tabs button.active{color:#fff;background:linear-gradient(180deg,var(--green),var(--accent));border-color:var(--green)}
 
 section.view{display:none;animation:fade .5s ease both}
 section.view.active{display:block}
@@ -71,7 +71,7 @@ tbody tr:last-child td{border-bottom:none}
 tbody tr{transition:background .15s}
 tbody tr:hover{background:var(--panel2)}
 .pos{font-family:'Bebas Neue';font-size:20px;color:var(--muted);width:48px}
-tr.r1 .pos{color:var(--gold)} tr.r2 .pos{color:#cdd6d0} tr.r3 .pos{color:#cd8b4f}
+tr.r1 .pos{color:var(--gold)} tr.r2 .pos{color:#8a9a92} tr.r3 .pos{color:#b5742f}
 .team{font-weight:600;display:flex;align-items:center;gap:10px}
 .crest{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,var(--panel2),var(--line));
   display:grid;place-items:center;font-family:'Bebas Neue';font-size:13px;color:var(--gold);flex-shrink:0}
@@ -94,7 +94,7 @@ tr.r1 .pos{color:var(--gold)} tr.r2 .pos{color:#cdd6d0} tr.r3 .pos{color:#cd8b4f
 .award{display:flex;align-items:center;gap:14px;padding:16px 18px;border-bottom:1px solid rgba(35,48,44,.5)}
 .award:last-child{border-bottom:none}
 .award .medal{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;font-family:'Bebas Neue';font-size:18px;flex-shrink:0;
-  background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0a0e0d}
+  background:linear-gradient(135deg,var(--gold),var(--gold2));color:#fff}
 .award .info{flex:1}
 .award .info .t{font-weight:700;font-size:15px}
 .award .info .s{font-size:12px;color:var(--muted)}
@@ -107,10 +107,10 @@ tr.r1 .pos{color:var(--gold)} tr.r2 .pos{color:#cdd6d0} tr.r3 .pos{color:#cd8b4f
 .bull .head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;position:relative}
 .bull .head .rd{font-family:'Bebas Neue';font-size:54px;line-height:.9}
 .bull .head .rd small{display:block;font-family:'Oswald';font-size:12px;letter-spacing:.2em;color:var(--gold);font-weight:600}
-.bull p.story{font-size:16px;line-height:1.7;margin:20px 0 0;color:#d4ddd7;position:relative;max-width:760px}
+.bull p.story{font-size:16px;line-height:1.7;margin:20px 0 0;color:#34423c;position:relative;max-width:760px}
 .bull p.story b{color:var(--gold)}
 .statline{display:flex;gap:24px;flex-wrap:wrap;margin-top:22px;position:relative}
-.statline .s .v{font-family:'Bebas Neue';font-size:28px;color:#fff}
+.statline .s .v{font-family:'Bebas Neue';font-size:28px;color:var(--txt)}
 .statline .s .k{font-family:'Oswald';font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
 .mv{display:flex;gap:8px;align-items:center;font-size:13px;padding:6px 0}
 .mv .up{color:var(--green);font-weight:700}.mv .down{color:var(--red);font-weight:700}
@@ -119,7 +119,56 @@ tr.r1 .pos{color:var(--gold)} tr.r2 .pos{color:#cdd6d0} tr.r3 .pos{color:#cd8b4f
 select{font-family:'Oswald';background:var(--panel);color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:9px 14px;font-size:14px;cursor:pointer}
 .footer{margin:60px 0 30px;padding-top:24px;border-top:1px solid var(--line);color:var(--dim);font-size:12px;line-height:1.7}
 .footer code{background:var(--panel);padding:2px 7px;border-radius:5px;color:var(--gold);font-size:11px}
-@media(max-width:760px){.g3,.g2{grid-template-columns:1fr}.hide-sm{display:none}h2.sec{font-size:30px}.logo{width:64px}.herotop{gap:14px}}
+/* COPAS */
+.cupnav{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:20px}
+.cupbtn{font-family:'Oswald';font-weight:500;letter-spacing:.06em;text-transform:uppercase;font-size:13px;
+  background:var(--panel);color:var(--muted);border:1px solid var(--line);border-radius:8px;padding:9px 16px;cursor:pointer;transition:.2s}
+.cupbtn:hover{color:var(--txt)}
+.cupbtn.active{color:#fff;background:var(--c,var(--green));border-color:var(--c,var(--green));font-weight:600}
+.phasenav{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.phasebtn{font-family:'Oswald';font-size:12px;letter-spacing:.05em;text-transform:uppercase;
+  background:transparent;color:var(--muted);border:1px solid var(--line);border-radius:7px;padding:7px 13px;cursor:pointer;transition:.2s}
+.phasebtn:hover{color:var(--txt)}
+.phasebtn.active{color:var(--c);border-color:var(--c)}
+.kgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.kmatch{background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:14px 16px;box-shadow:var(--shadow)}
+.ktag{font-family:'Oswald';font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);margin-bottom:10px;display:flex;justify-content:space-between}
+.ktag span{color:var(--dim);font-weight:400}
+.kteam{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-top:1px solid rgba(35,48,44,.5);font-size:14px}
+.kteam:first-of-type{border-top:none}
+.kteam.win .kn{font-weight:700;color:var(--txt)}
+.kteam.empty{color:var(--dim)}
+.kn{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding-right:10px}
+.kpts{font-family:'Oswald';font-weight:700;font-size:15px}
+.ggrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.gcard{padding:18px}
+.grow{display:flex;justify-content:space-between;align-items:center;font-size:13px;padding:5px 8px;border-radius:6px}
+.grow.q{background:rgba(47,191,113,.07)}
+.gn b{font-family:'Oswald';color:var(--dim);margin-right:8px}
+.grow.q .gn b{color:var(--green)}
+.gp{font-family:'Oswald';font-weight:700}
+@media(max-width:760px){.kgrid,.ggrid{grid-template-columns:1fr}}
+/* BOLETIM extras */
+.bullbar{display:flex;justify-content:flex-end;margin-bottom:12px}
+.dlbtn{font-family:'Oswald';font-weight:600;letter-spacing:.04em;font-size:13px;cursor:pointer;
+  background:linear-gradient(180deg,var(--green),var(--accent));color:#fff;border:none;border-radius:9px;padding:10px 18px;transition:.2s;box-shadow:var(--shadow)}
+.dlbtn:hover{filter:brightness(1.06)}
+.prizecard{display:flex;gap:14px;margin:18px 0 4px;flex-wrap:wrap;position:relative}
+.pz{flex:1;min-width:240px;background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:16px 18px}
+.pztitle{font-family:'Oswald';font-weight:600;font-size:12px;letter-spacing:.04em;color:var(--green)}
+.pzname{font-family:'Bebas Neue';font-size:26px;line-height:1.1;margin:5px 0;color:var(--txt)}
+.pzrow{display:flex;justify-content:space-between;align-items:center;font-size:13px;color:var(--muted);margin-top:4px}
+.pzval{font-family:'Oswald';font-weight:700;color:var(--gold)}
+.cupdig{margin-top:12px;border-top:1px solid var(--line);padding-top:10px}
+.cupdig-h{font-family:'Oswald';font-weight:700;font-size:14px;color:var(--green);letter-spacing:.03em}
+.cupdig-p{margin:8px 0}
+.cupdig-p .ph{font-family:'Oswald';font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:600}
+.pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:5px}
+.pill{font-size:12px;background:var(--panel2);border:1px solid var(--line);border-radius:20px;padding:4px 11px}
+.pill b{font-family:'Oswald';color:var(--gold);margin-left:3px}
+.pill.dim{color:var(--dim)}
+@media(max-width:760px){.g3,.g2{grid-template-columns:1fr}.hide-sm{display:none}h2.sec{font-size:30px}.logo{width:64px}.herotop{gap:14px}.prizecard{flex-direction:column}}
+
 </style>
 </head>
 <body>
@@ -162,9 +211,10 @@ select{font-family:'Oswald';background:var(--panel);color:var(--txt);border:1px 
 
   <!-- COPAS -->
   <section class="view" id="v-copas">
-    <h2 class="sec">Copas Continentais <span>Libertadores · Sulamericana · Champions · UEFA</span></h2>
-    <p class="lead">Classificatórias decididas por somatório de rodadas, conforme o regulamento da liga.</p>
-    <div class="grid g2" id="copas-grid"></div>
+    <h2 class="sec">Copas Continentais <span>Mata-mata por somatório de rodadas</span></h2>
+    <p class="lead">Cada copa segue o formato da liga: classificatória, fase de grupos e mata-mata (oitavas, quartas, semis e final), com os confrontos e pontuações conforme a planilha.</p>
+    <div class="cupnav" id="cupnav"></div>
+    <div id="cup-content"></div>
   </section>
 
   <!-- PREMIOS -->
@@ -241,38 +291,149 @@ function renderLiga(table){
   });
 }
 
-function copaCard(title, subtitle, color, groups){
-  const blocks = groups.map(g=>`
-    <div style="margin-top:14px">
-      <div class="lbl" style="color:${color}">${g.label}</div>
-      <ol style="list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:6px">
-        ${g.rows.length? g.rows.map(t=>`<li style="display:flex;justify-content:space-between;font-size:13px;border-bottom:1px solid rgba(35,48,44,.5);padding-bottom:5px">
-          <span><b style="color:var(--dim);font-family:'Oswald'">${t.pos}.</b> ${t.name}</span>
-          <span style="font-family:'Oswald';color:var(--gold)">${fmt(t.sum)}</span></li>`).join('')
-          : `<li style="font-size:13px;color:var(--dim)">Aguardando rodadas…</li>`}
-      </ol>
-    </div>`).join('');
-  return `<div class="card"><div class="lbl">${subtitle}</div><div class="big" style="color:${color}">${title}</div>${blocks}</div>`;
-}
+const CUPS=[
+  {key:'libertadores',name:'Libertadores',color:'var(--green)'},
+  {key:'sulamericana',name:'Sulamericana',color:'var(--blue)'},
+  {key:'champions',name:'Champions',color:'var(--gold)'},
+  {key:'uefa',name:'UEFA',color:'#9a7bd0'},
+  {key:'mundial',name:'Mundial',color:'#e0863a'},
+];
+let CUP_ACTIVE='libertadores';
 
 function renderCopas(){
-  const R=DATA.last_round, grid=$('#copas-grid'); grid.innerHTML='';
-  const lib=libertadoresClassif(DATA.teams,R);
-  grid.insertAdjacentHTML('beforeend', copaCard('Libertadores', lib.done?'Classificação fechada (rod. 1–5)':'Parcial · rodadas 1–5','var(--green)',[
-    {label:'Classificados diretos (top 24)', rows:lib.classificadosDireto.slice(0,8)},
-    {label:'Fase Tolima (25º–40º)', rows:lib.tolima.slice(0,6)},
-  ]));
-  grid.insertAdjacentHTML('beforeend', copaCard('Sulamericana','Vagas 41º–48º (rod. 1–5)','var(--blue)',[
-    {label:'Classificados', rows:lib.sulamericana},
-    {label:'Eliminados (49º–51º)', rows:lib.eliminados},
-  ]));
-  const ch=championsClassif(DATA.teams,R);
-  grid.insertAdjacentHTML('beforeend', copaCard('Champions', ch.done?'Classificação fechada (rod. 20–24)':'Inicia na rodada 20','var(--gold)',[
-    {label:'Fase de grupos (top 32)', rows:ch.grupos.slice(0,8)},
-  ]));
-  grid.insertAdjacentHTML('beforeend', copaCard('UEFA','Vagas 33º–49º (rod. 20–24)','#9a7bd0',[
-    {label:'Classificados', rows:ch.uefa.slice(0,8)},
-  ]));
+  const nav=$('#cupnav'); nav.innerHTML='';
+  CUPS.forEach(c=>{
+    if(!DATA.cups || !DATA.cups[c.key]) return;
+    const b=document.createElement('button');
+    b.textContent=c.name; b.dataset.cup=c.key;
+    b.className='cupbtn'+(c.key===CUP_ACTIVE?' active':'');
+    b.style.cssText=c.key===CUP_ACTIVE?`--c:${c.color}`:'';
+    b.onclick=()=>{CUP_ACTIVE=c.key;renderCopas();};
+    nav.appendChild(b);
+  });
+  renderCup(CUP_ACTIVE);
+}
+
+function matchRow(teams,name,rounds,color){
+  if(!name) return `<div class="kteam empty"><span>—</span></div>`;
+  const ms=matchScore(teams,name,rounds);
+  const played=ms.played>0;
+  return `<div class="kteam"><span class="kn">${name}</span>
+    <span class="kpts" style="color:${played?color:'var(--dim)'}">${played?fmt(ms.sum):'–'}</span></div>`;
+}
+
+function matchCard(teams,m,color){
+  const a=m.home?matchScore(teams,m.home,m.rounds):{sum:0,played:0};
+  const b=m.away?matchScore(teams,m.away,m.rounds):{sum:0,played:0};
+  const decided=a.played>0&&b.played>0;
+  const winHome=decided&&a.sum>=b.sum, winAway=decided&&b.sum>a.sum;
+  const rtxt=`R${String(m.rounds[0]).padStart(2,'0')}–${String(m.rounds[1]).padStart(2,'0')}`;
+  const line=(name,sc,win)=>{
+    if(!name) return `<div class="kteam empty">—</div>`;
+    return `<div class="kteam${win?' win':''}">
+      <span class="kn">${win?'▸ ':''}${name}</span>
+      <span class="kpts" style="color:${sc.played?color:'var(--dim)'}">${sc.played?fmt(sc.sum):'–'}</span></div>`;
+  };
+  return `<div class="kmatch">
+    <div class="ktag">${m.tag} <span>${rtxt}</span></div>
+    ${line(m.home,a,winHome)}
+    ${line(m.away,b,winAway)}
+  </div>`;
+}
+
+function renderCup(key){
+  const cup=DATA.cups[key];
+  const meta=CUPS.find(c=>c.key===key);
+  const color=meta.color, R=DATA.last_round, teams=DATA.teams;
+  const out=$('#cup-content'); out.innerHTML='';
+  const phases=[];
+
+  // classificatória (só Libertadores e Champions têm)
+  if(cup.classif){
+    const [a,b]=cup.classif.rounds;
+    const rank=aggRanking(teams,a,b).filter(x=>x.played>0);
+    const done=R>=b;
+    let html=`<div class="lead" style="margin:4px 0 14px">Classificatória · rodadas ${a}–${b} ${done?'(fechada)':'(em andamento)'}</div>`;
+    if(rank.length){
+      html+=`<div class="tablewrap"><table><thead><tr><th>#</th><th>Time</th><th class="num">Pts</th><th class="num hide-sm">Destino</th></tr></thead><tbody>`;
+      const lim = key==='libertadores'?40:49;
+      rank.slice(0,lim).forEach(t=>{
+        let dest='';
+        if(key==='libertadores'){ dest = t.pos<=24?'Grupos':(t.pos<=40?'Fase Tolima':'Sulamericana'); }
+        else { dest = t.pos<=32?'Grupos':'UEFA'; }
+        html+=`<tr><td class="pos">${t.pos}</td><td><div class="team"><span class="crest">${initials(t.name)}</span>${t.name}</div></td><td class="num total">${fmt(t.sum)}</td><td class="num hide-sm" style="color:var(--muted);font-size:12px">${dest}</td></tr>`;
+      });
+      html+=`</tbody></table></div>`;
+    } else html+=`<div class="card"><div class="meta">As rodadas ${a}–${b} ainda não foram disputadas.</div></div>`;
+    phases.push({label: key==='champions'?'Pré (rod. 20–24)':'Classificatória', html});
+  }
+
+  // fase Tolima (Libertadores)
+  if(key==='libertadores'){
+    const [a,b]=[6,7];
+    const lib=libertadoresClassif(teams,R);
+    if(R>=6 && lib.tolima.length){
+      let html=`<div class="lead" style="margin:4px 0 14px">Repescagem · rodadas 6–7 · 25º a 40º da classificatória</div><div class="kgrid">`;
+      lib.tolima.forEach(t=>{
+        const ms=matchScore(teams,t.name,[a,b]);
+        html+=`<div class="kmatch"><div class="ktag">${t.name}</div><div class="kteam"><span class="kn">Total rod. 6–7</span><span class="kpts" style="color:${color}">${ms.played?fmt(ms.sum):'–'}</span></div></div>`;
+      });
+      html+=`</div>`;
+      phases.push({label:'Fase Tolima',html});
+    }
+  }
+
+  // grupos
+  if(cup.grupos && cup.grupos.length){
+    const [a,b]=cup.grupos[0].rounds;
+    let html=`<div class="lead" style="margin:4px 0 14px">Fase de grupos · rodadas ${a}–${b} · classificam-se os 2 primeiros de cada grupo</div><div class="ggrid">`;
+    cup.grupos.forEach(g=>{
+      const rows=g.teams.map(n=>({name:n,...matchScore(teams,n,g.rounds)}))
+        .sort((x,y)=>y.sum-x.sum);
+      html+=`<div class="card gcard"><div class="lbl" style="color:${color}">Grupo ${g.group.replace('G','')}</div>
+        <ol style="list-style:none;margin-top:10px;display:flex;flex-direction:column;gap:7px">`;
+      rows.forEach((t,i)=>{
+        const q=i<2;
+        html+=`<li class="grow${q?' q':''}"><span class="gn"><b>${i+1}</b> ${t.name}</span><span class="gp" style="color:${t.played?color:'var(--dim)'}">${t.played?fmt(t.sum):'–'}</span></li>`;
+      });
+      html+=`</ol></div>`;
+    });
+    html+=`</div>`;
+    phases.push({label:'Grupos',html});
+  } else if(cup.grupos){
+    phases.push({label:'Grupos',html:`<div class="card"><div class="meta">A fase de grupos começa na rodada ${(cup.classif?cup.classif.rounds[1]+1:'?')}. Aguardando definição dos classificados.</div></div>`});
+  }
+
+  // mata-mata
+  const koPhases=[['oitavas','Oitavas'],['quartas','Quartas'],['semis','Semifinais'],['finais','Final']];
+  koPhases.forEach(([pk,plabel])=>{
+    if(!cup[pk] || !cup[pk].length) return;
+    const rounds=cup[pk][0].rounds;
+    const anyTeam=cup[pk].some(m=>m.home||m.away);
+    let html=`<div class="lead" style="margin:4px 0 14px">${plabel} · rodadas ${rounds[0]}–${rounds[1]} · classifica quem somar mais pontos</div>`;
+    if(anyTeam){
+      html+=`<div class="kgrid">`+cup[pk].map(m=>matchCard(teams,m,color)).join('')+`</div>`;
+    } else {
+      html+=`<div class="card"><div class="meta">Confrontos definidos após a fase anterior.</div></div>`;
+    }
+    phases.push({label:plabel,html});
+  });
+
+  if(!phases.length){
+    out.innerHTML=`<div class="card"><div class="meta">Esta copa ainda não começou.</div></div>`;
+    return;
+  }
+
+  // sub-navegação de fases
+  const navHtml=`<div class="phasenav">`+phases.map((p,i)=>`<button class="phasebtn${i===0?' active':''}" data-i="${i}" style="--c:${color}">${p.label}</button>`).join('')+`</div>`;
+  out.innerHTML=navHtml+`<div id="phase-body">${phases[0].html}</div>`;
+  out.querySelectorAll('.phasebtn').forEach(btn=>{
+    btn.onclick=()=>{
+      out.querySelectorAll('.phasebtn').forEach(x=>x.classList.remove('active'));
+      btn.classList.add('active');
+      $('#phase-body').innerHTML=phases[+btn.dataset.i].html;
+    };
+  });
 }
 
 function renderPremios(){
@@ -303,23 +464,72 @@ function setupBulletin(){
   renderBulletin(DATA.last_round);
 }
 
+// nome do mês a partir do bloco de 4 rodadas (bloco 1 = Janeiro, etc.)
+function monthLabel(blockIndex){
+  const nm = MONTH_NAMES[(blockIndex-1)%12] || ('Mês '+blockIndex);
+  return {num:String(blockIndex).padStart(2,'0'), name:nm};
+}
+
 function renderBulletin(r){
   const b=buildBulletin(DATA.teams,r);
   const story=composeStory(b);
-  const month=b.monthClosed&&b.monthClosed.winner?`<div class="card" style="margin-top:16px;border-color:var(--gold)">
-      <div class="lbl">🏆 Fechamento de mês — rodadas ${b.monthClosed.start}–${b.monthClosed.end}</div>
-      <div class="big" style="color:var(--gold)">${b.monthClosed.winner.name}</div>
-      <div class="meta">Campeão do mês com ${fmt(b.monthClosed.winner.sum)} pts somados</div></div>`:'';
+
+  // bloco/mês a que esta rodada pertence
+  const blockSize=4;
+  const blockIdx=Math.ceil(r/blockSize);
+  const ml=monthLabel(blockIdx);
+  const months=monthlyWinners(DATA.teams,r,blockSize);
+  const curMonth=months[months.length-1];
+  const monthClosed=(r%blockSize===0); // fechou o mês nesta rodada
+
+  // cabeçalho de prêmios (estilo do boletim manual)
+  const prizeHeader=`
+    <div class="prizecard">
+      <div class="pz">
+        <div class="pztitle">🏆 Campeão da Rodada ${String(r).padStart(2,'0')} — 1º Colocado</div>
+        <div class="pzname">${b.winner.name}</div>
+        <div class="pzrow"><span>${fmt(b.winner.v)} pts</span><span class="pzval">Prêmio: R$ ${fmt(PRIZE_ROUND)}</span></div>
+      </div>
+      <div class="pz">
+        <div class="pztitle">🥇 Campeão do Mês ${ml.num} (${ml.name}) — Parcial${monthClosed?' · Encerrado':''}</div>
+        <div class="pzname">${curMonth&&curMonth.winner?curMonth.winner.name:'—'}</div>
+        <div class="pzrow"><span>${curMonth&&curMonth.winner?fmt(curMonth.winner.sum)+' pts (rod. '+curMonth.start+'–'+curMonth.end+')':''}</span><span class="pzval">Prêmio: R$ ${fmt(PRIZE_MONTH)}</span></div>
+      </div>
+    </div>`;
+
+  // detalhamento das copas
+  const dig=cupDigest(DATA.cups,DATA.teams,r);
+  let cupsHtml='';
+  if(dig.length){
+    cupsHtml=`<div class="card" style="margin-top:16px"><div class="lbl">🏟️ Resultados das Copas até a rodada ${r}</div>`;
+    dig.forEach(c=>{
+      cupsHtml+=`<div class="cupdig"><div class="cupdig-h">${c.cup}</div>`;
+      c.phases.forEach(p=>{
+        const items=p.classif.length
+          ? p.classif.map(x=>`<span class="pill">${x.tag?x.tag+': ':''}${x.name}${x.group?' ('+x.group.replace('G','G')+')':''} <b>${fmt(x.sum)}</b></span>`).join('')
+          : `<span class="pill dim">aguardando</span>`;
+        cupsHtml+=`<div class="cupdig-p"><span class="ph">${p.phase} · ${p.status}</span><div class="pills">${items}</div></div>`;
+      });
+      cupsHtml+=`</div>`;
+    });
+    cupsHtml+=`</div>`;
+  }
+
   $('#bull-target').innerHTML=`
+    <div class="bullbar">
+      <button class="dlbtn" onclick="downloadBulletin(${r})">⬇ Baixar boletim da rodada ${String(r).padStart(2,'0')}</button>
+    </div>
+    <div id="bull-print">
     <div class="bull">
       <div class="head">
         <div class="rd"><small>Boletim ABB League</small>RODADA ${String(r).padStart(2,'0')}</div>
         <div style="text-align:right">
           <div class="lbl">Líder geral</div>
-          <div style="font-family:'Bebas Neue';font-size:30px;color:var(--gold)">${b.leader.name}</div>
+          <div style="font-family:'Bebas Neue';font-size:30px;color:var(--green)">${b.leader.name}</div>
           <div class="meta">${fmt(b.leader.total)} pts</div>
         </div>
       </div>
+      ${prizeHeader}
       <p class="story">${story}</p>
       <div class="statline">
         <div class="s"><div class="v">${fmt(b.winner.v)}</div><div class="k">Mitada · ${b.winner.name}</div></div>
@@ -331,11 +541,42 @@ function renderBulletin(r){
       <div class="card"><div class="lbl">📈 Quem mais subiu</div>${b.climbers.map(c=>`<div class="mv"><span class="up">▲ ${c.delta}</span> ${c.name} <span style="color:var(--dim)">→ ${c.pos}º</span></div>`).join('')||'<div class="meta">Sem variações.</div>'}</div>
       <div class="card"><div class="lbl">📉 Quem mais caiu</div>${b.fallers.map(c=>`<div class="mv"><span class="down">▼ ${Math.abs(c.delta)}</span> ${c.name} <span style="color:var(--dim)">→ ${c.pos}º</span></div>`).join('')||'<div class="meta">Sem variações.</div>'}</div>
     </div>
-    ${month}
     <div class="card" style="margin-top:16px"><div class="lbl">Top 5 da rodada</div>
       <ol style="list-style:none;margin-top:10px;display:flex;flex-direction:column;gap:8px">
       ${b.top5.map((t,i)=>`<li style="display:flex;justify-content:space-between;font-size:14px"><span><b style="color:var(--gold);font-family:'Oswald'">${i+1}.</b> ${t.name}</span><span style="font-family:'Oswald';color:var(--gold)">${fmt(t.v)}</span></li>`).join('')}
-      </ol></div>`;
+      </ol></div>
+    ${cupsHtml}
+    </div>`;
+}
+
+// gera um HTML autocontido e dispara download (abre como .html, imprimível em PDF)
+function downloadBulletin(r){
+  const node=document.getElementById('bull-print');
+  const css=`body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:#1c2622;margin:24px;max-width:820px}
+  .bull{background:#f4f6f3;border:1px solid #dde3dd;border-radius:14px;padding:24px;margin-bottom:14px}
+  .head{display:flex;justify-content:space-between;align-items:flex-start}
+  .rd{font-size:34px;font-weight:800;line-height:1} .rd small{display:block;font-size:11px;letter-spacing:.2em;color:#1f9d5b;font-weight:700}
+  .lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#90a096;font-weight:700}
+  .meta{font-size:12px;color:#5f6f68}
+  .prizecard{display:flex;gap:12px;margin:16px 0;flex-wrap:wrap}
+  .pz{flex:1;min-width:240px;background:#fff;border:1px solid #dde3dd;border-radius:11px;padding:14px}
+  .pztitle{font-size:12px;font-weight:700;color:#1f9d5b} .pzname{font-size:22px;font-weight:800;margin:4px 0;background:#fff3c4;display:inline-block;padding:2px 8px;border-radius:5px}
+  .pzrow{display:flex;justify-content:space-between;font-size:13px;margin-top:6px} .pzval{font-weight:700;color:#b5862a}
+  .story{font-size:15px;line-height:1.7;color:#34423c}
+  .statline{display:flex;gap:24px;flex-wrap:wrap;margin-top:14px} .statline .v{font-size:24px;font-weight:800} .statline .k{font-size:10px;text-transform:uppercase;color:#90a096}
+  .card{background:#fff;border:1px solid #dde3dd;border-radius:12px;padding:16px;margin-top:12px}
+  .mv{font-size:13px;padding:3px 0} .up{color:#1f9d5b;font-weight:700} .down{color:#d24a40;font-weight:700}
+  .cupdig{margin-top:10px;border-top:1px solid #eee;padding-top:8px} .cupdig-h{font-weight:800;color:#1f9d5b;font-size:14px}
+  .cupdig-p{margin:6px 0} .ph{font-size:11px;text-transform:uppercase;color:#5f6f68;font-weight:700}
+  .pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px} .pill{font-size:12px;background:#f4f6f3;border:1px solid #dde3dd;border-radius:20px;padding:3px 10px} .pill.dim{color:#90a096}
+  ol{padding-left:0} li{list-style:none;display:flex;justify-content:space-between;font-size:14px;padding:3px 0}`;
+  const html=`<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><title>Boletim ABB League — Rodada ${String(r).padStart(2,'0')}</title><style>${css}</style></head><body>${node.innerHTML}<p style="font-size:11px;color:#90a096;margin-top:20px">Gerado automaticamente · ABB League 2026 · para salvar em PDF use Imprimir → Salvar como PDF.</p></body></html>`;
+  const blob=new Blob([html],{type:'text/html;charset=utf-8'});
+  const a=document.createElement('a');
+  a.href=URL.createObjectURL(blob);
+  a.download=`Boletim_ABB_Rodada_${String(r).padStart(2,'0')}.html`;
+  document.body.appendChild(a); a.click(); document.body.removeChild(a);
+  setTimeout(()=>URL.revokeObjectURL(a.href),2000);
 }
 
 function composeStory(b){
@@ -344,7 +585,6 @@ function composeStory(b){
   parts.push(`A média geral ficou em ${fmt(b.avg)}, enquanto <b>${b.worst.name}</b> amargou a lanterna com ${fmt(b.worst.v)}.`);
   parts.push(`Na ponta da tabela, <b>${b.leader.name}</b> segue na liderança com ${fmt(b.leader.total)} pontos acumulados.`);
   if(b.climbers[0]&&b.climbers[0].delta>0) parts.push(`Quem comemorou foi <b>${b.climbers[0].name}</b>, que escalou ${b.climbers[0].delta} posições e chegou ao ${b.climbers[0].pos}º lugar.`);
-  if(b.monthClosed&&b.monthClosed.winner) parts.push(`E com o fim do período, <b>${b.monthClosed.winner.name}</b> foi coroado campeão do mês.`);
   return parts.join(' ');
 }
 

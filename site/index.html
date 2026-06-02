@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ABB LEAGUE 2026 · Central de Resultados</title>
+<link rel="icon" type="image/jpeg" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0e0d; --bg2:#0f1513; --panel:#121a18; --panel2:#16201d;
+  --line:#23302c; --txt:#e8efe9; --muted:#7e928a; --dim:#56655e;
+  --gold:#e9b949; --gold2:#c9952e; --green:#2fbf71; --red:#e1574c;
+  --blue:#4aa6d8; --accent:#1ed79b;
+  --shadow:0 18px 50px -20px rgba(0,0,0,.8);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:
+    radial-gradient(1200px 600px at 80% -10%, rgba(233,185,73,.06), transparent 60%),
+    radial-gradient(900px 500px at 0% 10%, rgba(30,215,155,.05), transparent 55%),
+    var(--bg);
+  color:var(--txt); font-family:'Archivo',system-ui,sans-serif;
+  -webkit-font-smoothing:antialiased; min-height:100vh; overflow-x:hidden;
+}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");}
+.wrap{max-width:1180px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+
+/* HERO */
+header.hero{padding:46px 0 26px;border-bottom:1px solid var(--line);position:relative}
+.herotop{display:flex;align-items:center;gap:22px}
+.logo{width:96px;height:auto;border-radius:14px;background:#fff;padding:8px;box-shadow:var(--shadow);flex-shrink:0}
+.herotext{min-width:0}
+.kicker{font-family:'Oswald';text-transform:uppercase;letter-spacing:.35em;font-size:11px;color:var(--gold);font-weight:600}
+h1.title{font-family:'Bebas Neue';font-size:clamp(54px,9vw,108px);line-height:.86;letter-spacing:.01em;margin:6px 0 4px;
+  background:linear-gradient(180deg,#fff 30%,var(--gold) 130%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--muted);font-size:15px;max-width:640px}
+.metabar{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.chip{background:var(--panel);border:1px solid var(--line);border-radius:100px;padding:8px 16px;font-size:13px;display:flex;align-items:center;gap:8px}
+.chip b{font-family:'Oswald';font-weight:600;color:var(--gold)}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 3px rgba(47,191,113,.18)}
+
+/* NAV */
+nav.tabs{position:sticky;top:0;z-index:20;display:flex;gap:4px;flex-wrap:wrap;padding:12px 0;margin:8px 0 30px;
+  background:linear-gradient(180deg,var(--bg) 70%,transparent);backdrop-filter:blur(6px)}
+nav.tabs button{font-family:'Oswald';font-weight:500;letter-spacing:.08em;text-transform:uppercase;font-size:13px;
+  background:transparent;color:var(--muted);border:1px solid transparent;border-radius:8px;padding:9px 16px;cursor:pointer;transition:.2s}
+nav.tabs button:hover{color:var(--txt)}
+nav.tabs button.active{color:#0a0e0d;background:linear-gradient(180deg,var(--gold),var(--gold2));border-color:var(--gold)}
+
+section.view{display:none;animation:fade .5s ease both}
+section.view.active{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+
+h2.sec{font-family:'Bebas Neue';font-size:38px;letter-spacing:.02em;margin-bottom:4px;display:flex;align-items:baseline;gap:12px}
+h2.sec span{font-family:'Oswald';font-size:13px;font-weight:500;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.lead{color:var(--muted);margin-bottom:22px;font-size:14px}
+
+/* TABLE */
+.tablewrap{background:var(--panel);border:1px solid var(--line);border-radius:16px;overflow:hidden;box-shadow:var(--shadow)}
+table{width:100%;border-collapse:collapse}
+thead th{font-family:'Oswald';text-transform:uppercase;letter-spacing:.08em;font-size:11px;color:var(--dim);font-weight:600;
+  text-align:left;padding:14px 16px;border-bottom:1px solid var(--line);background:var(--panel2)}
+thead th.num,tbody td.num{text-align:right;font-variant-numeric:tabular-nums}
+tbody td{padding:13px 16px;border-bottom:1px solid rgba(35,48,44,.5);font-size:14px}
+tbody tr:last-child td{border-bottom:none}
+tbody tr{transition:background .15s}
+tbody tr:hover{background:var(--panel2)}
+.pos{font-family:'Bebas Neue';font-size:20px;color:var(--muted);width:48px}
+tr.r1 .pos{color:var(--gold)} tr.r2 .pos{color:#cdd6d0} tr.r3 .pos{color:#cd8b4f}
+.team{font-weight:600;display:flex;align-items:center;gap:10px}
+.crest{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,var(--panel2),var(--line));
+  display:grid;place-items:center;font-family:'Bebas Neue';font-size:13px;color:var(--gold);flex-shrink:0}
+.total{font-family:'Oswald';font-weight:700;font-size:16px;color:var(--gold)}
+.zone-lib td:first-child{box-shadow:inset 3px 0 var(--green)}
+.zone-sul td:first-child{box-shadow:inset 3px 0 var(--blue)}
+.zone-out td:first-child{box-shadow:inset 3px 0 var(--red)}
+
+/* CARDS / GRID */
+.grid{display:grid;gap:16px}
+.g3{grid-template-columns:repeat(3,1fr)}
+.g2{grid-template-columns:repeat(2,1fr)}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:22px;box-shadow:var(--shadow)}
+.card .lbl{font-family:'Oswald';text-transform:uppercase;letter-spacing:.12em;font-size:11px;color:var(--dim);font-weight:600}
+.card .big{font-family:'Bebas Neue';font-size:30px;line-height:1.05;margin:6px 0 2px}
+.card .meta{font-size:13px;color:var(--muted)}
+.trophy{font-size:22px}
+
+/* AWARD ROW */
+.award{display:flex;align-items:center;gap:14px;padding:16px 18px;border-bottom:1px solid rgba(35,48,44,.5)}
+.award:last-child{border-bottom:none}
+.award .medal{width:42px;height:42px;border-radius:11px;display:grid;place-items:center;font-family:'Bebas Neue';font-size:18px;flex-shrink:0;
+  background:linear-gradient(135deg,var(--gold),var(--gold2));color:#0a0e0d}
+.award .info{flex:1}
+.award .info .t{font-weight:700;font-size:15px}
+.award .info .s{font-size:12px;color:var(--muted)}
+.award .pts{font-family:'Oswald';font-weight:700;color:var(--gold);font-size:17px}
+
+/* BULLETIN */
+.bull{background:linear-gradient(180deg,var(--panel2),var(--panel));border:1px solid var(--line);border-radius:20px;padding:30px;box-shadow:var(--shadow);position:relative;overflow:hidden}
+.bull::after{content:"";position:absolute;right:-60px;top:-60px;width:220px;height:220px;border-radius:50%;
+  background:radial-gradient(circle,rgba(233,185,73,.14),transparent 70%)}
+.bull .head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;position:relative}
+.bull .head .rd{font-family:'Bebas Neue';font-size:54px;line-height:.9}
+.bull .head .rd small{display:block;font-family:'Oswald';font-size:12px;letter-spacing:.2em;color:var(--gold);font-weight:600}
+.bull p.story{font-size:16px;line-height:1.7;margin:20px 0 0;color:#d4ddd7;position:relative;max-width:760px}
+.bull p.story b{color:var(--gold)}
+.statline{display:flex;gap:24px;flex-wrap:wrap;margin-top:22px;position:relative}
+.statline .s .v{font-family:'Bebas Neue';font-size:28px;color:#fff}
+.statline .s .k{font-family:'Oswald';font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.mv{display:flex;gap:8px;align-items:center;font-size:13px;padding:6px 0}
+.mv .up{color:var(--green);font-weight:700}.mv .down{color:var(--red);font-weight:700}
+
+.selectrow{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
+select{font-family:'Oswald';background:var(--panel);color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:9px 14px;font-size:14px;cursor:pointer}
+.footer{margin:60px 0 30px;padding-top:24px;border-top:1px solid var(--line);color:var(--dim);font-size:12px;line-height:1.7}
+.footer code{background:var(--panel);padding:2px 7px;border-radius:5px;color:var(--gold);font-size:11px}
+@media(max-width:760px){.g3,.g2{grid-template-columns:1fr}.hide-sm{display:none}h2.sec{font-size:30px}.logo{width:64px}.herotop{gap:14px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <div class="herotop">
+      <img src="logo.jpg" alt="ABB League" class="logo">
+      <div class="herotext">
+        <div class="kicker">Cartola FC · Temporada 2026</div>
+        <h1 class="title">ABB LEAGUE</h1>
+      </div>
+    </div>
+    <p class="sub">Central de resultados da liga — pontos corridos, copas continentais e o boletim esportivo de cada rodada, atualizados direto das pontuações oficiais do Cartola.</p>
+    <div class="metabar">
+      <div class="chip"><span class="dot"></span> Rodada atual <b id="m-round">–</b></div>
+      <div class="chip">Equipes <b id="m-teams">–</b></div>
+      <div class="chip">Líder <b id="m-leader">–</b></div>
+      <div class="chip">Última atualização <b id="m-upd">–</b></div>
+    </div>
+  </header>
+
+  <nav class="tabs" id="tabs">
+    <button data-v="liga" class="active">Pontos Corridos</button>
+    <button data-v="copas">Copas</button>
+    <button data-v="premios">Premiações</button>
+    <button data-v="boletim">Boletim da Rodada</button>
+  </nav>
+
+  <!-- LIGA -->
+  <section class="view active" id="v-liga">
+    <h2 class="sec">Classificação Geral <span>ABB League · 38 rodadas</span></h2>
+    <p class="lead">Soma de todas as rodadas oficiais. A faixa <span style="color:var(--green)">verde</span> indica zona de classificação direta à Libertadores; <span style="color:var(--blue)">azul</span> Sulamericana; <span style="color:var(--red)">vermelha</span> eliminação na fase inicial.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>#</th><th>Time</th><th class="num">Pts</th><th class="num hide-sm">Rod.</th><th class="num hide-sm">Média</th><th class="num hide-sm">Melhor</th></tr></thead>
+        <tbody id="liga-body"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- COPAS -->
+  <section class="view" id="v-copas">
+    <h2 class="sec">Copas Continentais <span>Libertadores · Sulamericana · Champions · UEFA</span></h2>
+    <p class="lead">Classificatórias decididas por somatório de rodadas, conforme o regulamento da liga.</p>
+    <div class="grid g2" id="copas-grid"></div>
+  </section>
+
+  <!-- PREMIOS -->
+  <section class="view" id="v-premios">
+    <h2 class="sec">Premiações <span>Vencedores de rodada e de mês</span></h2>
+    <div class="grid g2">
+      <div class="card" style="padding:0">
+        <div style="padding:18px 20px;border-bottom:1px solid var(--line)"><div class="lbl">🏆 Campeões do Mês</div></div>
+        <div id="month-list"></div>
+      </div>
+      <div class="card" style="padding:0">
+        <div style="padding:18px 20px;border-bottom:1px solid var(--line)"><div class="lbl">⚡ Vencedores de Rodada</div></div>
+        <div id="round-list" style="max-height:560px;overflow:auto"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BOLETIM -->
+  <section class="view" id="v-boletim">
+    <h2 class="sec">Boletim Esportivo <span>Resumo da rodada</span></h2>
+    <div class="selectrow">
+      <span class="lbl" style="font-family:'Oswald';color:var(--muted)">Escolha a rodada:</span>
+      <select id="bull-select"></select>
+    </div>
+    <div id="bull-target"></div>
+  </section>
+
+  <div class="footer" id="footer"></div>
+</div>
+
+<script src="logic.js"></script>
+<script>
+const $=(s,e=document)=>e.querySelector(s);
+const fmt=n=>n.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDigits:2});
+const initials=n=>n.replace(/[^A-Za-zÀ-ú0-9 ]/g,'').split(/\s+/).filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase()||'·';
+
+let DATA;
+
+async function boot(){
+  DATA = await fetch('data.json').then(r=>r.json());
+  const R = DATA.last_round;
+  $('#m-round').textContent = String(R).padStart(2,'0');
+  const ativos = DATA.teams.filter(t => t.scores.some(v => v !== null)).length;
+  $('#m-teams').textContent = ativos < DATA.teams.length ? `${DATA.teams.length} (${ativos} em jogo)` : DATA.teams.length;
+  const table = abbLeagueTable(DATA.teams, R);
+  $('#m-leader').textContent = table[0].name;
+  $('#m-upd').textContent = DATA.updated || 'dados da planilha';
+
+  renderLiga(table);
+  renderCopas();
+  renderPremios();
+  setupBulletin();
+  setupTabs();
+  renderFooter();
+}
+
+function renderLiga(table){
+  const tb=$('#liga-body'); tb.innerHTML='';
+  table.forEach((r,i)=>{
+    const aguardando = r.played === 0;
+    let zone='';
+    if(!aguardando){ if(r.pos<=24) zone='zone-lib'; else if(r.pos>=41&&r.pos<=48) zone='zone-sul'; else if(r.pos>=49&&r.pos<=51) zone='zone-out'; }
+    const tr=document.createElement('tr');
+    tr.className=`${zone} ${r.pos<=3?'r'+r.pos:''}`;
+    tr.style.animationDelay=(i*12)+'ms';
+    if(aguardando) tr.style.opacity='.5';
+    tr.innerHTML=`<td class="pos">${r.pos}</td>
+      <td><div class="team"><span class="crest">${initials(r.name)}</span>${r.name}${aguardando?' <span style="font-size:11px;color:var(--dim);font-family:\'Oswald\'">· aguardando estreia</span>':''}</div></td>
+      <td class="num total">${fmt(r.total)}</td>
+      <td class="num hide-sm">${r.played}</td>
+      <td class="num hide-sm">${fmt(r.media)}</td>
+      <td class="num hide-sm">${fmt(r.best)}</td>`;
+    tb.appendChild(tr);
+  });
+}
+
+function copaCard(title, subtitle, color, groups){
+  const blocks = groups.map(g=>`
+    <div style="margin-top:14px">
+      <div class="lbl" style="color:${color}">${g.label}</div>
+      <ol style="list-style:none;margin-top:8px;display:flex;flex-direction:column;gap:6px">
+        ${g.rows.length? g.rows.map(t=>`<li style="display:flex;justify-content:space-between;font-size:13px;border-bottom:1px solid rgba(35,48,44,.5);padding-bottom:5px">
+          <span><b style="color:var(--dim);font-family:'Oswald'">${t.pos}.</b> ${t.name}</span>
+          <span style="font-family:'Oswald';color:var(--gold)">${fmt(t.sum)}</span></li>`).join('')
+          : `<li style="font-size:13px;color:var(--dim)">Aguardando rodadas…</li>`}
+      </ol>
+    </div>`).join('');
+  return `<div class="card"><div class="lbl">${subtitle}</div><div class="big" style="color:${color}">${title}</div>${blocks}</div>`;
+}
+
+function renderCopas(){
+  const R=DATA.last_round, grid=$('#copas-grid'); grid.innerHTML='';
+  const lib=libertadoresClassif(DATA.teams,R);
+  grid.insertAdjacentHTML('beforeend', copaCard('Libertadores', lib.done?'Classificação fechada (rod. 1–5)':'Parcial · rodadas 1–5','var(--green)',[
+    {label:'Classificados diretos (top 24)', rows:lib.classificadosDireto.slice(0,8)},
+    {label:'Fase Tolima (25º–40º)', rows:lib.tolima.slice(0,6)},
+  ]));
+  grid.insertAdjacentHTML('beforeend', copaCard('Sulamericana','Vagas 41º–48º (rod. 1–5)','var(--blue)',[
+    {label:'Classificados', rows:lib.sulamericana},
+    {label:'Eliminados (49º–51º)', rows:lib.eliminados},
+  ]));
+  const ch=championsClassif(DATA.teams,R);
+  grid.insertAdjacentHTML('beforeend', copaCard('Champions', ch.done?'Classificação fechada (rod. 20–24)':'Inicia na rodada 20','var(--gold)',[
+    {label:'Fase de grupos (top 32)', rows:ch.grupos.slice(0,8)},
+  ]));
+  grid.insertAdjacentHTML('beforeend', copaCard('UEFA','Vagas 33º–49º (rod. 20–24)','#9a7bd0',[
+    {label:'Classificados', rows:ch.uefa.slice(0,8)},
+  ]));
+}
+
+function renderPremios(){
+  const R=DATA.last_round;
+  const months=monthlyWinners(DATA.teams,R,4);
+  const ml=$('#month-list'); ml.innerHTML='';
+  months.forEach(m=>{
+    if(!m.winner) return;
+    ml.insertAdjacentHTML('beforeend',`<div class="award">
+      <div class="medal">${m.index}</div>
+      <div class="info"><div class="t">${m.winner.name}</div><div class="s">Rodadas ${m.start}–${m.end}${m.end<m.start+3?' · parcial':''}</div></div>
+      <div class="pts">${fmt(m.winner.sum)}</div></div>`);
+  });
+  const winners=roundWinners(DATA.teams,R).reverse();
+  const rl=$('#round-list'); rl.innerHTML='';
+  winners.forEach(w=>{
+    rl.insertAdjacentHTML('beforeend',`<div class="award">
+      <div class="medal" style="background:linear-gradient(135deg,var(--accent),#129e74)">${w.round}</div>
+      <div class="info"><div class="t">${w.name}</div><div class="s">Maior pontuação da rodada ${w.round}</div></div>
+      <div class="pts">${fmt(w.score)}</div></div>`);
+  });
+}
+
+function setupBulletin(){
+  const sel=$('#bull-select'); sel.innerHTML='';
+  for(let r=DATA.last_round;r>=1;r--){const o=document.createElement('option');o.value=r;o.textContent='Rodada '+String(r).padStart(2,'0');sel.appendChild(o);}
+  sel.onchange=()=>renderBulletin(+sel.value);
+  renderBulletin(DATA.last_round);
+}
+
+function renderBulletin(r){
+  const b=buildBulletin(DATA.teams,r);
+  const story=composeStory(b);
+  const month=b.monthClosed&&b.monthClosed.winner?`<div class="card" style="margin-top:16px;border-color:var(--gold)">
+      <div class="lbl">🏆 Fechamento de mês — rodadas ${b.monthClosed.start}–${b.monthClosed.end}</div>
+      <div class="big" style="color:var(--gold)">${b.monthClosed.winner.name}</div>
+      <div class="meta">Campeão do mês com ${fmt(b.monthClosed.winner.sum)} pts somados</div></div>`:'';
+  $('#bull-target').innerHTML=`
+    <div class="bull">
+      <div class="head">
+        <div class="rd"><small>Boletim ABB League</small>RODADA ${String(r).padStart(2,'0')}</div>
+        <div style="text-align:right">
+          <div class="lbl">Líder geral</div>
+          <div style="font-family:'Bebas Neue';font-size:30px;color:var(--gold)">${b.leader.name}</div>
+          <div class="meta">${fmt(b.leader.total)} pts</div>
+        </div>
+      </div>
+      <p class="story">${story}</p>
+      <div class="statline">
+        <div class="s"><div class="v">${fmt(b.winner.v)}</div><div class="k">Mitada · ${b.winner.name}</div></div>
+        <div class="s"><div class="v">${fmt(b.avg)}</div><div class="k">Média da rodada</div></div>
+        <div class="s"><div class="v">${fmt(b.worst.v)}</div><div class="k">Lanterna · ${b.worst.name}</div></div>
+      </div>
+    </div>
+    <div class="grid g2" style="margin-top:16px">
+      <div class="card"><div class="lbl">📈 Quem mais subiu</div>${b.climbers.map(c=>`<div class="mv"><span class="up">▲ ${c.delta}</span> ${c.name} <span style="color:var(--dim)">→ ${c.pos}º</span></div>`).join('')||'<div class="meta">Sem variações.</div>'}</div>
+      <div class="card"><div class="lbl">📉 Quem mais caiu</div>${b.fallers.map(c=>`<div class="mv"><span class="down">▼ ${Math.abs(c.delta)}</span> ${c.name} <span style="color:var(--dim)">→ ${c.pos}º</span></div>`).join('')||'<div class="meta">Sem variações.</div>'}</div>
+    </div>
+    ${month}
+    <div class="card" style="margin-top:16px"><div class="lbl">Top 5 da rodada</div>
+      <ol style="list-style:none;margin-top:10px;display:flex;flex-direction:column;gap:8px">
+      ${b.top5.map((t,i)=>`<li style="display:flex;justify-content:space-between;font-size:14px"><span><b style="color:var(--gold);font-family:'Oswald'">${i+1}.</b> ${t.name}</span><span style="font-family:'Oswald';color:var(--gold)">${fmt(t.v)}</span></li>`).join('')}
+      </ol></div>`;
+}
+
+function composeStory(b){
+  const parts=[];
+  parts.push(`A rodada ${b.round} teve <b>${b.winner.name}</b> como grande destaque, cravando <b>${fmt(b.winner.v)}</b> pontos e levando a mitada.`);
+  parts.push(`A média geral ficou em ${fmt(b.avg)}, enquanto <b>${b.worst.name}</b> amargou a lanterna com ${fmt(b.worst.v)}.`);
+  parts.push(`Na ponta da tabela, <b>${b.leader.name}</b> segue na liderança com ${fmt(b.leader.total)} pontos acumulados.`);
+  if(b.climbers[0]&&b.climbers[0].delta>0) parts.push(`Quem comemorou foi <b>${b.climbers[0].name}</b>, que escalou ${b.climbers[0].delta} posições e chegou ao ${b.climbers[0].pos}º lugar.`);
+  if(b.monthClosed&&b.monthClosed.winner) parts.push(`E com o fim do período, <b>${b.monthClosed.winner.name}</b> foi coroado campeão do mês.`);
+  return parts.join(' ');
+}
+
+function setupTabs(){
+  const btns=[...document.querySelectorAll('#tabs button')];
+  btns.forEach(b=>b.onclick=()=>{
+    btns.forEach(x=>x.classList.remove('active'));b.classList.add('active');
+    document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+    $('#v-'+b.dataset.v).classList.add('active');
+  });
+}
+
+function renderFooter(){
+  $('#footer').innerHTML=`Dados: pontuações oficiais do Cartola FC, temporada 2026 · liga ABB League.
+  Esta página recalcula classificações, copas e premiações automaticamente a partir do arquivo <code>data.json</code>.
+  Para atualizar a cada rodada, basta substituir o <code>data.json</code> (o pipeline de nuvem faz isso sozinho lendo a API <code>api.cartolafc.globo.com</code>).`;
+}
+
+boot();
+</script>
+</body>
+</html>

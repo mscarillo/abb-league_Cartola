@@ -1,0 +1,50 @@
+name: Atualizar ABB League
+
+# Atualiza os dados e republica o site automaticamente.
+on:
+  schedule:
+    # A cada 3 horas (horário UTC). Cobre rodadas de fim de semana e meio de semana.
+    - cron: '0 */3 * * *'
+  workflow_dispatch:        # permite rodar manualmente pelo botão "Run workflow"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+jobs:
+  atualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Ler API do Cartola e gerar data.json
+        env:
+          GLB_TOKEN: ${{ secrets.GLB_TOKEN }}   # opcional (rodada ao vivo)
+        run: python update_cartola.py
+
+      - name: Commitar mudanças (se houver)
+        run: |
+          git config user.name  "abb-league-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add site/data.json
+          git diff --staged --quiet || git commit -m "Atualiza pontuações $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
+
+  deploy:
+    needs: atualizar
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: site
+      - id: deployment
+        uses: actions/deploy-pages@v4

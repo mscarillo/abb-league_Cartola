@@ -2,8 +2,9 @@
  "season": 2026,
  "league": "ABB LEAGUE 2026",
  "total_rounds": 38,
- "last_round": 18,
- "updated": "dados até a rodada 18",
+ "last_round": 19,
+ "market_status": 1,
+ "updated": "04/06/2026 18:47 UTC",
  "teams": [
   {
    "id": 2311770,
@@ -27,7 +28,7 @@
     78.95,
     93.21,
     61.03,
-    null,
+    61.03,
     null,
     null,
     null,
@@ -71,7 +72,7 @@
     69.7,
     75.41,
     46.62,
-    null,
+    46.62,
     null,
     null,
     null,
@@ -115,7 +116,7 @@
     56.34,
     84.11,
     86.05,
-    null,
+    86.05,
     null,
     null,
     null,
@@ -159,7 +160,7 @@
     81.53,
     68.22,
     132.15,
-    null,
+    132.15,
     null,
     null,
     null,
@@ -203,7 +204,7 @@
     65.95,
     85.42,
     101.8,
-    null,
+    101.8,
     null,
     null,
     null,
@@ -247,7 +248,7 @@
     76.69,
     79.62,
     91.85,
-    null,
+    91.85,
     null,
     null,
     null,
@@ -291,7 +292,7 @@
     85.99,
     65.32,
     103.6,
-    null,
+    103.6,
     null,
     null,
     null,
@@ -335,7 +336,7 @@
     93.85,
     66.92,
     93.85,
-    null,
+    93.85,
     null,
     null,
     null,
@@ -379,7 +380,7 @@
     65.95,
     86.72,
     100.0,
-    null,
+    100.0,
     null,
     null,
     null,
@@ -423,7 +424,7 @@
     57.5,
     71.42,
     91.7,
-    null,
+    91.7,
     null,
     null,
     null,
@@ -467,7 +468,7 @@
     76.0,
     79.32,
     97.4,
-    null,
+    97.4,
     null,
     null,
     null,
@@ -511,7 +512,7 @@
     72.29,
     90.22,
     122.6,
-    null,
+    122.6,
     null,
     null,
     null,
@@ -555,7 +556,7 @@
     79.78,
     65.72,
     135.95,
-    null,
+    135.95,
     null,
     null,
     null,
@@ -599,7 +600,7 @@
     85.65,
     70.06,
     127.45,
-    null,
+    127.45,
     null,
     null,
     null,
@@ -643,7 +644,7 @@
     52.35,
     57.92,
     82.24,
-    null,
+    82.24,
     null,
     null,
     null,
@@ -687,7 +688,7 @@
     63.54,
     68.17,
     95.35,
-    null,
+    95.35,
     null,
     null,
     null,
@@ -731,7 +732,7 @@
     75.8,
     74.32,
     127.35,
-    null,
+    127.35,
     null,
     null,
     null,
@@ -775,7 +776,7 @@
     50.59,
     77.72,
     97.8,
-    null,
+    97.8,
     null,
     null,
     null,
@@ -819,7 +820,7 @@
     19.15,
     16.75,
     33.85,
-    null,
+    33.85,
     null,
     null,
     null,
@@ -863,7 +864,7 @@
     69.49,
     69.02,
     106.05,
-    null,
+    106.05,
     null,
     null,
     null,
@@ -907,7 +908,7 @@
     57.74,
     46.76,
     94.35,
-    null,
+    94.35,
     null,
     null,
     null,
@@ -951,7 +952,7 @@
     43.15,
     99.47,
     111.35,
-    null,
+    111.35,
     null,
     null,
     null,
@@ -995,7 +996,7 @@
     75.49,
     87.45,
     97.5,
-    null,
+    97.5,
     null,
     null,
     null,
@@ -1039,7 +1040,7 @@
     91.03,
     90.72,
     90.4,
-    null,
+    90.4,
     null,
     null,
     null,
@@ -1083,7 +1084,7 @@
     78.18,
     81.42,
     107.2,
-    null,
+    107.2,
     null,
     null,
     null,
@@ -1127,7 +1128,7 @@
     62.28,
     44.86,
     37.92,
-    null,
+    37.92,
     null,
     null,
     null,
@@ -1171,7 +1172,7 @@
     49.4,
     66.75,
     98.35,
-    null,
+    98.35,
     null,
     null,
     null,
@@ -1215,7 +1216,7 @@
     81.6,
     80.32,
     114.15,
-    null,
+    114.15,
     null,
     null,
     null,
@@ -1259,7 +1260,7 @@
     80.51,
     93.22,
     117.7,
-    null,
+    117.7,
     null,
     null,
     null,
@@ -1303,7 +1304,7 @@
     50.76,
     55.21,
     121.35,
-    null,
+    121.35,
     null,
     null,
     null,
@@ -1329,8 +1330,8 @@
    "id": 51183958,
    "name": "katuni02",
    "scores": [
-    0.0,
-    0.0,
+    null,
+    null,
     34.79,
     55.06,
     63.99,
@@ -1347,7 +1348,7 @@
     58.0,
     54.71,
     73.35,
-    null,
+    73.35,
     null,
     null,
     null,
@@ -1391,7 +1392,7 @@
     65.15,
     72.52,
     107.9,
-    null,
+    107.9,
     null,
     null,
     null,
@@ -1435,7 +1436,7 @@
     78.05,
     87.25,
     120.28,
-    null,
+    120.28,
     null,
     null,
     null,
@@ -1479,7 +1480,7 @@
     56.25,
     54.85,
     94.95,
-    null,
+    94.95,
     null,
     null,
     null,
@@ -1523,7 +1524,7 @@
     81.91,
     53.95,
     83.15,
-    null,
+    83.15,
     null,
     null,
     null,
@@ -1567,7 +1568,7 @@
     65.45,
     81.92,
     84.25,
-    null,
+    84.25,
     null,
     null,
     null,
@@ -1611,7 +1612,7 @@
     68.59,
     66.92,
     100.1,
-    null,
+    100.1,
     null,
     null,
     null,
@@ -1655,7 +1656,7 @@
     68.95,
     82.5,
     99.15,
-    null,
+    99.15,
     null,
     null,
     null,
@@ -1699,7 +1700,7 @@
     16.96,
     43.25,
     30.87,
-    null,
+    30.87,
     null,
     null,
     null,
@@ -1743,7 +1744,7 @@
     85.54,
     61.77,
     97.95,
-    null,
+    97.95,
     null,
     null,
     null,
@@ -1787,7 +1788,7 @@
     83.89,
     64.02,
     98.0,
-    null,
+    98.0,
     null,
     null,
     null,
@@ -1831,7 +1832,7 @@
     72.68,
     57.82,
     112.1,
-    null,
+    112.1,
     null,
     null,
     null,
@@ -1875,7 +1876,7 @@
     72.76,
     42.45,
     57.57,
-    null,
+    57.57,
     null,
     null,
     null,
@@ -1919,7 +1920,7 @@
     32.4,
     46.95,
     50.8,
-    null,
+    50.8,
     null,
     null,
     null,
@@ -1963,7 +1964,7 @@
     38.2,
     71.42,
     110.2,
-    null,
+    110.2,
     null,
     null,
     null,
@@ -2007,7 +2008,7 @@
     70.14,
     71.92,
     124.8,
-    null,
+    124.8,
     null,
     null,
     null,
@@ -2051,7 +2052,7 @@
     64.35,
     89.22,
     107.8,
-    null,
+    107.8,
     null,
     null,
     null,
@@ -2095,7 +2096,7 @@
     81.03,
     72.22,
     86.1,
-    null,
+    86.1,
     null,
     null,
     null,
@@ -2139,7 +2140,7 @@
     64.63,
     85.07,
     89.15,
-    null,
+    89.15,
     null,
     null,
     null,
@@ -2183,7 +2184,7 @@
     70.8,
     81.12,
     46.44,
-    null,
+    46.44,
     null,
     null,
     null,
@@ -2227,7 +2228,7 @@
     95.24,
     76.12,
     137.95,
-    null,
+    137.95,
     null,
     null,
     null,
@@ -2271,7 +2272,7 @@
     59.18,
     79.25,
     98.7,
-    null,
+    98.7,
     null,
     null,
     null,
@@ -2315,7 +2316,7 @@
     74.58,
     75.22,
     140.5,
-    null,
+    140.5,
     null,
     null,
     null,
@@ -2359,7 +2360,7 @@
     76.0,
     84.22,
     106.4,
-    null,
+    106.4,
     null,
     null,
     null,
@@ -2403,7 +2404,7 @@
     63.0,
     69.15,
     96.05,
-    null,
+    96.05,
     null,
     null,
     null,
@@ -2447,7 +2448,7 @@
     75.45,
     66.67,
     97.9,
-    null,
+    97.9,
     null,
     null,
     null,
@@ -2491,7 +2492,7 @@
     74.75,
     92.92,
     119.59,
-    null,
+    119.59,
     null,
     null,
     null,
@@ -2535,7 +2536,7 @@
     73.85,
     36.37,
     23.9,
-    null,
+    23.9,
     null,
     null,
     null,
@@ -2579,7 +2580,7 @@
     77.4,
     69.92,
     107.6,
-    null,
+    107.6,
     null,
     null,
     null,
@@ -2623,7 +2624,7 @@
     83.48,
     99.72,
     92.55,
-    null,
+    92.55,
     null,
     null,
     null,
@@ -2667,7 +2668,7 @@
     98.28,
     67.26,
     76.73,
-    null,
+    76.73,
     null,
     null,
     null,
@@ -2711,7 +2712,7 @@
     53.25,
     69.65,
     100.45,
-    null,
+    100.45,
     null,
     null,
     null,
@@ -2755,7 +2756,7 @@
     79.78,
     82.72,
     140.95,
-    null,
+    140.95,
     null,
     null,
     null,
@@ -2799,7 +2800,7 @@
     72.6,
     74.02,
     108.6,
-    null,
+    108.6,
     null,
     null,
     null,
@@ -2843,7 +2844,7 @@
     70.7,
     78.12,
     105.75,
-    null,
+    105.75,
     null,
     null,
     null,
@@ -2887,7 +2888,7 @@
     61.6,
     84.32,
     77.9,
-    null,
+    77.9,
     null,
     null,
     null,
@@ -2931,7 +2932,7 @@
     59.95,
     82.02,
     98.1,
-    null,
+    98.1,
     null,
     null,
     null,
@@ -2953,733 +2954,5 @@
     null
    ]
   }
- ],
- "cups": {
-  "libertadores": {
-   "name": "Libertadores",
-   "classif": {
-    "rounds": [
-     1,
-     5
-    ],
-    "cut_grupos": 24,
-    "cut_tolima": 40,
-    "cut_sul": 48
-   },
-   "tolima_rounds": [
-    6,
-    7
-   ],
-   "grupos": [
-    {
-     "group": "G1",
-     "rounds": [
-      8,
-      11
-     ],
-     "teams": [
-      "FeCross F.C",
-      "Engineered to Win FC",
-      "ScarilloDREAMTEAM",
-      "Clube América Central"
-     ]
-    },
-    {
-     "group": "G2",
-     "rounds": [
-      8,
-      11
-     ],
-     "teams": [
-      "TRUGILO F.C",
-      "Tangue SCCP",
-      "Bonsucesso P G",
-      "Sport Clube Metralhas FC"
-     ]
-    },
-    {
-     "group": "G3",
-     "rounds": [
-      8,
-      11
-     ],
-     "teams": [
-      "SC ANDERSON ARAUJO",
-      "ARDM fc",
-      "C. A. Só Nus Tapa",
-      "BentoFootball"
-     ]
-    },
-    {
-     "group": "G4",
-     "rounds": [
-      8,
-      11
-     ],
-     "teams": [
-      "Jaderpan",
-      "FC timekin jr",
-      "Re Katuni",
-      "Navy Seals EC"
-     ]
-    },
-    {
-     "group": "G5",
-     "rounds": [
-      8,
-      11
-     ],
-     "teams": [
-      "Robson Camarotto FC",
-      "ANDREZAO CAMPEÃO",
-      "Catafllan 49ers",
-      "EC VTNC"
-     ]
-    },
-    {
-     "group": "G6",
-     "rounds": [
-      8,
-      11
-     ],
-     "teams": [
-      "Patsuzaki Junior",
-      "SC Corinthians de Madrid",
-      "FC Timeko",
-      "Farturinhas FC"
-     ]
-    },
-    {
-     "group": "G7",
-     "rounds": [
-      8,
-      11
-     ],
-     "teams": [
-      "Bosta Verde Sem Mundial",
-      "Bolonha SCSA",
-      "BIGPOPOFC",
-      "Patsuzaki Master"
-     ]
-    },
-    {
-     "group": "G8",
-     "rounds": [
-      8,
-      11
-     ],
-     "teams": [
-      "Street Angels BR",
-      "Esfarelado",
-      "S.E. Porcomuna",
-      "JOGA10SC"
-     ]
-    }
-   ],
-   "oitavas": [
-    {
-     "tag": "O1",
-     "home": "FeCross F.C",
-     "away": "Esfarelado",
-     "rounds": [
-      12,
-      13
-     ]
-    },
-    {
-     "tag": "O2",
-     "home": "Patsuzaki Junior",
-     "away": "FC timekin jr",
-     "rounds": [
-      12,
-      13
-     ]
-    },
-    {
-     "tag": "O3",
-     "home": "Jaderpan",
-     "away": "Robson Camarotto FC",
-     "rounds": [
-      12,
-      13
-     ]
-    },
-    {
-     "tag": "O4",
-     "home": "TRUGILO F.C",
-     "away": "ARDM fc",
-     "rounds": [
-      12,
-      13
-     ]
-    },
-    {
-     "tag": "O5",
-     "home": "SC ANDERSON ARAUJO",
-     "away": "Bolonha SCSA",
-     "rounds": [
-      12,
-      13
-     ]
-    },
-    {
-     "tag": "O6",
-     "home": "Street Angels BR",
-     "away": "ANDREZAO CAMPEÃO",
-     "rounds": [
-      12,
-      13
-     ]
-    },
-    {
-     "tag": "O7",
-     "home": "Bosta Verde Sem Mundial",
-     "away": "Engineered to Win FC",
-     "rounds": [
-      12,
-      13
-     ]
-    },
-    {
-     "tag": "O8",
-     "home": "SC Corinthians de Madrid",
-     "away": "Tangue SCCP",
-     "rounds": [
-      12,
-      13
-     ]
-    }
-   ],
-   "quartas": [
-    {
-     "tag": "Q1",
-     "home": "FeCross F.C",
-     "away": "SC Corinthians de Madrid",
-     "rounds": [
-      14,
-      15
-     ]
-    },
-    {
-     "tag": "Q2",
-     "home": "Patsuzaki Junior",
-     "away": "Bosta Verde Sem Mundial",
-     "rounds": [
-      14,
-      15
-     ]
-    },
-    {
-     "tag": "Q3",
-     "home": "Street Angels BR",
-     "away": "Jaderpan",
-     "rounds": [
-      14,
-      15
-     ]
-    },
-    {
-     "tag": "Q4",
-     "home": "TRUGILO F.C",
-     "away": "SC ANDERSON ARAUJO",
-     "rounds": [
-      14,
-      15
-     ]
-    }
-   ],
-   "semis": [
-    {
-     "tag": "S1",
-     "home": "FeCross F.C",
-     "away": "Patsuzaki Junior",
-     "rounds": [
-      16,
-      17
-     ]
-    },
-    {
-     "tag": "S2",
-     "home": "Street Angels BR",
-     "away": "TRUGILO F.C",
-     "rounds": [
-      16,
-      17
-     ]
-    }
-   ],
-   "finais": [
-    {
-     "tag": "F1",
-     "home": "Street Angels BR",
-     "away": "FeCross F.C",
-     "rounds": [
-      18,
-      19
-     ]
-    }
-   ]
-  },
-  "sulamericana": {
-   "name": "Sulamericana",
-   "oitavas": [
-    {
-     "tag": "O1",
-     "home": "Saci de Patinete Elétrica United",
-     "away": "RomaNetofc",
-     "rounds": [
-      12,
-      13
-     ]
-    },
-    {
-     "tag": "O2",
-     "home": "leão de fênix",
-     "away": "Peixão S.C",
-     "rounds": [
-      12,
-      13
-     ]
-    },
-    {
-     "tag": "O3",
-     "home": "Trivath",
-     "away": "Timão Ability FC",
-     "rounds": [
-      12,
-      13
-     ]
-    },
-    {
-     "tag": "O4",
-     "home": "Trikas Paulistano",
-     "away": "Rafiusks EC",
-     "rounds": [
-      12,
-      13
-     ]
-    },
-    {
-     "tag": "O5",
-     "home": "Lilo FC 10",
-     "away": "WELL-BJJ",
-     "rounds": [
-      12,
-      13
-     ]
-    },
-    {
-     "tag": "O6",
-     "home": "Biliskov Fc",
-     "away": "S.C. VanFooThe Amsterdã",
-     "rounds": [
-      12,
-      13
-     ]
-    },
-    {
-     "tag": "O7",
-     "home": "Náutico 1901CNC",
-     "away": "Godz MatOs",
-     "rounds": [
-      12,
-      13
-     ]
-    },
-    {
-     "tag": "O8",
-     "home": "Xitos Club",
-     "away": "100 Futuro Futebol e Amigos",
-     "rounds": [
-      12,
-      13
-     ]
-    }
-   ],
-   "quartas": [
-    {
-     "tag": "Q1",
-     "home": "Saci de Patinete Elétrica United",
-     "away": "Xitos Club",
-     "rounds": [
-      14,
-      15
-     ]
-    },
-    {
-     "tag": "Q2",
-     "home": "Náutico 1901CNC",
-     "away": "leão de fênix",
-     "rounds": [
-      14,
-      15
-     ]
-    },
-    {
-     "tag": "Q3",
-     "home": "Biliskov Fc",
-     "away": "Trivath",
-     "rounds": [
-      14,
-      15
-     ]
-    },
-    {
-     "tag": "Q4",
-     "home": "Trikas Paulistano",
-     "away": "Lilo FC 10",
-     "rounds": [
-      14,
-      15
-     ]
-    }
-   ],
-   "semis": [
-    {
-     "tag": "S1",
-     "home": "Saci de Patinete Elétrica United",
-     "away": "Náutico 1901CNC",
-     "rounds": [
-      16,
-      17
-     ]
-    },
-    {
-     "tag": "S2",
-     "home": "Biliskov Fc",
-     "away": "Trikas Paulistano",
-     "rounds": [
-      16,
-      17
-     ]
-    }
-   ],
-   "finais": [
-    {
-     "tag": "F1",
-     "home": "Saci de Patinete Elétrica United",
-     "away": "Biliskov Fc",
-     "rounds": [
-      18,
-      19
-     ]
-    }
-   ]
-  },
-  "champions": {
-   "name": "Champions",
-   "classif": {
-    "rounds": [
-     20,
-     24
-    ],
-    "cut_grupos": 32,
-    "cut_uefa": 49
-   },
-   "grupos": [],
-   "oitavas": [
-    {
-     "tag": "O1",
-     "home": null,
-     "away": null,
-     "rounds": [
-      29,
-      30
-     ]
-    },
-    {
-     "tag": "O2",
-     "home": null,
-     "away": null,
-     "rounds": [
-      29,
-      30
-     ]
-    },
-    {
-     "tag": "O3",
-     "home": null,
-     "away": null,
-     "rounds": [
-      29,
-      30
-     ]
-    },
-    {
-     "tag": "O4",
-     "home": null,
-     "away": null,
-     "rounds": [
-      29,
-      30
-     ]
-    },
-    {
-     "tag": "O5",
-     "home": null,
-     "away": null,
-     "rounds": [
-      29,
-      30
-     ]
-    },
-    {
-     "tag": "O6",
-     "home": null,
-     "away": null,
-     "rounds": [
-      29,
-      30
-     ]
-    },
-    {
-     "tag": "O7",
-     "home": null,
-     "away": null,
-     "rounds": [
-      29,
-      30
-     ]
-    },
-    {
-     "tag": "O8",
-     "home": null,
-     "away": null,
-     "rounds": [
-      29,
-      30
-     ]
-    }
-   ],
-   "quartas": [
-    {
-     "tag": "Q1",
-     "home": null,
-     "away": null,
-     "rounds": [
-      31,
-      32
-     ]
-    },
-    {
-     "tag": "Q2",
-     "home": null,
-     "away": null,
-     "rounds": [
-      31,
-      32
-     ]
-    },
-    {
-     "tag": "Q3",
-     "home": null,
-     "away": null,
-     "rounds": [
-      31,
-      32
-     ]
-    },
-    {
-     "tag": "Q4",
-     "home": null,
-     "away": null,
-     "rounds": [
-      31,
-      32
-     ]
-    }
-   ],
-   "semis": [
-    {
-     "tag": "S1",
-     "home": null,
-     "away": null,
-     "rounds": [
-      33,
-      34
-     ]
-    },
-    {
-     "tag": "S2",
-     "home": null,
-     "away": null,
-     "rounds": [
-      33,
-      34
-     ]
-    }
-   ],
-   "finais": [
-    {
-     "tag": "F1",
-     "home": null,
-     "away": null,
-     "rounds": [
-      35,
-      36
-     ]
-    }
-   ]
-  },
-  "uefa": {
-   "name": "UEFA",
-   "oitavas": [
-    {
-     "tag": "O1",
-     "home": null,
-     "away": null,
-     "rounds": [
-      29,
-      30
-     ]
-    },
-    {
-     "tag": "O2",
-     "home": null,
-     "away": null,
-     "rounds": [
-      29,
-      30
-     ]
-    },
-    {
-     "tag": "O3",
-     "home": null,
-     "away": null,
-     "rounds": [
-      29,
-      30
-     ]
-    },
-    {
-     "tag": "O4",
-     "home": null,
-     "away": null,
-     "rounds": [
-      29,
-      30
-     ]
-    },
-    {
-     "tag": "O5",
-     "home": null,
-     "away": null,
-     "rounds": [
-      29,
-      30
-     ]
-    },
-    {
-     "tag": "O6",
-     "home": null,
-     "away": null,
-     "rounds": [
-      29,
-      30
-     ]
-    },
-    {
-     "tag": "O7",
-     "home": null,
-     "away": null,
-     "rounds": [
-      29,
-      30
-     ]
-    },
-    {
-     "tag": "O8",
-     "home": null,
-     "away": null,
-     "rounds": [
-      29,
-      30
-     ]
-    }
-   ],
-   "quartas": [
-    {
-     "tag": "Q1",
-     "home": null,
-     "away": null,
-     "rounds": [
-      31,
-      32
-     ]
-    },
-    {
-     "tag": "Q2",
-     "home": null,
-     "away": null,
-     "rounds": [
-      31,
-      32
-     ]
-    },
-    {
-     "tag": "Q3",
-     "home": null,
-     "away": null,
-     "rounds": [
-      31,
-      32
-     ]
-    },
-    {
-     "tag": "Q4",
-     "home": null,
-     "away": null,
-     "rounds": [
-      31,
-      32
-     ]
-    }
-   ],
-   "semis": [
-    {
-     "tag": "S1",
-     "home": null,
-     "away": null,
-     "rounds": [
-      33,
-      34
-     ]
-    },
-    {
-     "tag": "S2",
-     "home": null,
-     "away": null,
-     "rounds": [
-      33,
-      34
-     ]
-    }
-   ],
-   "finais": [
-    {
-     "tag": "F1",
-     "home": null,
-     "away": null,
-     "rounds": [
-      35,
-      36
-     ]
-    }
-   ]
-  },
-  "mundial": {
-   "name": "Mundial",
-   "finais": [
-    {
-     "tag": "M1",
-     "home": null,
-     "away": null,
-     "rounds": [
-      37,
-      38
-     ]
-    }
-   ]
-  }
- }
+ ]
 }

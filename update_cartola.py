@@ -71,6 +71,27 @@ def team_round_score(team_id, rnd):
         return None
 
 
+def round_months():
+    """Mês (1-12) em que cada rodada foi/será disputada, lido da API do Cartola.
+    Usa o endpoint /rodadas, que traz inicio/fim de cada rodada. Retorna {rnd: mes}."""
+    d = http_get(f"{API}/rodadas")
+    out = {}
+    if isinstance(d, list):
+        for item in d:
+            try:
+                rid = int(item.get("rodada_id"))
+                # campos possíveis: 'inicio', 'fim', 'data' (formato 'YYYY-MM-DD HH:MM:SS')
+                raw = item.get("inicio") or item.get("fim") or item.get("data")
+                if rid and raw:
+                    # mês é o caractere 6-7 de 'YYYY-MM-...'
+                    mes = int(str(raw)[5:7])
+                    if 1 <= mes <= 12:
+                        out[str(rid)] = mes
+            except (TypeError, ValueError):
+                continue
+    return out
+
+
 def main():
     if not os.path.exists(TEAMS_FILE):
         print("ERRO: teams.json não encontrado.", file=sys.stderr)
@@ -88,11 +109,31 @@ def main():
     teams_out = []
     for t in teams_meta:
         scores = [None] * TOTAL_ROUNDS
+        patrimonio = None
         for rnd in range(1, last_to_fetch + 1):
-            s = team_round_score(t["id"], rnd)
-            scores[rnd - 1] = s
+            d = http_get(f"{API}/time/id/{t['id']}/{rnd}")
+            if d:
+                pts = d.get("pontos")
+                if pts is None and isinstance(d.get("time"), dict):
+                    pts = d["time"].get("pontos")
+                try:
+                    scores[rnd - 1] = round(float(pts), 2) if pts is not None else None
+                except (TypeError, ValueError):
+                    scores[rnd - 1] = None
+                # patrimônio: pega o mais recente disponível
+                pat = d.get("patrimonio")
+                if pat is None and isinstance(d.get("time"), dict):
+                    pat = d["time"].get("patrimonio")
+                if pat is not None:
+                    try:
+                        patrimonio = round(float(pat), 2)
+                    except (TypeError, ValueError):
+                        pass
             time.sleep(0.05)  # gentileza com a API
-        teams_out.append({"id": t["id"], "name": t["name"], "scores": scores})
+        team_obj = {"id": t["id"], "name": t["name"], "scores": scores}
+        if patrimonio is not None:
+            team_obj["patrimonio"] = patrimonio
+        teams_out.append(team_obj)
         print(f"  ok: {t['name']}")
 
     # última rodada com qualquer dado
@@ -100,6 +141,9 @@ def main():
     for rnd in range(TOTAL_ROUNDS):
         if any(tm["scores"][rnd] is not None for tm in teams_out):
             last_round = rnd + 1
+
+    # mês real de cada rodada (da API). Se a API não responder, o site usa o fallback do calendário.
+    rmonths = round_months()
 
     out = {
         "season": 2026,
@@ -110,6 +154,23 @@ def main():
         "updated": datetime.now(timezone.utc).strftime("%d/%m/%Y %H:%M UTC"),
         "teams": teams_out,
     }
+    if rmonths:
+        out["round_months"] = rmonths
+
+    # Preserva a estrutura de copas (grupos/chaveamentos) já existente no data.json.
+    # As pontuações são recalculadas no site a partir de "teams"; aqui só mantemos
+    # quem está em cada confronto, que vem da planilha (extract_cups.py).
+    if os.path.exists(OUT_FILE):
+        try:
+            prev = json.load(open(OUT_FILE, encoding="utf-8"))
+            if isinstance(prev, dict) and prev.get("cups"):
+                out["cups"] = prev["cups"]
+            # se a API não trouxe meses agora, preserva os que já existiam
+            if not rmonths and isinstance(prev, dict) and prev.get("round_months"):
+                out["round_months"] = prev["round_months"]
+        except Exception:
+            pass
+
     os.makedirs(os.path.dirname(OUT_FILE), exist_ok=True)
     json.dump(out, open(OUT_FILE, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
     print(f"\ndata.json gerado · {len(teams_out)} times · rodada {last_round}")

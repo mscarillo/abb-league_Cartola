@@ -178,7 +178,109 @@ function phasePlayed(lastRound, rounds) {
 // ---------- Prêmios e meses ----------
 const PRIZE_ROUND = 35.26;   // R$ por vencedor de rodada
 const PRIZE_MONTH = 42.63;   // R$ por vencedor de mês
+
+// Estrutura completa de premiação (regras ABB League 2026).
+// Base: 67 inscrições × R$ 50 = R$ 3.350. Percentuais conforme o PDF de regras.
+const PRIZE_ENTRY = 50;
+function prizePlan(numTeams) {
+  const total = (numTeams || 67) * PRIZE_ENTRY;
+  const pct = p => Math.round(total * p) / 100;
+  return {
+    total,
+    numTeams: numTeams || 67,
+    // classificação final dos pontos corridos (1º ao 7º)
+    league: [
+      { pos: 1, label: 'Campeão', pctTxt: '10%', value: pct(10) },
+      { pos: 2, label: 'Vice-Campeão', pctTxt: '4%', value: pct(4) },
+      { pos: 3, label: '3º Colocado', pctTxt: '3%', value: pct(3) },
+      { pos: 4, label: '4º Colocado', pctTxt: '2%', value: pct(2) },
+      { pos: 5, label: '5º Colocado', pctTxt: '1%', value: pct(1) },
+      { pos: 6, label: '6º Colocado', pctTxt: '0,5%', value: pct(0.5) },
+      { pos: 7, label: '7º Colocado', pctTxt: '0,5%', value: pct(0.5) },
+    ],
+    special: [
+      { key: 'rico', label: 'O Mais Rico', pctTxt: '1%', value: pct(1) },
+      { key: 'maiorVencedor', label: 'Maior Vencedor de Rodadas e Meses', pctTxt: '1%', value: pct(1) },
+      { key: 'maiorPontuacao', label: 'Maior Pontuação entre Vencedores de Rodada', pctTxt: '1%', value: pct(1) },
+    ],
+    recurring: [
+      { key: 'mes', label: 'Vencedor de Cada Mês', pctTxt: '14% ÷ 11', value: PRIZE_MONTH, note: '11 meses' },
+      { key: 'rodada', label: 'Vencedor de Cada Rodada', pctTxt: '40% ÷ 38', value: PRIZE_ROUND, note: '38 rodadas' },
+    ],
+    cups: [
+      { key: 'libertadores', label: 'Campeão Libertadores', pctTxt: '5%', value: pct(5) },
+      { key: 'sulamericana', label: 'Campeão Sul-Americana', pctTxt: '3%', value: pct(3) },
+      { key: 'champions', label: 'Campeão Champions', pctTxt: '5%', value: pct(5) },
+      { key: 'uefa', label: 'Campeão UEFA', pctTxt: '3%', value: pct(3) },
+      { key: 'mundial', label: 'Campeão Mundial', pctTxt: '6%', value: pct(6) },
+    ],
+  };
+}
+
 const MONTH_NAMES = ['Janeiro','Fevereiro','Março','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'];
+
+// Mapa-base rodada -> mês (1=Jan ... 12=Dez), conforme o calendário CBF 2026.
+// Usado como fallback quando o data.json ainda não traz as datas reais da API.
+// Confere com o boletim manual (rodada 18 = Maio).
+const ROUND_MONTH_FALLBACK = {
+  1:1,  2:2, 3:2, 4:2, 5:3, 6:3, 7:3, 8:3, 9:3,
+  10:4, 11:4, 12:4, 13:4,
+  14:5, 15:5, 16:5, 17:5, 18:5,
+  19:7, 20:7, 21:7, 22:7,           // retorno pós-Copa do Mundo
+  23:8, 24:8, 25:8, 26:8,
+  27:9, 28:9, 29:9, 30:9,
+  31:10, 32:10, 33:10, 34:10,
+  35:11, 36:11, 37:11, 38:12
+};
+
+// Resolve o mês de cada rodada: usa data real (data.round_months) se houver,
+// senão o mapa-base. data.round_months = { "1": 1, "2": 2, ... } (mês 1-12).
+function roundMonthMap(data) {
+  const real = data && data.round_months;
+  const map = {};
+  for (let r = 1; r <= (data.total_rounds || 38); r++) {
+    if (real && real[r] != null) map[r] = real[r];
+    else if (real && real[String(r)] != null) map[r] = real[String(r)];
+    else map[r] = ROUND_MONTH_FALLBACK[r] || null;
+  }
+  return map;
+}
+
+// Campeões do mês agrupando pelas rodadas reais de cada mês (não por blocos fixos).
+// Retorna [{ month: 5, name:'Maio', rounds:[14,..,18], winner:{name,sum}, ranking:[...] }]
+function monthlyWinnersByCalendar(data, teams, lastRound) {
+  const mm = roundMonthMap(data);
+  // agrupa rodadas jogadas por mês
+  const byMonth = {};
+  for (let r = 1; r <= lastRound; r++) {
+    const m = mm[r];
+    if (m == null) continue;
+    (byMonth[m] = byMonth[m] || []).push(r);
+  }
+  const months = Object.keys(byMonth).map(Number).sort((a, b) => a - b);
+  return months.map(m => {
+    const rounds = byMonth[m];
+    const ranking = teams.map(t => {
+      let sum = 0, played = 0;
+      rounds.forEach(r => {
+        const v = t.scores[r - 1];
+        if (v != null) { sum += v; played++; }
+      });
+      return { name: t.name, id: t.id, sum: Math.round(sum * 100) / 100, played };
+    }).filter(x => x.played > 0).sort((a, b) => b.sum - a.sum);
+    return {
+      month: m, name: MONTH_NAMES[m - 1] || ('Mês ' + m),
+      rounds, winner: ranking[0] || null, ranking: ranking.slice(0, 5)
+    };
+  });
+}
+
+// dado uma rodada, retorna o mês a que ela pertence (e nome)
+function monthOfRound(data, r) {
+  const mm = roundMonthMap(data);
+  const m = mm[r];
+  return { month: m, name: m ? (MONTH_NAMES[m - 1] || ('Mês ' + m)) : '—' };
+}
 
 // Resultados das copas até uma dada rodada: por fase, lista de confrontos decididos
 // + classificados. Usado no boletim para "vencedores e classificados de cada etapa".
@@ -244,5 +346,5 @@ function cupDigest(cups, teams, lastRound) {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { abbLeagueTable, roundWinners, monthlyWinners, libertadoresClassif, championsClassif, buildBulletin, aggRanking, matchScore, scoreName, phasePlayed, cupDigest, PRIZE_ROUND, PRIZE_MONTH, MONTH_NAMES };
+  module.exports = { abbLeagueTable, roundWinners, monthlyWinners, monthlyWinnersByCalendar, monthOfRound, roundMonthMap, libertadoresClassif, championsClassif, buildBulletin, aggRanking, matchScore, scoreName, phasePlayed, cupDigest, prizePlan, PRIZE_ROUND, PRIZE_MONTH, PRIZE_ENTRY, MONTH_NAMES, ROUND_MONTH_FALLBACK };
 }

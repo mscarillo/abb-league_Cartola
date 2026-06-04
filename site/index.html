@@ -10,18 +10,19 @@
 <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#eef1ee; --bg2:#e6eae6; --panel:#ffffff; --panel2:#f4f6f3;
-  --line:#dde3dd; --txt:#1c2622; --muted:#5f6f68; --dim:#90a096;
-  --gold:#b5862a; --gold2:#9a6f1f; --green:#1f9d5b; --red:#d24a40;
-  --blue:#2f86b8; --accent:#0f9e6e;
-  --shadow:0 12px 32px -16px rgba(28,38,34,.28);
+  --bg:#f0f1f3; --bg2:#e7e9ec; --panel:#ffffff; --panel2:#f5f6f8;
+  --line:#dcdfe4; --txt:#16181d; --muted:#5d646e; --dim:#8b929c;
+  --gold:#b58a2e; --gold2:#9a6f1f; --green:#c8102e; --red:#c8102e;
+  --blue:#2f6fb0; --accent:#e2334a; --ink:#1a1d23;
+  --pos:#1f9d5b; --zone1:#1f9d5b; --zonesul:#2f6fb0; --zoneout:#c8102e;
+  --shadow:0 12px 32px -16px rgba(20,22,28,.30);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{
   background:
-    radial-gradient(1200px 600px at 80% -10%, rgba(181,134,42,.07), transparent 60%),
-    radial-gradient(900px 500px at 0% 10%, rgba(31,157,91,.06), transparent 55%),
+    radial-gradient(1200px 600px at 80% -10%, rgba(200,16,46,.07), transparent 60%),
+    radial-gradient(900px 500px at 0% 10%, rgba(26,29,35,.05), transparent 55%),
     var(--bg);
   color:var(--txt); font-family:'Archivo',system-ui,sans-serif;
   -webkit-font-smoothing:antialiased; min-height:100vh; overflow-x:hidden;
@@ -37,7 +38,7 @@ header.hero{padding:46px 0 26px;border-bottom:1px solid var(--line);position:rel
 .herotext{min-width:0}
 .kicker{font-family:'Oswald';text-transform:uppercase;letter-spacing:.35em;font-size:11px;color:var(--gold);font-weight:600}
 h1.title{font-family:'Bebas Neue';font-size:clamp(54px,9vw,108px);line-height:.86;letter-spacing:.01em;margin:6px 0 4px;
-  background:linear-gradient(180deg,var(--txt) 20%,var(--green) 130%);-webkit-background-clip:text;background-clip:text;color:transparent}
+  background:linear-gradient(180deg,var(--ink) 25%,var(--red) 135%);-webkit-background-clip:text;background-clip:text;color:transparent}
 .sub{color:var(--muted);font-size:15px;max-width:640px}
 .metabar{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
 .chip{background:var(--panel);border:1px solid var(--line);border-radius:100px;padding:8px 16px;font-size:13px;display:flex;align-items:center;gap:8px}
@@ -76,9 +77,25 @@ tr.r1 .pos{color:var(--gold)} tr.r2 .pos{color:#8a9a92} tr.r3 .pos{color:#b5742f
 .crest{width:26px;height:26px;border-radius:7px;background:linear-gradient(135deg,var(--panel2),var(--line));
   display:grid;place-items:center;font-family:'Bebas Neue';font-size:13px;color:var(--gold);flex-shrink:0}
 .total{font-family:'Oswald';font-weight:700;font-size:16px;color:var(--gold)}
-.zone-lib td:first-child{box-shadow:inset 3px 0 var(--green)}
-.zone-sul td:first-child{box-shadow:inset 3px 0 var(--blue)}
-.zone-out td:first-child{box-shadow:inset 3px 0 var(--red)}
+.zone-lib td:first-child{box-shadow:inset 3px 0 var(--zone1)}
+.zone-sul td:first-child{box-shadow:inset 3px 0 var(--zonesul)}
+.zone-out td:first-child{box-shadow:inset 3px 0 var(--zoneout)}
+.prizebadge{font-family:'Oswald';font-weight:700;font-size:12px;color:#fff;background:linear-gradient(135deg,var(--gold),var(--gold2));padding:3px 9px;border-radius:20px;white-space:nowrap}
+tr.prizerow td.prize{padding-right:16px}
+td.prize{text-align:right}
+/* PLANO DE PREMIAÇÃO */
+.pl-card{margin-bottom:16px}
+.pl-table{width:100%;border-collapse:collapse;margin-top:10px}
+.pl-table th{font-family:'Oswald';text-transform:uppercase;letter-spacing:.06em;font-size:10px;color:var(--dim);font-weight:600;text-align:left;padding:6px 10px;border-bottom:1px solid var(--line)}
+.pl-table td{padding:9px 10px;border-bottom:1px solid rgba(220,223,228,.6);font-size:13px}
+.pl-table tr:last-child td{border-bottom:none}
+.pl-pos{font-family:'Bebas Neue';font-size:18px;color:var(--gold);width:36px}
+.pl-label{font-weight:600}
+.pl-note{font-size:11px;color:var(--dim);font-weight:400}
+.pl-pct{color:var(--muted);font-family:'Oswald';font-size:12px;width:64px}
+.pl-val{font-family:'Oswald';font-weight:700;color:var(--gold);text-align:right;white-space:nowrap}
+.pl-holder .holder{font-weight:600;color:var(--txt)}
+.pl-holder .holder.dim{color:var(--dim);font-weight:400}
 
 /* CARDS / GRID */
 .grid{display:grid;gap:16px}
@@ -113,7 +130,7 @@ tr.r1 .pos{color:var(--gold)} tr.r2 .pos{color:#8a9a92} tr.r3 .pos{color:#b5742f
 .statline .s .v{font-family:'Bebas Neue';font-size:28px;color:var(--txt)}
 .statline .s .k{font-family:'Oswald';font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
 .mv{display:flex;gap:8px;align-items:center;font-size:13px;padding:6px 0}
-.mv .up{color:var(--green);font-weight:700}.mv .down{color:var(--red);font-weight:700}
+.mv .up{color:var(--pos);font-weight:700}.mv .down{color:var(--red);font-weight:700}
 
 .selectrow{display:flex;align-items:center;gap:12px;margin-bottom:20px;flex-wrap:wrap}
 select{font-family:'Oswald';background:var(--panel);color:var(--txt);border:1px solid var(--line);border-radius:8px;padding:9px 14px;font-size:14px;cursor:pointer}
@@ -143,9 +160,9 @@ select{font-family:'Oswald';background:var(--panel);color:var(--txt);border:1px 
 .ggrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .gcard{padding:18px}
 .grow{display:flex;justify-content:space-between;align-items:center;font-size:13px;padding:5px 8px;border-radius:6px}
-.grow.q{background:rgba(47,191,113,.07)}
+.grow.q{background:rgba(31,157,91,.08)}
 .gn b{font-family:'Oswald';color:var(--dim);margin-right:8px}
-.grow.q .gn b{color:var(--green)}
+.grow.q .gn b{color:var(--zone1)}
 .gp{font-family:'Oswald';font-weight:700}
 @media(max-width:760px){.kgrid,.ggrid{grid-template-columns:1fr}}
 /* BOLETIM extras */
@@ -194,16 +211,17 @@ select{font-family:'Oswald';background:var(--panel);color:var(--txt);border:1px 
     <button data-v="liga" class="active">Pontos Corridos</button>
     <button data-v="copas">Copas</button>
     <button data-v="premios">Premiações</button>
+    <button data-v="plano">Premiação R$</button>
     <button data-v="boletim">Boletim da Rodada</button>
   </nav>
 
   <!-- LIGA -->
   <section class="view active" id="v-liga">
     <h2 class="sec">Classificação Geral <span>ABB League · 38 rodadas</span></h2>
-    <p class="lead">Soma de todas as rodadas oficiais. A faixa <span style="color:var(--green)">verde</span> indica zona de classificação direta à Libertadores; <span style="color:var(--blue)">azul</span> Sulamericana; <span style="color:var(--red)">vermelha</span> eliminação na fase inicial.</p>
+    <p class="lead">Soma de todas as rodadas oficiais. A coluna <b style="color:var(--gold)">Prêmio</b> mostra, ao vivo, quanto cada time levaria na premiação final (1º ao 7º) se o campeonato terminasse agora. Faixas laterais: <span style="color:var(--zone1)">verde</span> Libertadores, <span style="color:var(--zonesul)">azul</span> Sul-Americana, <span style="color:var(--zoneout)">vermelha</span> eliminação.</p>
     <div class="tablewrap">
       <table>
-        <thead><tr><th>#</th><th>Time</th><th class="num">Pts</th><th class="num hide-sm">Rod.</th><th class="num hide-sm">Média</th><th class="num hide-sm">Melhor</th></tr></thead>
+        <thead><tr><th>#</th><th>Time</th><th class="num">Pts</th><th class="num hide-sm">Rod.</th><th class="num hide-sm">Média</th><th class="num hide-sm">Melhor</th><th class="num">Prêmio</th></tr></thead>
         <tbody id="liga-body"></tbody>
       </table>
     </div>
@@ -230,6 +248,13 @@ select{font-family:'Oswald';background:var(--panel);color:var(--txt);border:1px 
         <div id="round-list" style="max-height:560px;overflow:auto"></div>
       </div>
     </div>
+  </section>
+
+  <!-- PLANO DE PREMIAÇÃO (R$) -->
+  <section class="view" id="v-plano">
+    <h2 class="sec">Premiação <span>Distribuição do prêmio · ABB League 2026</span></h2>
+    <p class="lead" id="plano-lead"></p>
+    <div id="plano-content"></div>
   </section>
 
   <!-- BOLETIM -->
@@ -266,6 +291,7 @@ async function boot(){
   renderLiga(table);
   renderCopas();
   renderPremios();
+  renderPlano();
   setupBulletin();
   setupTabs();
   renderFooter();
@@ -273,20 +299,27 @@ async function boot(){
 
 function renderLiga(table){
   const tb=$('#liga-body'); tb.innerHTML='';
+  const plan=prizePlan(DATA.teams.length);
+  const prizeByPos={}; plan.league.forEach(p=>prizeByPos[p.pos]=p);
   table.forEach((r,i)=>{
     const aguardando = r.played === 0;
     let zone='';
     if(!aguardando){ if(r.pos<=24) zone='zone-lib'; else if(r.pos>=41&&r.pos<=48) zone='zone-sul'; else if(r.pos>=49&&r.pos<=51) zone='zone-out'; }
     const tr=document.createElement('tr');
-    tr.className=`${zone} ${r.pos<=3?'r'+r.pos:''}`;
+    tr.className=`${zone} ${r.pos<=3?'r'+r.pos:''} ${prizeByPos[r.pos]?'prizerow':''}`;
     tr.style.animationDelay=(i*12)+'ms';
     if(aguardando) tr.style.opacity='.5';
+    const prize=prizeByPos[r.pos];
+    const prizeCell=prize
+      ? `<td class="num prize"><span class="prizebadge">R$ ${fmt(prize.value)}</span></td>`
+      : `<td class="num prize"></td>`;
     tr.innerHTML=`<td class="pos">${r.pos}</td>
       <td><div class="team"><span class="crest">${initials(r.name)}</span>${r.name}${aguardando?' <span style="font-size:11px;color:var(--dim);font-family:\'Oswald\'">· aguardando estreia</span>':''}</div></td>
       <td class="num total">${fmt(r.total)}</td>
       <td class="num hide-sm">${r.played}</td>
       <td class="num hide-sm">${fmt(r.media)}</td>
-      <td class="num hide-sm">${fmt(r.best)}</td>`;
+      <td class="num hide-sm">${fmt(r.best)}</td>
+      ${prizeCell}`;
     tb.appendChild(tr);
   });
 }
@@ -438,23 +471,96 @@ function renderCup(key){
 
 function renderPremios(){
   const R=DATA.last_round;
-  const months=monthlyWinners(DATA.teams,R,4);
+  const months=monthlyWinnersByCalendar(DATA,DATA.teams,R);
   const ml=$('#month-list'); ml.innerHTML='';
   months.forEach(m=>{
     if(!m.winner) return;
+    const rmin=Math.min(...m.rounds), rmax=Math.max(...m.rounds);
     ml.insertAdjacentHTML('beforeend',`<div class="award">
-      <div class="medal">${m.index}</div>
-      <div class="info"><div class="t">${m.winner.name}</div><div class="s">Rodadas ${m.start}–${m.end}${m.end<m.start+3?' · parcial':''}</div></div>
+      <div class="medal">${String(m.month).padStart(2,'0')}</div>
+      <div class="info"><div class="t">${m.winner.name}</div><div class="s">${m.name} · rodadas ${rmin}–${rmax} · <b style="color:var(--gold)">R$ ${fmt(PRIZE_MONTH)}</b></div></div>
       <div class="pts">${fmt(m.winner.sum)}</div></div>`);
   });
   const winners=roundWinners(DATA.teams,R).reverse();
   const rl=$('#round-list'); rl.innerHTML='';
   winners.forEach(w=>{
     rl.insertAdjacentHTML('beforeend',`<div class="award">
-      <div class="medal" style="background:linear-gradient(135deg,var(--accent),#129e74)">${w.round}</div>
-      <div class="info"><div class="t">${w.name}</div><div class="s">Maior pontuação da rodada ${w.round}</div></div>
+      <div class="medal" style="background:linear-gradient(135deg,var(--red),#a3271d)">${w.round}</div>
+      <div class="info"><div class="t">${w.name}</div><div class="s">Maior pontuação da rodada ${w.round} · <b style="color:var(--gold)">R$ ${fmt(PRIZE_ROUND)}</b></div></div>
       <div class="pts">${fmt(w.score)}</div></div>`);
   });
+}
+
+function renderPlano(){
+  const R=DATA.last_round;
+  const plan=prizePlan(DATA.teams.length);
+  const table=abbLeagueTable(DATA.teams,R);
+  const cur=p=>table.find(t=>t.pos===p); // time atualmente na posição
+  const fmtR=v=>'R$ '+fmt(v);
+
+  // quem lidera cada copa hoje (1º da classificatória/somatório como proxy ao vivo)
+  const cupLeader=(key)=>{
+    const c=DATA.cups&&DATA.cups[key]; if(!c) return null;
+    // usa a final se decidida; senão, o líder da fase mais avançada com dados
+    if(c.finais&&c.finais[0]){
+      const m=c.finais[0];
+      if(m.home&&m.away){
+        const a=matchScore(DATA.teams,m.home,m.rounds), b=matchScore(DATA.teams,m.away,m.rounds);
+        if(a.played&&b.played) return a.sum>=b.sum?m.home:m.away;
+      }
+    }
+    return null;
+  };
+
+  const row=(rankLabel,label,pctTxt,value,holder,note)=>`
+    <tr>
+      <td class="pl-pos">${rankLabel||''}</td>
+      <td class="pl-label">${label}${note?` <span class="pl-note">${note}</span>`:''}</td>
+      <td class="pl-pct">${pctTxt}</td>
+      <td class="pl-val">${fmtR(value)}</td>
+      <td class="pl-holder">${holder?`<span class="holder">${holder}</span>`:'<span class="holder dim">—</span>'}</td>
+    </tr>`;
+
+  let leagueRows=plan.league.map(p=>{
+    const t=cur(p.pos);
+    return row(p.pos+'º', p.label, p.pctTxt, p.value, t&&t.played?t.name:null);
+  }).join('');
+
+  // especiais ao vivo
+  const rw=roundWinners(DATA.teams,R);
+  const maiorPont = rw.length? rw.reduce((a,b)=>b.score>a.score?b:a) : null;
+  // maior vencedor de rodadas+meses (contagem)
+  const cnt={};
+  rw.forEach(w=>cnt[w.name]=(cnt[w.name]||0)+1);
+  monthlyWinnersByCalendar(DATA,DATA.teams,R).forEach(m=>{if(m.winner)cnt[m.winner.name]=(cnt[m.winner.name]||0)+1;});
+  let maiorVenc=null,maiorVencN=0;
+  Object.entries(cnt).forEach(([n,c])=>{if(c>maiorVencN){maiorVencN=c;maiorVenc=n;}});
+  // O Mais Rico: maior patrimônio (cartoletas), se o dado existir
+  let rico=null, ricoVal=null;
+  DATA.teams.forEach(t=>{ if(typeof t.patrimonio==='number' && (ricoVal===null||t.patrimonio>ricoVal)){ricoVal=t.patrimonio;rico=t.name;} });
+  const especiais=[
+    row('','O Mais Rico','1%',plan.special[0].value, rico, rico?('C$ '+fmt(ricoVal)):'aguardando dado de patrimônio'),
+    row('','Maior Vencedor de Rodadas e Meses','1%',plan.special[1].value, maiorVenc, maiorVenc?`${maiorVencN} prêmios`:''),
+    row('','Maior Pontuação entre Vencedores de Rodada','1%',plan.special[2].value, maiorPont?maiorPont.name:null, maiorPont?fmt(maiorPont.score)+' pts (rod. '+maiorPont.round+')':''),
+  ].join('');
+
+  const recorrentes=plan.recurring.map(p=>row('',p.label,p.pctTxt,p.value,null,p.note)).join('');
+  const copas=plan.cups.map(p=>row('',p.label,p.pctTxt,p.value,cupLeader(p.key),cupLeader(p.key)?'líder atual':'')).join('');
+
+  $('#plano-lead').innerHTML=`Premiação total de <b>${fmtR(plan.total)}</b> (${plan.numTeams} inscrições × R$ ${fmt(PRIZE_ENTRY)}). A coluna <b>Atual</b> mostra quem ocuparia cada prêmio se a temporada terminasse agora.`;
+
+  const block=(title,rows)=>`<div class="card pl-card"><div class="lbl">${title}</div>
+    <table class="pl-table"><thead><tr><th></th><th>Prêmio</th><th>%</th><th class="pl-val">Valor</th><th>Atual</th></tr></thead>
+    <tbody>${rows}</tbody></table></div>`;
+
+  $('#plano-content').innerHTML=
+    block('🏆 Pontos Corridos — classificação final (38ª rodada)',leagueRows)+
+    block('⭐ Prêmios Especiais',especiais)+
+    block('🔁 Recorrentes',recorrentes)+
+    block('🏟️ Copas Continentais',copas)+
+    `<div class="card pl-card" style="display:flex;justify-content:space-between;align-items:center">
+      <div class="lbl" style="margin:0">Total em prêmios</div>
+      <div style="font-family:'Bebas Neue';font-size:30px;color:var(--gold)">${fmtR(plan.total)}</div></div>`;
 }
 
 function setupBulletin(){
@@ -474,13 +580,14 @@ function renderBulletin(r){
   const b=buildBulletin(DATA.teams,r);
   const story=composeStory(b);
 
-  // bloco/mês a que esta rodada pertence
-  const blockSize=4;
-  const blockIdx=Math.ceil(r/blockSize);
-  const ml=monthLabel(blockIdx);
-  const months=monthlyWinners(DATA.teams,r,blockSize);
-  const curMonth=months[months.length-1];
-  const monthClosed=(r%blockSize===0); // fechou o mês nesta rodada
+  // mês real a que esta rodada pertence (calendário CBF / data da API)
+  const mo=monthOfRound(DATA,r);
+  const allMonths=monthlyWinnersByCalendar(DATA,DATA.teams,r);
+  const curMonth=allMonths.find(m=>m.month===mo.month);
+  // o mês fechou se a próxima rodada pertence a outro mês (ou acabou)
+  const nextMo=monthOfRound(DATA,r+1).month;
+  const monthClosed=(r>=DATA.total_rounds)||(nextMo!==mo.month);
+  const mRmin=curMonth?Math.min(...curMonth.rounds):r, mRmax=curMonth?Math.max(...curMonth.rounds):r;
 
   // cabeçalho de prêmios (estilo do boletim manual)
   const prizeHeader=`
@@ -491,9 +598,9 @@ function renderBulletin(r){
         <div class="pzrow"><span>${fmt(b.winner.v)} pts</span><span class="pzval">Prêmio: R$ ${fmt(PRIZE_ROUND)}</span></div>
       </div>
       <div class="pz">
-        <div class="pztitle">🥇 Campeão do Mês ${ml.num} (${ml.name}) — Parcial${monthClosed?' · Encerrado':''}</div>
+        <div class="pztitle">🥇 Campeão do Mês ${String(mo.month).padStart(2,'0')} (${mo.name}) — ${monthClosed?'Encerrado':'Parcial'}</div>
         <div class="pzname">${curMonth&&curMonth.winner?curMonth.winner.name:'—'}</div>
-        <div class="pzrow"><span>${curMonth&&curMonth.winner?fmt(curMonth.winner.sum)+' pts (rod. '+curMonth.start+'–'+curMonth.end+')':''}</span><span class="pzval">Prêmio: R$ ${fmt(PRIZE_MONTH)}</span></div>
+        <div class="pzrow"><span>${curMonth&&curMonth.winner?fmt(curMonth.winner.sum)+' pts (rod. '+mRmin+'–'+mRmax+')':''}</span><span class="pzval">Prêmio: R$ ${fmt(PRIZE_MONTH)}</span></div>
       </div>
     </div>`;
 

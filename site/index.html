@@ -96,6 +96,27 @@ td.prize{text-align:right}
 .pl-val{font-family:'Oswald';font-weight:700;color:var(--gold);text-align:right;white-space:nowrap}
 .pl-holder .holder{font-weight:600;color:var(--txt)}
 .pl-holder .holder.dim{color:var(--dim);font-weight:400}
+.hof-banner{display:flex;justify-content:center;margin:0 0 10px}
+.hof-banner img{max-width:420px;width:100%;height:auto}
+.hof-badge{display:inline-block;margin-left:10px;font-family:'Oswald';font-size:10px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--gold2);background:rgba(181,138,46,.12);border:1px solid rgba(181,138,46,.35);border-radius:20px;padding:3px 9px;vertical-align:middle}
+.hof-season-card{margin-top:16px}
+.hof-season-head{display:flex;align-items:baseline;justify-content:space-between;flex-wrap:wrap;gap:8px;border-bottom:1px solid var(--line);padding-bottom:14px;margin-bottom:18px}
+.hof-year{font-family:'Bebas Neue';font-size:36px;color:var(--txt)}
+.hof-meta{font-size:13px;color:var(--muted)}
+.hof-champion{display:flex;align-items:center;gap:16px;background:linear-gradient(135deg,rgba(181,138,46,.12),rgba(181,138,46,.03));border:2px solid var(--gold);border-radius:14px;padding:18px 20px;margin-bottom:20px}
+.hof-champion .trophy-big{width:52px;height:52px;flex-shrink:0}
+.hof-champion-label{font-family:'Oswald';font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);font-weight:700;margin-bottom:4px}
+.hof-champion-name{font-family:'Bebas Neue';font-size:28px;color:var(--gold2);line-height:1.05}
+.hof-champion-meta{font-size:13px;color:var(--muted);margin-top:4px}
+.hof-cups{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:8px}
+.hof-cup-card{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:14px;text-align:center}
+.hof-cup-card .trophy-ico{width:20px;height:20px;color:var(--gold2);margin-bottom:6px}
+.hof-cup-label{font-family:'Oswald';font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--dim);margin-bottom:4px}
+.hof-cup-team{font-weight:700;font-size:13.5px;margin-bottom:2px}
+.hof-cup-val{font-family:'Oswald';font-weight:700;font-size:13px;color:var(--gold2)}
+.pl-prizes{display:flex;flex-wrap:wrap;gap:6px;max-width:420px}
+.prize-chip{font-family:'Oswald';font-weight:600;font-size:10.5px;letter-spacing:.02em;text-transform:uppercase;color:var(--gold2);background:rgba(181,138,46,.12);border:1px solid rgba(181,138,46,.28);border-radius:20px;padding:3px 9px;white-space:nowrap}
+.prize-chip.none{color:var(--dim);background:var(--panel2);border-color:var(--line);text-transform:none;font-weight:400;letter-spacing:0}
 
 /* CARDS / GRID */
 .grid{display:grid;gap:16px}
@@ -125,6 +146,11 @@ td.prize{text-align:right}
 .bull .head .rd{font-family:'Bebas Neue';font-size:54px;line-height:.9}
 .bull .head .rd small{display:block;font-family:'Oswald';font-size:12px;letter-spacing:.2em;color:var(--gold);font-weight:600}
 .bull p.story{font-size:16px;line-height:1.7;margin:20px 0 0;color:#34423c;position:relative;max-width:760px}
+.cup-highlight{background:linear-gradient(135deg,rgba(181,138,46,.10),rgba(181,138,46,.03));border:1px solid rgba(181,138,46,.35);border-radius:13px;padding:14px 16px;margin-top:16px;position:relative;max-width:760px}
+.cs-title{font-family:'Oswald';font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--gold2);margin-bottom:8px}
+.cs-line{font-size:13.5px;line-height:1.7;color:var(--txt);padding:3px 0}
+.cs-line.dim{color:var(--muted)}
+.cs-line.cs-champion{font-size:15.5px;color:var(--gold2);font-weight:700}
 .bull p.story b{color:var(--gold)}
 .statline{display:flex;gap:24px;flex-wrap:wrap;margin-top:22px;position:relative}
 .statline .s .v{font-family:'Bebas Neue';font-size:28px;color:var(--txt)}
@@ -157,12 +183,24 @@ select{font-family:'Oswald';background:var(--panel);color:var(--txt);border:1px 
 .kteam.empty{color:var(--dim)}
 .kn{flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding-right:10px}
 .kpts{font-family:'Oswald';font-weight:700;font-size:15px}
+
+/* Destaque do campeão na final de cada copa */
+.kmatch.final-decided{border:2px solid var(--gold);box-shadow:0 0 0 3px rgba(181,138,46,.14),var(--shadow);background:linear-gradient(180deg,rgba(181,138,46,.08),var(--panel) 55%);position:relative}
+.kteam.champion{background:rgba(181,138,46,.14);border-radius:9px;margin:2px -8px;padding:11px 10px;border-top:none!important;gap:10px}
+.kteam.champion .kn{display:flex;align-items:center;font-weight:800;font-size:18px;color:var(--gold2);white-space:normal}
+.kteam.champion .kpts{font-size:19px}
+.trophy-ico{width:18px;height:18px;flex-shrink:0;color:var(--gold2)}
+.trophy-big{width:34px;height:34px;flex-shrink:0}
+.champion-tag{margin-top:10px;display:flex;align-items:center;justify-content:center;gap:6px;font-family:'Oswald';font-weight:700;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);background:rgba(181,138,46,.12);border:1px solid rgba(181,138,46,.35);border-radius:20px;padding:6px 10px;text-align:center}
+.champion-tag .trophy-ico{width:13px;height:13px;flex-shrink:0}
 .ggrid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
 .gcard{padding:18px}
 .grow{display:flex;justify-content:space-between;align-items:center;font-size:13px;padding:5px 8px;border-radius:6px}
 .grow.q{background:rgba(31,157,91,.08)}
-.gn b{font-family:'Oswald';color:var(--dim);margin-right:8px}
 .grow.q .gn b{color:var(--zone1)}
+.tolima-dest{margin-top:10px;padding-top:8px;border-top:1px solid rgba(35,48,44,.15);font-size:11.5px;color:var(--muted);line-height:1.6}
+.tolima-dest b{color:var(--txt)}
+.gn b{font-family:'Oswald';color:var(--dim);margin-right:8px}
 .gp{font-family:'Oswald';font-weight:700}
 @media(max-width:760px){.kgrid,.ggrid{grid-template-columns:1fr}}
 /* BOLETIM extras */
@@ -213,6 +251,7 @@ select{font-family:'Oswald';background:var(--panel);color:var(--txt);border:1px 
     <button data-v="premios">Premiações</button>
     <button data-v="plano">Premiação R$</button>
     <button data-v="boletim">Boletim da Rodada</button>
+    <button data-v="hof">Hall of Fame</button>
   </nav>
 
   <!-- LIGA -->
@@ -267,9 +306,29 @@ select{font-family:'Oswald';background:var(--panel);color:var(--txt);border:1px 
     <div id="bull-target"></div>
   </section>
 
+  <!-- HALL OF FAME -->
+  <section class="view" id="v-hof">
+    <div class="hof-banner"><img src="hof-logo.jpg" alt="Hall of Fame ABB League"></div>
+    <h2 class="sec">Hall of Fame <span>Os grandes campeões da história da ABB League</span></h2>
+    <p class="lead">Apenas para consulta — todos os campeões e premiados de cada temporada, desde 2012. O <b style="color:var(--gold2)">Campeão Brasileirão</b> de cada ano é o grande destaque; os campeões das copas continentais aparecem logo abaixo.</p>
+    <div class="card pl-card" style="padding:0;overflow:hidden">
+      <div style="padding:18px 20px;border-bottom:1px solid var(--line)"><div class="lbl">🏆 Galeria de Campeões · Pontos Corridos</div></div>
+      <div class="tablewrap" style="border:none;border-radius:0;box-shadow:none"><table class="pl-table">
+        <thead><tr><th>Temporada</th><th>Campeão</th><th>Cartoleiro</th><th class="pl-val">Prêmio</th></tr></thead>
+        <tbody id="hof-roll"></tbody>
+      </table></div>
+    </div>
+    <div class="selectrow" style="margin-top:24px">
+      <span class="lbl" style="font-family:'Oswald';color:var(--muted)">Ver temporada completa:</span>
+      <select id="hof-select"></select>
+    </div>
+    <div id="hof-target"></div>
+  </section>
+
   <div class="footer" id="footer"></div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="logic.js"></script>
 <script>
 const $=(s,e=document)=>e.querySelector(s);
@@ -277,25 +336,6 @@ const fmt=n=>n.toLocaleString('pt-BR',{minimumFractionDigits:2,maximumFractionDi
 const initials=n=>n.replace(/[^A-Za-zÀ-ú0-9 ]/g,'').split(/\s+/).filter(Boolean).slice(0,2).map(w=>w[0]).join('').toUpperCase()||'·';
 
 let DATA;
-
-async function boot(){
-  DATA = await fetch('data.json').then(r=>r.json());
-  const R = DATA.last_round;
-  $('#m-round').textContent = String(R).padStart(2,'0');
-  const ativos = DATA.teams.filter(t => t.scores.some(v => v !== null)).length;
-  $('#m-teams').textContent = ativos < DATA.teams.length ? `${DATA.teams.length} (${ativos} em jogo)` : DATA.teams.length;
-  const table = abbLeagueTable(DATA.teams, R);
-  $('#m-leader').textContent = table[0].name;
-  $('#m-upd').textContent = DATA.updated || 'dados da planilha';
-
-  renderLiga(table);
-  renderCopas();
-  renderPremios();
-  renderPlano();
-  setupBulletin();
-  setupTabs();
-  renderFooter();
-}
 
 function renderLiga(table){
   const tb=$('#liga-body'); tb.innerHTML='';
@@ -355,22 +395,40 @@ function matchRow(teams,name,rounds,color){
     <span class="kpts" style="color:${played?color:'var(--dim)'}">${played?fmt(ms.sum):'–'}</span></div>`;
 }
 
-function matchCard(teams,m,color){
+const TROPHY_ICON=`<svg class="trophy-ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 21h8"/><path d="M12 17v4"/><path d="M7 4h10v5a5 5 0 0 1-10 0V4z"/><path d="M7 5H4a1 1 0 0 0-1 1v1a4 4 0 0 0 4 4"/><path d="M17 5h3a1 1 0 0 1 1 1v1a4 4 0 0 1-4 4"/></svg>`;
+
+// troféu genérico maior (taça clássica), usado ao lado do nome do campeão
+const TROPHY_BIG=`<svg class="trophy-big" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+  <path d="M14 6h20v9a10 10 0 0 1-20 0V6z" fill="url(#tgrad)"/>
+  <path d="M14 9H8a2.2 2.2 0 0 0-2.2 2.2v1.6A6.6 6.6 0 0 0 12.4 19.4" stroke="var(--gold2)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+  <path d="M34 9h6a2.2 2.2 0 0 1 2.2 2.2v1.6A6.6 6.6 0 0 1 35.6 19.4" stroke="var(--gold2)" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+  <circle cx="24" cy="11.5" r="2.6" fill="var(--panel)" opacity=".55"/>
+  <rect x="21" y="25" width="6" height="7" fill="var(--gold2)"/>
+  <rect x="13" y="32" width="22" height="4" rx="1.5" fill="var(--gold2)"/>
+  <rect x="16.5" y="36" width="15" height="4" rx="1.5" fill="var(--gold)"/>
+  <defs><linearGradient id="tgrad" x1="14" y1="6" x2="34" y2="21" gradientUnits="userSpaceOnUse"><stop stop-color="var(--gold)"/><stop offset="1" stop-color="var(--gold2)"/></linearGradient></defs>
+</svg>`;
+
+function matchCard(teams,m,color,isFinal,cupLabel){
   const a=m.home?matchScore(teams,m.home,m.rounds):{sum:0,played:0};
   const b=m.away?matchScore(teams,m.away,m.rounds):{sum:0,played:0};
   const decided=a.played>0&&b.played>0;
   const winHome=decided&&a.sum>=b.sum, winAway=decided&&b.sum>a.sum;
+  const champDecided=!!isFinal&&decided; // final já tem campeão definido
   const rtxt=`R${String(m.rounds[0]).padStart(2,'0')}–${String(m.rounds[1]).padStart(2,'0')}`;
   const line=(name,sc,win)=>{
     if(!name) return `<div class="kteam empty">—</div>`;
-    return `<div class="kteam${win?' win':''}">
-      <span class="kn">${win?'▸ ':''}${name}</span>
-      <span class="kpts" style="color:${sc.played?color:'var(--dim)'}">${sc.played?fmt(sc.sum):'–'}</span></div>`;
+    const champ=champDecided&&win;
+    return `<div class="kteam${win?' win':''}${champ?' champion':''}">
+      ${champ?TROPHY_BIG:''}
+      <span class="kn">${!champ&&win?'▸ ':''}${name}</span>
+      <span class="kpts" style="color:${sc.played?(champ?'var(--gold2)':color):'var(--dim)'}">${sc.played?fmt(sc.sum):'–'}</span></div>`;
   };
-  return `<div class="kmatch">
+  return `<div class="kmatch${champDecided?' final-decided':''}">
     <div class="ktag">${m.tag} <span>${rtxt}</span></div>
     ${line(m.home,a,winHome)}
     ${line(m.away,b,winAway)}
+    ${champDecided?`<div class="champion-tag">${TROPHY_ICON} CAMPEÃO ${(cupLabel||'').toUpperCase()}</div>`:''}
   </div>`;
 }
 
@@ -401,16 +459,32 @@ function renderCup(key){
     phases.push({label: key==='champions'?'Pré (rod. 20–24)':'Classificatória', html});
   }
 
-  // fase Tolima (Libertadores)
+  // fase Tolima (Libertadores) — 8 confrontos (T1-T8) entre os 16 times do 25º ao 40º
+  // da classificatória, seed espelhado (25ºx40º, 26ºx39º...): o vencedor de Ti herda
+  // a vaga do Grupo Gi (conforme a planilha original); o perdedor vai pra Sulamericana.
   if(key==='libertadores'){
     const [a,b]=[6,7];
     const lib=libertadoresClassif(teams,R);
-    if(R>=6 && lib.tolima.length){
-      let html=`<div class="lead" style="margin:4px 0 14px">Repescagem · rodadas 6–7 · 25º a 40º da classificatória</div><div class="kgrid">`;
-      lib.tolima.forEach(t=>{
-        const ms=matchScore(teams,t.name,[a,b]);
-        html+=`<div class="kmatch"><div class="ktag">${t.name}</div><div class="kteam"><span class="kn">Total rod. 6–7</span><span class="kpts" style="color:${color}">${ms.played?fmt(ms.sum):'–'}</span></div></div>`;
-      });
+    if(R>=6 && lib.tolima.length===16){
+      const done=R>=b;
+      const pool=lib.tolima; // pool[0]=25º ... pool[15]=40º
+      let html=`<div class="lead" style="margin:4px 0 14px">Repescagem · rodadas 6–7 · 8 confrontos entre 25º–40º da classificatória — o vencedor de cada um herda a vaga do respectivo grupo ${done?'(encerrada)':'(em andamento)'}</div><div class="kgrid">`;
+      for(let i=0;i<8;i++){
+        const home=pool[i], away=pool[15-i];
+        const hs=matchScore(teams,home.name,[a,b]), as=matchScore(teams,away.name,[a,b]);
+        const decided=done&&hs.played>0&&as.played>0;
+        const homeWins=decided&&hs.sum>=as.sum, awayWins=decided&&as.sum>hs.sum;
+        const g='G'+(i+1);
+        const line=(name,sc,win)=>`<div class="kteam${win?' win':''}">
+          <span class="kn">${win?'✅ ':''}${name}</span>
+          <span class="kpts" style="color:${sc.played?(win?'var(--zone1)':color):'var(--dim)'}">${sc.played?fmt(sc.sum):'–'}</span></div>`;
+        html+=`<div class="kmatch">
+          <div class="ktag">T${i+1} <span>vaga no Grupo ${g}</span></div>
+          ${line(home.name,hs,homeWins)}
+          ${line(away.name,as,awayWins)}
+          ${decided?`<div class="tolima-dest">🏆 <b>${homeWins?home.name:away.name}</b> → Grupo ${g} &nbsp;·&nbsp; ❌ <b>${homeWins?away.name:home.name}</b> → Sul-Americana</div>`:''}
+        </div>`;
+      }
       html+=`</div>`;
       phases.push({label:'Fase Tolima',html});
     }
@@ -445,7 +519,7 @@ function renderCup(key){
     const anyTeam=cup[pk].some(m=>m.home||m.away);
     let html=`<div class="lead" style="margin:4px 0 14px">${plabel} · rodadas ${rounds[0]}–${rounds[1]} · classifica quem somar mais pontos</div>`;
     if(anyTeam){
-      html+=`<div class="kgrid">`+cup[pk].map(m=>matchCard(teams,m,color)).join('')+`</div>`;
+      html+=`<div class="kgrid">`+cup[pk].map(m=>matchCard(teams,m,color,pk==='finais','ABB '+meta.name)).join('')+`</div>`;
     } else {
       html+=`<div class="card"><div class="meta">Confrontos definidos após a fase anterior.</div></div>`;
     }
@@ -489,6 +563,109 @@ function renderPremios(){
       <div class="info"><div class="t">${w.name}</div><div class="s">Maior pontuação da rodada ${w.round} · <b style="color:var(--gold)">R$ ${fmt(PRIZE_ROUND)}</b></div></div>
       <div class="pts">${fmt(w.score)}</div></div>`);
   });
+}
+
+// meses cujas rodadas já foram TODAS disputadas (mês "fechado" = prêmio definitivo)
+function closedMonthsSet(data, R){
+  const mm = roundMonthMap(data);
+  const byMonth = {};
+  for (let r = 1; r <= (data.total_rounds || 38); r++) {
+    const m = mm[r];
+    if (m == null) continue;
+    (byMonth[m] = byMonth[m] || []).push(r);
+  }
+  const closed = new Set();
+  Object.entries(byMonth).forEach(([m, rounds]) => {
+    if (Math.max(...rounds) <= R) closed.add(Number(m));
+  });
+  return closed;
+}
+
+// Soma, por time, todos os prêmios já CONQUISTADOS (definitivos, não mudam mais):
+// vencedor de cada rodada já disputada, vencedor de cada mês já fechado, e campeão
+// de cada copa cuja final já foi decidida. Prêmios de posição final (1º-7º) e os
+// especiais (Mais Rico, Maior Vencedor, Maior Pontuação) só entram quando a
+// temporada chega na última rodada — antes disso são só líderes provisórios,
+// já mostrados ao vivo nos quadros acima.
+function teamPrizeSummary(){
+  const R = DATA.last_round;
+  const total = DATA.total_rounds || 38;
+  const plan = prizePlan(DATA.teams.length);
+  const acc = {};
+  DATA.teams.forEach(t => { acc[t.name] = { total: 0, items: [] }; });
+  const add = (name, label, value) => {
+    if (!acc[name]) acc[name] = { total: 0, items: [] };
+    acc[name].total += value;
+    acc[name].items.push({ label, value });
+  };
+
+  roundWinners(DATA.teams, R).forEach(w => add(w.name, `Rodada ${w.round}`, PRIZE_ROUND));
+
+  const closedMonths = closedMonthsSet(DATA, R);
+  monthlyWinnersByCalendar(DATA, DATA.teams, R).forEach(bl => {
+    if (bl.winner && closedMonths.has(bl.month)) add(bl.winner.name, bl.name, PRIZE_MONTH);
+  });
+
+  plan.cups.forEach(p => {
+    const c = DATA.cups && DATA.cups[p.key];
+    if (!c || !c.finais || !c.finais[0]) return;
+    const m = c.finais[0];
+    if (m.home && m.away) {
+      const a = matchScore(DATA.teams, m.home, m.rounds), b = matchScore(DATA.teams, m.away, m.rounds);
+      if (a.played > 0 && b.played > 0) add(a.sum >= b.sum ? m.home : m.away, p.label, p.value);
+    }
+  });
+
+  if (R >= total) {
+    const table = abbLeagueTable(DATA.teams, R);
+    plan.league.forEach(p => {
+      const t = table.find(x => x.pos === p.pos);
+      if (t) add(t.name, p.label, p.value);
+    });
+    const rw = roundWinners(DATA.teams, R);
+    if (rw.length) {
+      const maiorPont = rw.reduce((a, b) => b.score > a.score ? b : a);
+      add(maiorPont.name, plan.special[2].label, plan.special[2].value);
+    }
+    const cnt = {};
+    rw.forEach(w => cnt[w.name] = (cnt[w.name] || 0) + 1);
+    monthlyWinnersByCalendar(DATA, DATA.teams, R).forEach(m => { if (m.winner) cnt[m.winner.name] = (cnt[m.winner.name] || 0) + 1; });
+    let maiorVenc = null, maiorVencN = 0;
+    Object.entries(cnt).forEach(([n, c]) => { if (c > maiorVencN) { maiorVencN = c; maiorVenc = n; } });
+    if (maiorVenc) add(maiorVenc, plan.special[1].label, plan.special[1].value);
+    let rico = null, ricoVal = null;
+    DATA.teams.forEach(t => { if (typeof t.patrimonio === 'number' && (ricoVal === null || t.patrimonio > ricoVal)) { ricoVal = t.patrimonio; rico = t.name; } });
+    if (rico) add(rico, plan.special[0].label, plan.special[0].value);
+  }
+
+  return acc;
+}
+
+function renderPremiosPorTime(fmtR){
+  const summary = teamPrizeSummary();
+  const rows = DATA.teams.map(t => {
+    const s = summary[t.name] || { total: 0, items: [] };
+    return { name: t.name, total: s.total, items: s.items };
+  }).sort((a, b) => b.total - a.total || a.name.localeCompare(b.name, 'pt-BR'));
+
+  const body = rows.map((r, i) => {
+    const chips = r.items.length
+      ? r.items.map(it => `<span class="prize-chip" title="${fmtR(it.value)}">${it.label}</span>`).join('')
+      : '<span class="prize-chip none">— nenhum ainda</span>';
+    return `<tr>
+      <td class="pl-pos">${i + 1}</td>
+      <td><div class="team"><span class="crest">${initials(r.name)}</span>${r.name}</div></td>
+      <td class="pl-val" style="color:${r.total > 0 ? 'var(--gold)' : 'var(--dim)'}">${fmtR(r.total)}</td>
+      <td class="pl-prizes">${chips}</td>
+    </tr>`;
+  }).join('');
+
+  return `<div class="card pl-card">
+    <div class="lbl">💰 Prêmios acumulados por time · ${DATA.teams.length} participantes</div>
+    <p class="lead" style="margin:6px 0 14px">Soma de tudo que cada time já garantiu de fato (rodadas e meses já fechados, e copas cuja final já foi decidida). Atualiza sozinho a cada rodada. Prêmios de posição final (1º–7º) e especiais só entram aqui quando a 38ª rodada for concluída.</p>
+    <div class="tablewrap"><table class="pl-table"><thead><tr><th>#</th><th>Time</th><th class="pl-val">Total ganho</th><th>Prêmios conquistados</th></tr></thead>
+    <tbody>${body}</tbody></table></div>
+  </div>`;
 }
 
 function renderPlano(){
@@ -560,7 +737,8 @@ function renderPlano(){
     block('🏟️ Copas Continentais',copas)+
     `<div class="card pl-card" style="display:flex;justify-content:space-between;align-items:center">
       <div class="lbl" style="margin:0">Total em prêmios</div>
-      <div style="font-family:'Bebas Neue';font-size:30px;color:var(--gold)">${fmtR(plan.total)}</div></div>`;
+      <div style="font-family:'Bebas Neue';font-size:30px;color:var(--gold)">${fmtR(plan.total)}</div></div>`+
+    renderPremiosPorTime(fmtR);
 }
 
 function setupBulletin(){
@@ -588,6 +766,28 @@ function renderBulletin(r){
   const nextMo=monthOfRound(DATA,r+1).month;
   const monthClosed=(r>=DATA.total_rounds)||(nextMo!==mo.month);
   const mRmin=curMonth?Math.min(...curMonth.rounds):r, mRmax=curMonth?Math.max(...curMonth.rounds):r;
+
+  // destaque do que está rolando nas copas em paralelo, nesta rodada específica
+  const spot=cupRoundSpotlight(DATA.cups,DATA.teams,r);
+  let cupSpotlightHtml='';
+  if(spot.length){
+    const lines=spot.map(s=>{
+      if(s.isEnd&&s.isFinal&&s.result&&s.result.winners&&s.result.winners.length){
+        return `<div class="cs-line cs-champion">🏆 <b>${s.cup}</b> — Final decidida nesta rodada! Campeão: <b>${s.result.winners[0]}</b></div>`;
+      }
+      if(s.isEnd&&s.result&&s.result.type==='matomata'&&s.result.winners.length){
+        return `<div class="cs-line">✅ <b>${s.cup}</b> — ${s.phase} concluída nesta rodada. Classificados: ${s.result.winners.join(', ')}</div>`;
+      }
+      if(s.isEnd){
+        return `<div class="cs-line">✅ <b>${s.cup}</b> — ${s.phase} chega ao fim nesta rodada, definindo os classificados.</div>`;
+      }
+      if(s.isStart){
+        return `<div class="cs-line">🔔 <b>${s.cup}</b> — começa a ${s.phase} (rod. ${s.rounds[0]}–${s.rounds[1]}).</div>`;
+      }
+      return `<div class="cs-line dim">⏳ <b>${s.cup}</b> — ${s.phase} em andamento (rod. ${s.rounds[0]}–${s.rounds[1]}).</div>`;
+    }).join('');
+    cupSpotlightHtml=`<div class="cup-highlight"><div class="cs-title">🏟️ Também nas Copas — rodada ${String(r).padStart(2,'0')}</div>${lines}</div>`;
+  }
 
   // cabeçalho de prêmios (estilo do boletim manual)
   const prizeHeader=`
@@ -624,7 +824,7 @@ function renderBulletin(r){
 
   $('#bull-target').innerHTML=`
     <div class="bullbar">
-      <button class="dlbtn" onclick="downloadBulletin(${r})">⬇ Baixar boletim da rodada ${String(r).padStart(2,'0')}</button>
+      <button class="dlbtn" onclick="downloadBulletin(${r},this)">⬇ Baixar boletim em PDF · rodada ${String(r).padStart(2,'0')}</button>
     </div>
     <div id="bull-print">
     <div class="bull">
@@ -638,6 +838,7 @@ function renderBulletin(r){
       </div>
       ${prizeHeader}
       <p class="story">${story}</p>
+      ${cupSpotlightHtml}
       <div class="statline">
         <div class="s"><div class="v">${fmt(b.winner.v)}</div><div class="k">Mitada · ${b.winner.name}</div></div>
         <div class="s"><div class="v">${fmt(b.avg)}</div><div class="k">Média da rodada</div></div>
@@ -656,10 +857,11 @@ function renderBulletin(r){
     </div>`;
 }
 
-// gera um HTML autocontido e dispara download (abre como .html, imprimível em PDF)
-function downloadBulletin(r){
+// gera um PDF de verdade a partir do boletim (client-side, via html2pdf.js) e dispara o download
+function downloadBulletin(r,btn){
   const node=document.getElementById('bull-print');
-  const css=`body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:#1c2622;margin:24px;max-width:820px}
+  const filename=`Boletim_ABB_Rodada_${String(r).padStart(2,'0')}.pdf`;
+  const css=`body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:#1c2622;margin:0;max-width:820px}
   .bull{background:#f4f6f3;border:1px solid #dde3dd;border-radius:14px;padding:24px;margin-bottom:14px}
   .head{display:flex;justify-content:space-between;align-items:flex-start}
   .rd{font-size:34px;font-weight:800;line-height:1} .rd small{display:block;font-size:11px;letter-spacing:.2em;color:#1f9d5b;font-weight:700}
@@ -676,14 +878,36 @@ function downloadBulletin(r){
   .cupdig{margin-top:10px;border-top:1px solid #eee;padding-top:8px} .cupdig-h{font-weight:800;color:#1f9d5b;font-size:14px}
   .cupdig-p{margin:6px 0} .ph{font-size:11px;text-transform:uppercase;color:#5f6f68;font-weight:700}
   .pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px} .pill{font-size:12px;background:#f4f6f3;border:1px solid #dde3dd;border-radius:20px;padding:3px 10px} .pill.dim{color:#90a096}
-  ol{padding-left:0} li{list-style:none;display:flex;justify-content:space-between;font-size:14px;padding:3px 0}`;
-  const html=`<!DOCTYPE html><html lang="pt-BR"><head><meta charset="UTF-8"><title>Boletim ABB League — Rodada ${String(r).padStart(2,'0')}</title><style>${css}</style></head><body>${node.innerHTML}<p style="font-size:11px;color:#90a096;margin-top:20px">Gerado automaticamente · ABB League 2026 · para salvar em PDF use Imprimir → Salvar como PDF.</p></body></html>`;
-  const blob=new Blob([html],{type:'text/html;charset=utf-8'});
-  const a=document.createElement('a');
-  a.href=URL.createObjectURL(blob);
-  a.download=`Boletim_ABB_Rodada_${String(r).padStart(2,'0')}.html`;
-  document.body.appendChild(a); a.click(); document.body.removeChild(a);
-  setTimeout(()=>URL.revokeObjectURL(a.href),2000);
+  ol{padding-left:0} li{list-style:none;display:flex;justify-content:space-between;font-size:14px;padding:3px 0}
+  .cup-highlight{background:#fff3c4;border:1px solid #e9c95f;border-radius:11px;padding:14px;margin-top:12px}
+  .cs-title{font-weight:800;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a651f;margin-bottom:6px}
+  .cs-line{font-size:12.5px;line-height:1.6;color:#3b3320;padding:2px 0}
+  .cs-line.dim{color:#8a8362}
+  .cs-line.cs-champion{font-size:14px;color:#8a651f;font-weight:800}`;
+
+  const wrap=document.createElement('div');
+  wrap.style.cssText='position:fixed;left:-9999px;top:0;width:820px;background:#fff;padding:24px';
+  wrap.innerHTML=`<style>${css}</style>${node.innerHTML}<p style="font-size:11px;color:#90a096;margin-top:20px">Gerado automaticamente · ABB League 2026</p>`;
+  document.body.appendChild(wrap);
+
+  const label=btn?btn.textContent:'';
+  if(btn){ btn.disabled=true; btn.textContent='Gerando PDF…'; }
+
+  html2pdf().set({
+    margin:10,
+    filename,
+    image:{type:'jpeg',quality:0.98},
+    html2canvas:{scale:2,useCORS:true,backgroundColor:'#ffffff'},
+    jsPDF:{unit:'mm',format:'a4',orientation:'portrait'},
+    pagebreak:{mode:['css','legacy']}
+  }).from(wrap).save().then(()=>{
+    document.body.removeChild(wrap);
+    if(btn){ btn.disabled=false; btn.textContent=label; }
+  }).catch(()=>{
+    document.body.removeChild(wrap);
+    if(btn){ btn.disabled=false; btn.textContent=label; }
+    alert('Não foi possível gerar o PDF agora. Tente novamente.');
+  });
 }
 
 function composeStory(b){
@@ -702,6 +926,126 @@ function setupTabs(){
     document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
     $('#v-'+b.dataset.v).classList.add('active');
   });
+}
+
+async function boot(){
+  DATA = await fetch('data.json').then(r=>r.json());
+  const R = DATA.last_round;
+  $('#m-round').textContent = String(R).padStart(2,'0');
+  const ativos = DATA.teams.filter(t => t.scores.some(v => v !== null)).length;
+  $('#m-teams').textContent = ativos < DATA.teams.length ? `${DATA.teams.length} (${ativos} em jogo)` : DATA.teams.length;
+  const table = abbLeagueTable(DATA.teams, R);
+  $('#m-leader').textContent = table[0].name;
+  $('#m-upd').textContent = DATA.updated || 'dados da planilha';
+
+  renderLiga(table);
+  renderCopas();
+  renderPremios();
+  renderPlano();
+  setupBulletin();
+  renderHallOfFame();
+  setupTabs();
+  renderFooter();
+}
+
+// ---------- HALL OF FAME ----------
+function hofFmtR(v){ return (v===null||v===undefined) ? '–' : 'R$ '+fmt(v); }
+
+function hofTier(title){
+  if(title==='Premiação CAMPEÃO BRASILEIRÃO') return 'main';
+  if(/CAMPEÃO (LIBERTADORES|SULAMERICANA|CHAMPIONS|UEFA|MUNDIAL)/.test(title)) return 'cup';
+  return 'other';
+}
+
+function hofCleanTitle(t){
+  const map={
+    'Premiação CAMPEÃO BRASILEIRÃO':'Campeão Brasileirão',
+    'Premiação ViceCampeão':'Vice-Campeão',
+    'O Mais Rico':'O Mais Rico',
+    'Premiação: O Maior Vencedor de Premiação de Rodadas e Meses':'Maior Vencedor de Rodadas e Meses',
+    'Premiação: A Maior Pontuação Registrada entre os vencedores das Rodadas':'Maior Pontuação entre Vencedores de Rodada',
+    'Premiação CAMPEÃO LIBERTADORES':'Libertadores',
+    'Premiação CAMPEÃO SULAMERICANA':'Sul-Americana',
+    'Premiação CAMPEÃO CHAMPIONS':'Champions',
+    'Premiação CAMPEÃO UEFA':'UEFA',
+    'Premiação CAMPEÃO MUNDIAL':'Mundial',
+  };
+  if(map[t]) return map[t];
+  const m=t.match(/Premiação (\d+)o Colocado/);
+  if(m) return `${m[1]}º Colocado`;
+  return t.replace(/^Premiação:?\s*/,'');
+}
+
+function renderHallOfFame(){
+  const seasons=(DATA.hall_of_fame||[]).slice().sort((a,b)=>b.year-a.year);
+  const roll=$('#hof-roll'); roll.innerHTML='';
+  seasons.forEach(s=>{
+    const champ=s.awards.find(a=>a.title==='Premiação CAMPEÃO BRASILEIRÃO');
+    if(!champ) return;
+    roll.insertAdjacentHTML('beforeend',`<tr>
+      <td class="pl-pos">${s.year}</td>
+      <td><div class="team"><span class="crest" style="color:var(--gold2)">${initials(champ.team)}</span><b style="color:var(--gold2)">${champ.team}</b></div></td>
+      <td style="color:var(--muted)">${champ.manager||'–'}</td>
+      <td class="pl-val">${hofFmtR(champ.value)}</td>
+    </tr>`);
+  });
+
+  const sel=$('#hof-select'); sel.innerHTML='';
+  seasons.forEach(s=>{
+    const o=document.createElement('option');
+    o.value=s.year; o.textContent='Temporada '+s.year;
+    sel.appendChild(o);
+  });
+  sel.onchange=()=>renderHofSeason(+sel.value);
+  if(seasons.length) renderHofSeason(seasons[0].year);
+}
+
+function renderHofSeason(year){
+  const s=(DATA.hall_of_fame||[]).find(x=>x.year===year);
+  const out=$('#hof-target');
+  if(!s){ out.innerHTML=''; return; }
+
+  const champ=s.awards.find(a=>hofTier(a.title)==='main');
+  const cups=s.awards.filter(a=>hofTier(a.title)==='cup');
+  const others=s.awards.filter(a=>hofTier(a.title)==='other');
+
+  const champHtml=champ?`<div class="hof-champion">
+    ${TROPHY_BIG}
+    <div class="hof-champion-info">
+      <div class="hof-champion-label">Campeão Brasileirão · ${s.year}</div>
+      <div class="hof-champion-name">${champ.team}</div>
+      <div class="hof-champion-meta">${champ.manager||''}${champ.real_club?' · '+champ.real_club+' (Cartola)':''}${champ.value!=null?' · '+hofFmtR(champ.value):''}</div>
+    </div>
+  </div>`:'';
+
+  const cupsHtml=cups.length?`<div class="hof-cups">${cups.map(c=>`
+    <div class="hof-cup-card">
+      ${TROPHY_ICON}
+      <div class="hof-cup-label">${hofCleanTitle(c.title)}</div>
+      <div class="hof-cup-team">${c.team||'–'}</div>
+      <div class="hof-cup-val">${hofFmtR(c.value)}</div>
+    </div>`).join('')}</div>`:'';
+
+  const othersHtml=others.length?`<div class="tablewrap" style="margin-top:16px"><table class="pl-table">
+    <thead><tr><th>Prêmio</th><th>Time</th><th>Cartoleiro</th><th>Clube</th><th class="pl-val">Valor</th></tr></thead>
+    <tbody>${others.map(o=>`<tr>
+      <td class="pl-label">${hofCleanTitle(o.title)}</td>
+      <td>${o.team||'–'}</td>
+      <td style="color:var(--muted)">${o.manager||'–'}</td>
+      <td style="color:var(--muted)">${o.real_club||'–'}</td>
+      <td class="pl-val">${hofFmtR(o.value)}</td>
+    </tr>`).join('')}</tbody>
+  </table></div>`:'';
+
+  out.innerHTML=`<div class="card hof-season-card">
+    <div class="hof-season-head">
+      <div class="hof-year">${s.year}</div>
+      <div class="hof-meta">${s.total_text?s.total_text.replace('Total de Participantes: ',''):''}${s.note?`<span class="hof-badge">${s.note}</span>`:''}</div>
+    </div>
+    ${champHtml}
+    ${cupsHtml}
+    ${othersHtml}
+  </div>`;
 }
 
 function renderFooter(){

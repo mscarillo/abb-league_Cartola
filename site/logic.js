@@ -345,6 +345,60 @@ function cupDigest(cups, teams, lastRound) {
   return out;
 }
 
+// Fases de copa ativas numa rodada específica (começando, em andamento ou terminando)
+// — usado para destacar, no boletim da rodada, o que está acontecendo nas copas em
+// paralelo aos pontos corridos.
+function cupRoundSpotlight(cups, teams, r) {
+  if (!cups) return [];
+  const cupOrder = [
+    ['libertadores', 'ABB Libertadores'],
+    ['sulamericana', 'ABB Sul-Americana'],
+    ['champions', 'ABB Champions'],
+    ['uefa', 'ABB UEFA'],
+    ['mundial', 'ABB Mundial'],
+  ];
+  const phaseOrder = [
+    ['classif', 'Classificatória'],
+    ['grupos', 'Fase de Grupos'],
+    ['oitavas', 'Oitavas de Final'],
+    ['quartas', 'Quartas de Final'],
+    ['semis', 'Semifinais'],
+    ['finais', 'Final'],
+  ];
+  const out = [];
+  for (const [ckey, clabel] of cupOrder) {
+    const cup = cups[ckey];
+    if (!cup) continue;
+    for (const [pk, plabel] of phaseOrder) {
+      const entries = pk === 'classif' ? (cup.classif ? [cup.classif] : []) : (cup[pk] || []);
+      if (!entries.length) continue;
+      const rounds = entries[0].rounds;
+      if (!rounds) continue;
+      const [a, b] = rounds;
+      if (r < a || r > b) continue; // fase não ativa nesta rodada
+      const isFinal = pk === 'finais';
+      const isStart = r === a;
+      const isEnd = r === b;
+      let result = null;
+      if (isEnd) {
+        if (pk === 'classif' || pk === 'grupos') {
+          result = { type: 'classificacao' };
+        } else {
+          const winners = [];
+          entries.forEach(m => {
+            if (!m.home || !m.away) return;
+            const ha = matchScore(teams, m.home, m.rounds), aw = matchScore(teams, m.away, m.rounds);
+            if (ha.played > 0 && aw.played > 0) winners.push(ha.sum >= aw.sum ? m.home : m.away);
+          });
+          result = { type: 'matomata', winners };
+        }
+      }
+      out.push({ cup: clabel, phase: plabel, isFinal, isStart, isEnd, rounds: [a, b], result });
+    }
+  }
+  return out;
+}
+
 if (typeof module !== 'undefined') {
-  module.exports = { abbLeagueTable, roundWinners, monthlyWinners, monthlyWinnersByCalendar, monthOfRound, roundMonthMap, libertadoresClassif, championsClassif, buildBulletin, aggRanking, matchScore, scoreName, phasePlayed, cupDigest, prizePlan, PRIZE_ROUND, PRIZE_MONTH, PRIZE_ENTRY, MONTH_NAMES, ROUND_MONTH_FALLBACK };
+  module.exports = { abbLeagueTable, roundWinners, monthlyWinners, monthlyWinnersByCalendar, monthOfRound, roundMonthMap, libertadoresClassif, championsClassif, buildBulletin, aggRanking, matchScore, scoreName, phasePlayed, cupDigest, cupRoundSpotlight, prizePlan, PRIZE_ROUND, PRIZE_MONTH, PRIZE_ENTRY, MONTH_NAMES, ROUND_MONTH_FALLBACK };
 }

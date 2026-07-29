@@ -2,7 +2,7 @@
  "season": 2026,
  "league": "ABB LEAGUE 2026",
  "total_rounds": 38,
- "last_round": 21,
+ "last_round": 20,
  "market_status": 1,
  "updated": "29/07/2026 16:33 UTC",
  "teams": [
@@ -30,7 +30,7 @@
     61.03,
     27.4,
     97.81,
-    97.81,
+    null,
     null,
     null,
     null,
@@ -75,7 +75,7 @@
     46.62,
     29.65,
     60.56,
-    60.56,
+    null,
     null,
     null,
     null,
@@ -120,7 +120,7 @@
     86.05,
     106.33,
     60.78,
-    60.78,
+    null,
     null,
     null,
     null,
@@ -165,7 +165,7 @@
     132.15,
     126.53,
     113.06,
-    113.06,
+    null,
     null,
     null,
     null,
@@ -210,7 +210,7 @@
     101.8,
     116.78,
     120.91,
-    120.91,
+    null,
     null,
     null,
     null,
@@ -255,7 +255,7 @@
     91.85,
     35.24,
     84.45,
-    84.45,
+    null,
     null,
     null,
     null,
@@ -300,7 +300,7 @@
     103.6,
     114.58,
     102.4,
-    102.4,
+    null,
     null,
     null,
     null,
@@ -345,7 +345,7 @@
     93.85,
     53.64,
     97.18,
-    97.18,
+    null,
     null,
     null,
     null,
@@ -390,7 +390,7 @@
     100.0,
     116.78,
     136.51,
-    136.51,
+    null,
     null,
     null,
     null,
@@ -435,7 +435,7 @@
     91.7,
     98.94,
     118.35,
-    118.35,
+    null,
     null,
     null,
     null,
@@ -480,7 +480,7 @@
     97.4,
     116.08,
     98.23,
-    98.23,
+    null,
     null,
     null,
     null,
@@ -525,7 +525,7 @@
     122.6,
     113.53,
     99.71,
-    99.71,
+    null,
     null,
     null,
     null,
@@ -570,7 +570,7 @@
     135.95,
     131.58,
     103.41,
-    103.41,
+    null,
     null,
     null,
     null,
@@ -615,7 +615,7 @@
     127.45,
     124.18,
     96.36,
-    96.36,
+    null,
     null,
     null,
     null,
@@ -660,7 +660,7 @@
     82.24,
     112.45,
     74.5,
-    74.5,
+    null,
     null,
     null,
     null,
@@ -705,7 +705,7 @@
     95.35,
     104.58,
     125.05,
-    125.05,
+    null,
     null,
     null,
     null,
@@ -750,7 +750,7 @@
     127.35,
     111.38,
     83.88,
-    83.88,
+    null,
     null,
     null,
     null,
@@ -795,7 +795,7 @@
     97.8,
     57.58,
     114.31,
-    114.31,
+    null,
     null,
     null,
     null,
@@ -840,7 +840,7 @@
     33.85,
     19.1,
     10.85,
-    10.85,
+    null,
     null,
     null,
     null,
@@ -885,7 +885,7 @@
     106.05,
     108.88,
     100.03,
-    100.03,
+    null,
     null,
     null,
     null,
@@ -930,7 +930,7 @@
     94.35,
     121.78,
     79.51,
-    79.51,
+    null,
     null,
     null,
     null,
@@ -975,7 +975,7 @@
     111.35,
     51.74,
     57.07,
-    57.07,
+    null,
     null,
     null,
     null,
@@ -1020,7 +1020,7 @@
     97.5,
     118.1,
     63.46,
-    63.46,
+    null,
     null,
     null,
     null,
@@ -1065,7 +1065,7 @@
     90.4,
     153.68,
     105.1,
-    105.1,
+    null,
     null,
     null,
     null,
@@ -1110,7 +1110,7 @@
     107.2,
     116.28,
     100.13,
-    100.13,
+    null,
     null,
     null,
     null,
@@ -1155,7 +1155,7 @@
     37.92,
     21.5,
     40.35,
-    40.35,
+    null,
     null,
     null,
     null,
@@ -1200,7 +1200,7 @@
     98.35,
     95.4,
     11.23,
-    11.23,
+    null,
     null,
     null,
     null,
@@ -1245,7 +1245,7 @@
     114.15,
     111.03,
     109.71,
-    109.71,
+    null,
     null,
     null,
     null,
@@ -1290,7 +1290,7 @@
     117.7,
     83.18,
     107.55,
-    107.55,
+    null,
     null,
     null,
     null,
@@ -1335,7 +1335,7 @@
     121.35,
     87.98,
     88.91,
-    88.91,
+    null,
     null,
     null,
     null,
@@ -1380,7 +1380,7 @@
     73.35,
     116.08,
     76.06,
-    76.06,
+    null,
     null,
     null,
     null,
@@ -1425,7 +1425,7 @@
     107.9,
     112.58,
     103.11,
-    103.11,
+    null,
     null,
     null,
     null,
@@ -1470,7 +1470,7 @@
     120.28,
     94.47,
     110.95,
-    110.95,
+    null,
     null,
     null,
     null,
@@ -1515,7 +1515,7 @@
     94.95,
     85.3,
     77.01,
-    77.01,
+    null,
     null,
     null,
     null,
@@ -1560,7 +1560,7 @@
     83.15,
     90.4,
     49.73,
-    49.73,
+    null,
     null,
     null,
     null,
@@ -1605,7 +1605,7 @@
     84.25,
     100.08,
     66.12,
-    66.12,
+    null,
     null,
     null,
     null,
@@ -1650,7 +1650,7 @@
     100.1,
     120.78,
     106.61,
-    106.61,
+    null,
     null,
     null,
     null,
@@ -1695,7 +1695,7 @@
     99.15,
     101.98,
     108.65,
-    108.65,
+    null,
     null,
     null,
     null,
@@ -1740,7 +1740,7 @@
     30.87,
     31.45,
     33.13,
-    33.13,
+    null,
     null,
     null,
     null,
@@ -1785,7 +1785,7 @@
     97.95,
     111.48,
     117.91,
-    117.91,
+    null,
     null,
     null,
     null,
@@ -1830,7 +1830,7 @@
     98.0,
     91.18,
     107.81,
-    107.81,
+    null,
     null,
     null,
     null,
@@ -1875,7 +1875,7 @@
     112.1,
     114.33,
     114.81,
-    114.81,
+    null,
     null,
     null,
     null,
@@ -1920,7 +1920,7 @@
     57.57,
     67.9,
     14.13,
-    14.13,
+    null,
     null,
     null,
     null,
@@ -1965,7 +1965,7 @@
     50.8,
     33.7,
     45.95,
-    45.95,
+    null,
     null,
     null,
     null,
@@ -2010,7 +2010,7 @@
     110.2,
     112.69,
     123.51,
-    123.51,
+    null,
     null,
     null,
     null,
@@ -2055,7 +2055,7 @@
     124.8,
     133.68,
     116.43,
-    116.43,
+    null,
     null,
     null,
     null,
@@ -2100,7 +2100,7 @@
     107.8,
     104.83,
     69.77,
-    69.77,
+    null,
     null,
     null,
     null,
@@ -2145,7 +2145,7 @@
     86.1,
     25.5,
     68.26,
-    68.26,
+    null,
     null,
     null,
     null,
@@ -2190,7 +2190,7 @@
     89.15,
     34.5,
     106.7,
-    106.7,
+    null,
     null,
     null,
     null,
@@ -2235,7 +2235,7 @@
     46.44,
     88.6,
     82.98,
-    82.98,
+    null,
     null,
     null,
     null,
@@ -2280,7 +2280,7 @@
     137.95,
     102.08,
     104.02,
-    104.02,
+    null,
     null,
     null,
     null,
@@ -2325,7 +2325,7 @@
     98.7,
     40.16,
     72.01,
-    72.01,
+    null,
     null,
     null,
     null,
@@ -2370,7 +2370,7 @@
     140.5,
     114.18,
     100.93,
-    100.93,
+    null,
     null,
     null,
     null,
@@ -2415,7 +2415,7 @@
     106.4,
     121.28,
     111.91,
-    111.91,
+    null,
     null,
     null,
     null,
@@ -2460,7 +2460,7 @@
     96.05,
     61.94,
     55.66,
-    55.66,
+    null,
     null,
     null,
     null,
@@ -2505,7 +2505,7 @@
     97.9,
     90.08,
     122.61,
-    122.61,
+    null,
     null,
     null,
     null,
@@ -2550,7 +2550,7 @@
     119.59,
     108.38,
     118.11,
-    118.11,
+    null,
     null,
     null,
     null,
@@ -2595,7 +2595,7 @@
     23.9,
     123.98,
     83.66,
-    83.66,
+    null,
     null,
     null,
     null,
@@ -2640,7 +2640,7 @@
     107.6,
     121.98,
     99.81,
-    99.81,
+    null,
     null,
     null,
     null,
@@ -2685,7 +2685,7 @@
     92.55,
     134.28,
     116.71,
-    116.71,
+    null,
     null,
     null,
     null,
@@ -2730,7 +2730,7 @@
     76.73,
     87.13,
     50.82,
-    50.82,
+    null,
     null,
     null,
     null,
@@ -2775,7 +2775,7 @@
     100.45,
     100.98,
     90.71,
-    90.71,
+    null,
     null,
     null,
     null,
@@ -2820,7 +2820,7 @@
     140.95,
     117.23,
     119.41,
-    119.41,
+    null,
     null,
     null,
     null,
@@ -2865,7 +2865,7 @@
     108.6,
     126.68,
     116.91,
-    116.91,
+    null,
     null,
     null,
     null,
@@ -2910,7 +2910,7 @@
     105.75,
     117.88,
     94.85,
-    94.85,
+    null,
     null,
     null,
     null,
@@ -2955,7 +2955,7 @@
     77.9,
     92.99,
     94.63,
-    94.63,
+    null,
     null,
     null,
     null,
@@ -3000,7 +3000,7 @@
     98.1,
     33.84,
     120.71,
-    120.71,
+    null,
     null,
     null,
     null,
@@ -3789,5 +3789,1457 @@
     }
    ]
   }
- }
+ },
+ "hall_of_fame": [
+  {
+   "year": 2012,
+   "note": null,
+   "total_text": "Total de Participantes: 33 (R$ 20,00 de Inscrição)",
+   "awards": [
+    {
+     "title": "Premiação CAMPEÃO BRASILEIRÃO",
+     "team": "Limão SPFC",
+     "manager": "Henrique Delfiol",
+     "value": 152,
+     "real_club": "São Paulo",
+     "fontsize": 16.0
+    },
+    {
+     "title": "Premiação ViceCampeão",
+     "team": "Londrinense 2012",
+     "manager": "Nivaldo",
+     "value": 33,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 3o Colocado",
+     "team": "TRICOLORIMORTAL F.C.",
+     "manager": "Jarbas",
+     "value": 20,
+     "real_club": "Grêmio",
+     "fontsize": 11.0
+    }
+   ]
+  },
+  {
+   "year": 2013,
+   "note": null,
+   "total_text": "Total de Participantes: 38 (R$ 20,00 de Inscrição)",
+   "awards": [
+    {
+     "title": "Premiação CAMPEÃO BRASILEIRÃO",
+     "team": "Londrinense 2013",
+     "manager": "Nivaldo",
+     "value": 114,
+     "real_club": "Corinthians",
+     "fontsize": 16.0
+    },
+    {
+     "title": "Premiação ViceCampeão",
+     "team": "Santos_ABB",
+     "manager": "Wellington (Ronaldinho)",
+     "value": 76,
+     "real_club": "Santos",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 3o Colocado",
+     "team": "DESPACHANTE E.C.",
+     "manager": "Marcelo Gato",
+     "value": 38,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 4o Colocado",
+     "team": "DrelandiaFC",
+     "manager": "Fabricio Ely",
+     "value": 20,
+     "real_club": "Flamengo",
+     "fontsize": 11.0
+    },
+    {
+     "title": "O Mais Rico",
+     "team": "Santos_ABB",
+     "manager": "Wellington (Ronaldinho)",
+     "value": 20,
+     "real_club": "Santos",
+     "fontsize": 11.0
+    }
+   ]
+  },
+  {
+   "year": 2014,
+   "note": null,
+   "total_text": "Total de Participantes: 33 (R$ 30,00 de Inscrição)",
+   "awards": [
+    {
+     "title": "Premiação CAMPEÃO BRASILEIRÃO",
+     "team": "Santos_ABB",
+     "manager": "Wellington (Ronaldinho)",
+     "value": 198,
+     "real_club": "Santos",
+     "fontsize": 16.0
+    },
+    {
+     "title": "Premiação ViceCampeão",
+     "team": "Fergus F.C.",
+     "manager": "Ferrão",
+     "value": 69.3,
+     "real_club": "Portuguesa Santista",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 3o Colocado",
+     "team": "ScarilloDREAMTEAM",
+     "manager": "Marcelo Scarillo",
+     "value": 49.5,
+     "real_club": "São Paulo",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 4o Colocado",
+     "team": "MaMoAra F.C.",
+     "manager": "Marcelo Araujo",
+     "value": 29.7,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 5o Colocado",
+     "team": "Brooklin United",
+     "manager": "Bruno Miyakuchi",
+     "value": 10,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 6o Colocado",
+     "team": "Re@l M@drid 2014",
+     "manager": "Ricardo Duarti",
+     "value": 10,
+     "real_club": "Santos",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 7o Colocado",
+     "team": "Londrinense 2013",
+     "manager": "Nivaldo",
+     "value": 10,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 8o Colocado",
+     "team": "MALANOTTE FC",
+     "manager": "Silvio Malanotte",
+     "value": 10,
+     "real_club": "Santos",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 9o Colocado",
+     "team": "MYKC FC",
+     "manager": "Marco Camargo",
+     "value": 10,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 10o Colocado",
+     "team": "Bratslava F.M",
+     "manager": "Robson Gomes",
+     "value": 10,
+     "real_club": "São Paulo",
+     "fontsize": 11.0
+    },
+    {
+     "title": "O Mais Rico",
+     "team": "macarronnys",
+     "manager": "Ronny Dairiki",
+     "value": 20,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    }
+   ]
+  },
+  {
+   "year": 2015,
+   "note": null,
+   "total_text": "Total de Participantes: 40 (R$ 40,00 de Inscrição)",
+   "awards": [
+    {
+     "title": "Premiação CAMPEÃO BRASILEIRÃO",
+     "team": "marruda",
+     "manager": "Marcelo Arruda",
+     "value": 224,
+     "real_club": "Corinthians",
+     "fontsize": 16.0
+    },
+    {
+     "title": "Premiação ViceCampeão",
+     "team": "OPA! DrelandiaFC",
+     "manager": "Fabricio Ely",
+     "value": 64,
+     "real_club": "Flamengo",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 3o Colocado",
+     "team": "MYCK FC",
+     "manager": "Marcp Camargo",
+     "value": 32,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 4o Colocado",
+     "team": "GRÊMIO_OSASCO",
+     "manager": "Rogerio Lima",
+     "value": 32,
+     "real_club": "Santos",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 5o Colocado",
+     "team": "Fergus F.C.",
+     "manager": "Ferrão",
+     "value": 32,
+     "real_club": "Portuguesa Santista",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 6o Colocado",
+     "team": "Sel. Sorocabana",
+     "manager": "Paulo Maylinch",
+     "value": 32,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 7o Colocado",
+     "team": "FUDIDO09",
+     "manager": "Leonardo Arruda",
+     "value": 32,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "O Mais Rico",
+     "team": "Sel. Sorocabana",
+     "manager": "Paulo Maylinch",
+     "value": 32,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    }
+   ]
+  },
+  {
+   "year": 2016,
+   "note": "A MAIOR TEMPORADA DE TODAS",
+   "total_text": "Total de Participantes: 44 (R$ 40,00 de Inscrição)",
+   "awards": [
+    {
+     "title": "Premiação CAMPEÃO BRASILEIRÃO",
+     "team": "ScarilloDREAMTEAM",
+     "manager": "Marcelo Scarillo",
+     "value": 211.2,
+     "real_club": "São Paulo",
+     "fontsize": 16.0
+    },
+    {
+     "title": "Premiação ViceCampeão",
+     "team": "Eletrovolt",
+     "manager": "Leonardo Ghessi",
+     "value": 52.8,
+     "real_club": "Palmeiras",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 3o Colocado",
+     "team": "Fanfer F.C.",
+     "manager": "Hugo Soares",
+     "value": 35.2,
+     "real_club": "Santos",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 4o Colocado",
+     "team": "Santos_ABB",
+     "manager": "Wellington (Ronaldinho)",
+     "value": 17.6,
+     "real_club": "Santos",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 5o Colocado",
+     "team": "marruda",
+     "manager": "Marcelo Arruda",
+     "value": 17.6,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 6o Colocado",
+     "team": "Badnight FC",
+     "manager": "Silvio Malanotte",
+     "value": 17.6,
+     "real_club": "Santos",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 7o Colocado",
+     "team": "A Peste Negra FC",
+     "manager": "Bruno Munhoz",
+     "value": 17.6,
+     "real_club": "São Paulo",
+     "fontsize": 11.0
+    },
+    {
+     "title": "O Mais Rico",
+     "team": "Eletrovolt",
+     "manager": "Leonardo Ghessi",
+     "value": 17.6,
+     "real_club": "Palmeiras",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação CAMPEÃO LIBERTADORES",
+     "team": "Santos_ABB",
+     "manager": "Wellington (Ronaldinho)",
+     "value": 105.6,
+     "real_club": "Santos",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO CHAMPIONS",
+     "team": "Robson Camarotto FC",
+     "manager": "Robson Camarotto",
+     "value": 105.6,
+     "real_club": "Corinthians",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO MUNDIAL",
+     "team": "Robson Camarotto FC",
+     "manager": "Robson Camarotto",
+     "value": 211.2,
+     "real_club": "Corinthians",
+     "fontsize": 14.0
+    }
+   ]
+  },
+  {
+   "year": 2017,
+   "note": null,
+   "total_text": "Total de Participantes: 51 (R$ 40,00 de Inscrição)",
+   "awards": [
+    {
+     "title": "Premiação CAMPEÃO BRASILEIRÃO",
+     "team": "Eletrovolt",
+     "manager": "Leonardo Ghessi",
+     "value": 204,
+     "real_club": "Palmeiras",
+     "fontsize": 16.0
+    },
+    {
+     "title": "Premiação ViceCampeão",
+     "team": "Peixão S.C",
+     "manager": "Lucas Ribeiro",
+     "value": 61.2,
+     "real_club": "Santos",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 3o Colocado",
+     "team": "Robson Camarotto FC",
+     "manager": "Robson Camarotto",
+     "value": 40.8,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 4o Colocado",
+     "team": "OPA! DrelandiaFC",
+     "manager": "Fabricio Ely",
+     "value": 20.4,
+     "real_club": "Flamengo",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 5o Colocado",
+     "team": "klinger romero",
+     "manager": "Klinger Romero",
+     "value": 20.4,
+     "real_club": "Santos",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 6o Colocado",
+     "team": "Pé Vermelho 2017",
+     "manager": "Nivaldo",
+     "value": 20.4,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 7o Colocado",
+     "team": "ThorneraFC",
+     "manager": "Fabio Kase",
+     "value": 20.4,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "O Mais Rico",
+     "team": "MYKC FC",
+     "manager": "Marco Camargo",
+     "value": 20.4,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação CAMPEÃO LIBERTADORES",
+     "team": "ARDM fc",
+     "manager": "André",
+     "value": 122.4,
+     "real_club": "Corinthians",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO SULAMERICANA",
+     "team": "MaMoAra F.C.",
+     "manager": "Marcelo Araujo",
+     "value": 40.8,
+     "real_club": "Corinthians",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO CHAMPIONS",
+     "team": "ScarilloDREAMTEAM",
+     "manager": "Marcelo Scarillo",
+     "value": 122.4,
+     "real_club": "São Paulo",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO UEFA",
+     "team": "S. C PELICANOS",
+     "manager": "Reinaldo Pelicano",
+     "value": 40.8,
+     "real_club": "Corinthians",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO MUNDIAL",
+     "team": "ARDM fc",
+     "manager": "André",
+     "value": 204,
+     "real_club": "Corinthians",
+     "fontsize": 14.0
+    }
+   ]
+  },
+  {
+   "year": 2018,
+   "note": null,
+   "total_text": "Total de Participantes: 57 (R$ 50,00 de Inscrição)",
+   "awards": [
+    {
+     "title": "Premiação CAMPEÃO BRASILEIRÃO",
+     "team": "Tubalões",
+     "manager": "A. Pinho",
+     "value": 285,
+     "real_club": "Corinthians",
+     "fontsize": 16.0
+    },
+    {
+     "title": "Premiação ViceCampeão",
+     "team": "Esfarelado Futebol Clube",
+     "manager": "Paulo V. Milreu",
+     "value": 85.5,
+     "real_club": "Palmeiras",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 3o Colocado",
+     "team": "Ferreiríssimo FC",
+     "manager": "Thiago Ferreira",
+     "value": 57,
+     "real_club": "São Paulo",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 4o Colocado",
+     "team": "EC Xerem",
+     "manager": "Danillo Lopes",
+     "value": 28.5,
+     "real_club": "Palmeiras",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 5o Colocado",
+     "team": "Dubalacubacu F.C.",
+     "manager": "Luis de Almeida",
+     "value": 28.5,
+     "real_club": "São Paulo",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 6o Colocado",
+     "team": "VASCO DA GAMA 98",
+     "manager": "Wellington",
+     "value": 28.5,
+     "real_club": "Vasco",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 7o Colocado",
+     "team": "Santastico_ABB",
+     "manager": "Wellington Moreira",
+     "value": 28.5,
+     "real_club": "Santos",
+     "fontsize": 11.0
+    },
+    {
+     "title": "O Mais Rico",
+     "team": "Eletrovolt",
+     "manager": "Leonardo Ghessi",
+     "value": 28.5,
+     "real_club": "Palmeiras",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação CAMPEÃO LIBERTADORES",
+     "team": "SE Porco Grassi",
+     "manager": "Rafael Grassi",
+     "value": 142.5,
+     "real_club": "Palmeiras",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO SULAMERICANA",
+     "team": "Patsuzaki Junior",
+     "manager": "Marinho Jr",
+     "value": 85.5,
+     "real_club": "São Paulo",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO CHAMPIONS",
+     "team": "Saci Montado na mula de Patinete",
+     "manager": "Daniel Fernandes",
+     "value": 142.5,
+     "real_club": "Corinthians",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO UEFA",
+     "team": "Dubalacubacu F.C.",
+     "manager": "Luis de Almeida",
+     "value": 85.5,
+     "real_club": "São Paulo",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO MUNDIAL",
+     "team": "Saci Montado na mula de Patinete",
+     "manager": "Daniel Fernandes",
+     "value": 285,
+     "real_club": "Corinthians",
+     "fontsize": 14.0
+    }
+   ]
+  },
+  {
+   "year": 2019,
+   "note": null,
+   "total_text": "Total de Participantes: 70 (R$ 50,00 de Inscrição)",
+   "awards": [
+    {
+     "title": "Premiação CAMPEÃO BRASILEIRÃO",
+     "team": "Clube América Central",
+     "manager": "Rogerio Melo",
+     "value": 350,
+     "real_club": "Corinthians",
+     "fontsize": 16.0
+    },
+    {
+     "title": "Premiação ViceCampeão",
+     "team": "EC Xerem",
+     "manager": "Danillo Lopes",
+     "value": 140,
+     "real_club": "Palmeiras",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 3o Colocado",
+     "team": "Patsusaki Master",
+     "manager": "Mario Matsuzaki",
+     "value": 105,
+     "real_club": "São Paulo",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 4o Colocado",
+     "team": "VSF Vanfoothe Amsterdã",
+     "manager": "Felipe Bregula",
+     "value": 70,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 5o Colocado",
+     "team": "Peixão S.C",
+     "manager": "Lucas Lopes",
+     "value": 35,
+     "real_club": "Santos",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 6o Colocado",
+     "team": "SouRonaldo FC",
+     "manager": "Ronaldo",
+     "value": 17.5,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 7o Colocado",
+     "team": "CR XXX de Fevereiro",
+     "manager": "Luiz Poppi",
+     "value": 17.5,
+     "real_club": "Santos",
+     "fontsize": 11.0
+    },
+    {
+     "title": "O Mais Rico",
+     "team": "Red Bruno",
+     "manager": "Bruno Adam",
+     "value": 35,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação: O Maior Vencedor de Premiação de Rodadas e Meses",
+     "team": "Tangue FC / CR XXX de Fevereiro",
+     "manager": "Jaque / Luiz Poppi",
+     "value": 35,
+     "real_club": "Corinthi/Santos",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação: A Maior Pontuação Registrada entre os vencedores das Rodadas",
+     "team": "CR XXX de Fevereiro",
+     "manager": "Luiz Poppi",
+     "value": 35,
+     "real_club": "Santos",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação CAMPEÃO LIBERTADORES",
+     "team": "Street Angels Brazil",
+     "manager": "Amilcar Amato",
+     "value": 175,
+     "real_club": "Corinthians",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO SULAMERICANA",
+     "team": "Real Buchas FC",
+     "manager": "Diego Pinheiro",
+     "value": 105,
+     "real_club": "Palmeiras",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO CHAMPIONS",
+     "team": "Tangue FC",
+     "manager": "Jaque",
+     "value": 175,
+     "real_club": "Corinthians",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO UEFA",
+     "team": "Tutubar@o",
+     "manager": "Jonas Merxed Peres",
+     "value": 105,
+     "real_club": "Corinthians",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO MUNDIAL",
+     "team": "Street Angels Brazil",
+     "manager": "Amilcar Amato",
+     "value": 210,
+     "real_club": "Corinthians",
+     "fontsize": 14.0
+    }
+   ]
+  },
+  {
+   "year": 2020,
+   "note": null,
+   "total_text": "Total de Participantes: 70 (R$ 50,00 de Inscrição)",
+   "awards": [
+    {
+     "title": "Premiação CAMPEÃO BRASILEIRÃO",
+     "team": "ANDREZAO CAMPEÃO",
+     "manager": "André Santos",
+     "value": 350,
+     "real_club": "São Paulo",
+     "fontsize": 16.0
+    },
+    {
+     "title": "Premiação ViceCampeão",
+     "team": "Patsuzaki Master",
+     "manager": "Marinho Patsuzaki",
+     "value": 140,
+     "real_club": "São Paulo",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 3o Colocado",
+     "team": "S.E. Porcomuna",
+     "manager": "Rodrigo",
+     "value": 105,
+     "real_club": "Palmeiras",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 4o Colocado",
+     "team": "S.E CavaloParaguaio",
+     "manager": "Alvaro batista de Melo",
+     "value": 70,
+     "real_club": "Santos",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 5o Colocado",
+     "team": "FeCross F.C",
+     "manager": "Fernando Cruz",
+     "value": 35,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 6o Colocado",
+     "team": "Sabatina F.C.",
+     "manager": "Luciano Pinho",
+     "value": 17.5,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 7o Colocado",
+     "team": "City Of ManchesterFC",
+     "manager": "Marco Antonio Soares",
+     "value": 17.5,
+     "real_club": "São Paulo",
+     "fontsize": 11.0
+    },
+    {
+     "title": "O Mais Rico",
+     "team": "Sel. Sorocabana",
+     "manager": "Paulo Maylinch",
+     "value": 35,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação: O Maior Vencedor de Premiação de Rodadas e Meses",
+     "team": "ANDREZAO CAMPEÃO",
+     "manager": "André",
+     "value": 35,
+     "real_club": "São Paulo",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação: A Maior Pontuação Registrada entre os vencedores das Rodadas",
+     "team": "VASCO DA GAMA 98",
+     "manager": "Wellington",
+     "value": 35,
+     "real_club": "Vasco",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação CAMPEÃO LIBERTADORES",
+     "team": "EC Xerem",
+     "manager": "Danilo Lopes",
+     "value": 175,
+     "real_club": "Palmeiras",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO SULAMERICANA",
+     "team": "Burlington FC",
+     "manager": "Marco Camargo",
+     "value": 105,
+     "real_club": "Corinthains",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO CHAMPIONS",
+     "team": "Sabatina F.C.",
+     "manager": "Luciano Pinho",
+     "value": 175,
+     "real_club": "Corinthians",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO UEFA",
+     "team": "EC VTNC",
+     "manager": "Caio D Giorno",
+     "value": 105,
+     "real_club": "São Paulo",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO MUNDIAL",
+     "team": "Sabatina F.C.",
+     "manager": "Luciano Pinho",
+     "value": 210,
+     "real_club": "Corinthians",
+     "fontsize": 14.0
+    }
+   ]
+  },
+  {
+   "year": 2021,
+   "note": null,
+   "total_text": "Total de Participantes: 74 (R$ 50,00 de Inscrição)",
+   "awards": [
+    {
+     "title": "Premiação CAMPEÃO BRASILEIRÃO",
+     "team": "Biu de Fia F.C.",
+     "manager": "Daniel Correia",
+     "value": 370,
+     "real_club": "São Paulo",
+     "fontsize": 16.0
+    },
+    {
+     "title": "Premiação ViceCampeão",
+     "team": "ANDREZAO CAMPEÃO",
+     "manager": "André Santos",
+     "value": 148,
+     "real_club": "São Paulo",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 3o Colocado",
+     "team": "Esfarelado",
+     "manager": "Paulo Milreu",
+     "value": 111,
+     "real_club": "Palmeiras",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 4o Colocado",
+     "team": "S.C. Binado",
+     "manager": "Igor",
+     "value": 74,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 5o Colocado",
+     "team": "Peixão S.C",
+     "manager": "Lucas Lopes",
+     "value": 37,
+     "real_club": "Santos",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 6o Colocado",
+     "team": "Tubalões2",
+     "manager": "Antonio Pinho",
+     "value": 18.5,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 7o Colocado",
+     "team": "Sabatina F.C.",
+     "manager": "Luciano Pinho",
+     "value": 18.5,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "O Mais Rico",
+     "team": "Sel. Sorocabana",
+     "manager": "Paulo Maylinch",
+     "value": 37,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação: O Maior Vencedor de Premiação de Rodadas e Meses",
+     "team": "Esfarelado",
+     "manager": "Paulo  Milreu",
+     "value": 37,
+     "real_club": "Palmeiras",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação: A Maior Pontuação Registrada entre os vencedores das Rodadas",
+     "team": "Pipoqueiro do ABC FC",
+     "manager": "Guilherme Gonçalves",
+     "value": 37,
+     "real_club": "Palmeiras",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação CAMPEÃO LIBERTADORES",
+     "team": "Biu de Fia F.C.",
+     "manager": "Daniel Correia",
+     "value": 185,
+     "real_club": "São Paulo",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO SULAMERICANA",
+     "team": "Esfarelado",
+     "manager": "Paulo Milreu",
+     "value": 111,
+     "real_club": "Palmeiras",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO CHAMPIONS",
+     "team": "S.C. Binado",
+     "manager": "Igor",
+     "value": 185,
+     "real_club": "Corinthians",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO UEFA",
+     "team": "Patsuzaki Junior",
+     "manager": "Matsupato Junior",
+     "value": 111,
+     "real_club": "São Paulo",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO MUNDIAL",
+     "team": "Biu de Fia F.C.",
+     "manager": "Daniel Correia",
+     "value": 222,
+     "real_club": "São Paulo",
+     "fontsize": 14.0
+    }
+   ]
+  },
+  {
+   "year": 2022,
+   "note": null,
+   "total_text": "Total de Participantes: 76 (R$ 50,00 de Inscrição)",
+   "awards": [
+    {
+     "title": "Premiação CAMPEÃO BRASILEIRÃO",
+     "team": "DINHOVASCAO",
+     "manager": "Diedson Lima",
+     "value": 380,
+     "real_club": "Vasco",
+     "fontsize": 16.0
+    },
+    {
+     "title": "Premiação ViceCampeão",
+     "team": "Patsuzaki Master",
+     "manager": "Mario Matsupato",
+     "value": 152,
+     "real_club": "São Paulo",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 3o Colocado",
+     "team": "EC Xerem",
+     "manager": "Danillo Lopes",
+     "value": 114,
+     "real_club": "Palmeiras",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 4o Colocado",
+     "team": "Biu de Fia F.C.",
+     "manager": "Daniel Correia",
+     "value": 76,
+     "real_club": "São Paulo",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 5o Colocado",
+     "team": "Bosta Verde Sem Mundial",
+     "manager": "Pedro Henrique",
+     "value": 38,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 6o Colocado",
+     "team": "SC Corinthians de Madrid",
+     "manager": "Lucas Barros",
+     "value": 19,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 7o Colocado",
+     "team": "Sabatina F.C.",
+     "manager": "Luciano Pinho",
+     "value": 19,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "O Mais Rico",
+     "team": "O time do Pacheco",
+     "manager": "Rafael Pacheco",
+     "value": 38,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação: O Maior Vencedor de Premiação de Rodadas e Meses",
+     "team": "EsKKema F.C",
+     "manager": "Rafel Silva",
+     "value": 38,
+     "real_club": "Palmeiras",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação: A Maior Pontuação Registrada entre os vencedores das Rodadas",
+     "team": "EC Xerem",
+     "manager": "Danillo Lopes",
+     "value": 38,
+     "real_club": "Palmeiras",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação CAMPEÃO LIBERTADORES",
+     "team": "Biu de Fia F.C.",
+     "manager": "Daniel Correia",
+     "value": 190,
+     "real_club": "São Paulo",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO SULAMERICANA",
+     "team": "Navy Seals EC",
+     "manager": "Fernando Avila",
+     "value": 114,
+     "real_club": "São Paulo",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO CHAMPIONS",
+     "team": "SC Corinthians de Madrid",
+     "manager": "Lucas Barros",
+     "value": 190,
+     "real_club": "Corinthians",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO UEFA",
+     "team": "leão de fênix",
+     "manager": "Luiz Claudio",
+     "value": 114,
+     "real_club": "Corinthians",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO MUNDIAL",
+     "team": "Biu de Fia F.C.",
+     "manager": "Daniel Correia",
+     "value": 228,
+     "real_club": "São Paulo",
+     "fontsize": 14.0
+    }
+   ]
+  },
+  {
+   "year": 2023,
+   "note": null,
+   "total_text": "Total de Participantes: 69 (R$ 50,00 de Inscrição)",
+   "awards": [
+    {
+     "title": "Premiação CAMPEÃO BRASILEIRÃO",
+     "team": "TRUGILO F.C",
+     "manager": "Alessandro Trugilo",
+     "value": 345,
+     "real_club": "Palmeiras",
+     "fontsize": 16.0
+    },
+    {
+     "title": "Premiação ViceCampeão",
+     "team": "Patsuzaki Junior",
+     "manager": "Matsupato Junior",
+     "value": 138,
+     "real_club": "São Paulo",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 3o Colocado",
+     "team": "ANDREZAO CAMPEÃO",
+     "manager": "André Santos",
+     "value": 103.5,
+     "real_club": "São Paulo",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 4o Colocado",
+     "team": "SC Corinthians de Madrid",
+     "manager": "Lucas Barros",
+     "value": 69,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 5o Colocado",
+     "team": "Sel.Sorocabana",
+     "manager": "Paulo Maylinch",
+     "value": 34.5,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 6o Colocado",
+     "team": "InVictor_Team",
+     "manager": "Victor Peres",
+     "value": 17.25,
+     "real_club": "Palmeiras",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 7o Colocado",
+     "team": "Godz MatOs",
+     "manager": "Felipe Matos",
+     "value": 17.25,
+     "real_club": "Palmeiras",
+     "fontsize": 11.0
+    },
+    {
+     "title": "O Mais Rico",
+     "team": "leão de fênix",
+     "manager": "Luiz Claudio Sousa Novais",
+     "value": 34.5,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação: O Maior Vencedor de Premiação de Rodadas e Meses",
+     "team": "leão de fênix",
+     "manager": "Luiz Claudio Sousa Novais",
+     "value": 34.5,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação: A Maior Pontuação Registrada entre os vencedores das Rodadas",
+     "team": "Godz MatOs",
+     "manager": "Felipe Matos",
+     "value": 34.5,
+     "real_club": "Palmeiras",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação CAMPEÃO LIBERTADORES",
+     "team": "Sel.Sorocabana",
+     "manager": "Paulo Maylinch",
+     "value": 172.5,
+     "real_club": "Corinthians",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO SULAMERICANA",
+     "team": "Trikas Paulistano",
+     "manager": "Geovana Oliveira",
+     "value": 103.5,
+     "real_club": "São Paulo",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO CHAMPIONS",
+     "team": "Sel.Sorocabana",
+     "manager": "Paulo Maylinch",
+     "value": 172.5,
+     "real_club": "Corinthians",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO UEFA",
+     "team": "JOGA10SC",
+     "manager": "Junior Andrade",
+     "value": 103.5,
+     "real_club": "Flamengo",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO MUNDIAL",
+     "team": "Sel.Sorocabana",
+     "manager": "Paulo Maylinch",
+     "value": 207,
+     "real_club": "Corinthians",
+     "fontsize": 14.0
+    }
+   ]
+  },
+  {
+   "year": 2024,
+   "note": null,
+   "total_text": "Total de Participantes: 68 (R$ 50,00 de Inscrição)",
+   "awards": [
+    {
+     "title": "Premiação CAMPEÃO BRASILEIRÃO",
+     "team": "Patsuzaki Junior",
+     "manager": "Matsupato Junior",
+     "value": 340,
+     "real_club": "São Paulo",
+     "fontsize": 16.0
+    },
+    {
+     "title": "Premiação ViceCampeão",
+     "team": "FC Timeko",
+     "manager": "Marcelo Bueno",
+     "value": 136,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 3o Colocado",
+     "team": "ANDREZAO CAMPEÃO",
+     "manager": "André Santos",
+     "value": 102,
+     "real_club": "São Paulo",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 4o Colocado",
+     "team": "Bosta Verde Sem Mundial",
+     "manager": "Pedro Henrique",
+     "value": 68,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 5o Colocado",
+     "team": "SC Corinthians de Madrid",
+     "manager": "Lucas Barros",
+     "value": 34,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 6o Colocado",
+     "team": "S. E. Léo Champion",
+     "manager": "Leonardo Gouveia",
+     "value": 17,
+     "real_club": "Palmeiras",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 7o Colocado",
+     "team": "Peixão S.C",
+     "manager": "Lucas Lopes",
+     "value": 17,
+     "real_club": "Santos",
+     "fontsize": 11.0
+    },
+    {
+     "title": "O Mais Rico",
+     "team": "C. A. Só Nus Tapa",
+     "manager": "Vinicius",
+     "value": 34,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação: O Maior Vencedor de Premiação de Rodadas e Meses",
+     "team": "FC Timeko",
+     "manager": "Marcelo Bueno",
+     "value": 34,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação: A Maior Pontuação Registrada entre os vencedores das Rodadas",
+     "team": "BentoFootball",
+     "manager": "Daniel Bento",
+     "value": 34,
+     "real_club": "São Paulo",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação CAMPEÃO LIBERTADORES",
+     "team": "Bosta Verde Sem Mundial",
+     "manager": "Pedro Henrique",
+     "value": 170,
+     "real_club": "Corinthians",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO SULAMERICANA",
+     "team": "Trikas Paulistano",
+     "manager": "Geovana Oliveira",
+     "value": 102,
+     "real_club": "São Paulo",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO CHAMPIONS",
+     "team": "Campo Limpo Team",
+     "manager": "Andrey Teodoro",
+     "value": 170,
+     "real_club": "São Paulo",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO UEFA",
+     "team": "Eletrovolt",
+     "manager": "Leonardo Ghessi",
+     "value": 102,
+     "real_club": "Palmeiras",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO MUNDIAL",
+     "team": "Bosta Verde Sem Mundial",
+     "manager": "Pedro Henrique",
+     "value": 204,
+     "real_club": "Corinthians",
+     "fontsize": 14.0
+    }
+   ]
+  },
+  {
+   "year": 2025,
+   "note": null,
+   "total_text": "Total de Participantes: 73 (R$ 50,00 de Inscrição)",
+   "awards": [
+    {
+     "title": "Premiação CAMPEÃO BRASILEIRÃO",
+     "team": "S.C VanFooThe Amsterdã",
+     "manager": "Felipe Bregula",
+     "value": 365,
+     "real_club": "Corinthians",
+     "fontsize": 16.0
+    },
+    {
+     "title": "Premiação ViceCampeão",
+     "team": "ANDREZAO CAMPEÃO",
+     "manager": "Andre Santos",
+     "value": 146,
+     "real_club": "Sao Paulo",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 3o Colocado",
+     "team": "Catafllan 49ers",
+     "manager": "Jorge Correa",
+     "value": 109.5,
+     "real_club": "Santos",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 4o Colocado",
+     "team": "Bosta Verde Sem Mundial",
+     "manager": "Pedro Henrique",
+     "value": 73,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 5o Colocado",
+     "team": "FC Timeko",
+     "manager": "Marcelo Bueno",
+     "value": 36.5,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 6o Colocado",
+     "team": "Engineered to Win FC",
+     "manager": "Joelson Andrade",
+     "value": 18.25,
+     "real_club": "Sao Paulo",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação 7o Colocado",
+     "team": "SC Corinthians de Madrid",
+     "manager": "Lucas Barros",
+     "value": 18.25,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "O Mais Rico",
+     "team": "C. A. Só Nus Tapa",
+     "manager": "Vinicius",
+     "value": 36.5,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação: O Maior Vencedor de Premiação de Rodadas e Meses",
+     "team": "FC Timeko",
+     "manager": "Marcelo Bueno",
+     "value": 36.5,
+     "real_club": "Corinthians",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação: A Maior Pontuação Registrada entre os vencedores das Rodadas",
+     "team": "Engineered to Win FC",
+     "manager": "Joelson Andrade",
+     "value": 36.5,
+     "real_club": "Sao Paulo",
+     "fontsize": 11.0
+    },
+    {
+     "title": "Premiação CAMPEÃO LIBERTADORES",
+     "team": "BIGPOPOFC",
+     "manager": "Marcelo Cardoso",
+     "value": 182.5,
+     "real_club": "Sao Paulo",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO SULAMERICANA",
+     "team": "ANDREZAO CAMPEÃO",
+     "manager": "Andre Santos",
+     "value": 109.5,
+     "real_club": "Sao Paulo",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO CHAMPIONS",
+     "team": "ANDREZAO CAMPEÃO",
+     "manager": "Andre Santos",
+     "value": 182.5,
+     "real_club": "Sao Paulo",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO UEFA",
+     "team": "TRUGILO F.C",
+     "manager": "Alessandro Trugilo",
+     "value": 109.5,
+     "real_club": "Palmeiras",
+     "fontsize": 14.0
+    },
+    {
+     "title": "Premiação CAMPEÃO MUNDIAL",
+     "team": "BIGPOPOFC",
+     "manager": "Marcelo Cardoso",
+     "value": 219,
+     "real_club": "Sao Paulo",
+     "fontsize": 14.0
+    }
+   ]
+  }
+ ]
 }

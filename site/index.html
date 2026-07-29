@@ -204,10 +204,6 @@ select{font-family:'Oswald';background:var(--panel);color:var(--txt);border:1px 
 .gp{font-family:'Oswald';font-weight:700}
 @media(max-width:760px){.kgrid,.ggrid{grid-template-columns:1fr}}
 /* BOLETIM extras */
-.bullbar{display:flex;justify-content:flex-end;margin-bottom:12px}
-.dlbtn{font-family:'Oswald';font-weight:600;letter-spacing:.04em;font-size:13px;cursor:pointer;
-  background:linear-gradient(180deg,var(--green),var(--accent));color:#fff;border:none;border-radius:9px;padding:10px 18px;transition:.2s;box-shadow:var(--shadow)}
-.dlbtn:hover{filter:brightness(1.06)}
 .prizecard{display:flex;gap:14px;margin:18px 0 4px;flex-wrap:wrap;position:relative}
 .pz{flex:1;min-width:240px;background:var(--panel);border:1px solid var(--line);border-radius:13px;padding:16px 18px}
 .pztitle{font-family:'Oswald';font-weight:600;font-size:12px;letter-spacing:.04em;color:var(--green)}
@@ -328,7 +324,6 @@ select{font-family:'Oswald';background:var(--panel);color:var(--txt);border:1px 
   <div class="footer" id="footer"></div>
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js" integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="logic.js"></script>
 <script>
 const $=(s,e=document)=>e.querySelector(s);
@@ -823,10 +818,7 @@ function renderBulletin(r){
   }
 
   $('#bull-target').innerHTML=`
-    <div class="bullbar">
-      <button class="dlbtn" onclick="downloadBulletin(${r},this)">⬇ Baixar boletim em PDF · rodada ${String(r).padStart(2,'0')}</button>
-    </div>
-    <div id="bull-print">
+    <div>
     <div class="bull">
       <div class="head">
         <div class="rd"><small>Boletim ABB League</small>RODADA ${String(r).padStart(2,'0')}</div>
@@ -855,31 +847,6 @@ function renderBulletin(r){
       </ol></div>
     ${cupsHtml}
     </div>`;
-}
-
-// gera um PDF de verdade a partir do boletim (client-side, via html2pdf.js) e dispara o download
-// gera um PDF a partir do boletim já renderizado na tela (html2canvas precisa capturar
-// um elemento realmente visível — uma cópia fora da tela, ex.: left:-9999px, sai em branco)
-function downloadBulletin(r,btn){
-  const node=document.getElementById('bull-print');
-  const filename=`Boletim_ABB_Rodada_${String(r).padStart(2,'0')}.pdf`;
-  const label=btn?btn.textContent:'';
-  if(btn){ btn.disabled=true; btn.textContent='Gerando PDF…'; }
-
-  html2pdf().set({
-    margin:10,
-    filename,
-    image:{type:'jpeg',quality:0.98},
-    html2canvas:{scale:2,useCORS:true,backgroundColor:'#ffffff',windowWidth:node.scrollWidth,windowHeight:node.scrollHeight},
-    jsPDF:{unit:'mm',format:'a4',orientation:'portrait'},
-    pagebreak:{mode:['css','legacy']}
-  }).from(node).save().then(()=>{
-    if(btn){ btn.disabled=false; btn.textContent=label; }
-  }).catch((err)=>{
-    console.error('Falha ao gerar PDF do boletim:',err);
-    if(btn){ btn.disabled=false; btn.textContent=label; }
-    alert('Não foi possível gerar o PDF agora. Tente novamente.');
-  });
 }
 
 function composeStory(b){

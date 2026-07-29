@@ -447,12 +447,12 @@ function renderCup(key){
     let html=`<div class="lead" style="margin:4px 0 14px">Classificatória · rodadas ${a}–${b} ${done?'(fechada)':'(em andamento)'}</div>`;
     if(rank.length){
       html+=`<div class="tablewrap"><table><thead><tr><th>#</th><th>Time</th><th class="num">Pts</th><th class="num hide-sm">Destino</th></tr></thead><tbody>`;
-      const lim = key==='libertadores'?40:49;
+      const lim = key==='libertadores'?40:rank.length;
       rank.slice(0,lim).forEach(t=>{
-        let dest='';
+        let dest='', destColor='var(--muted)';
         if(key==='libertadores'){ dest = t.pos<=24?'Grupos':(t.pos<=40?'Fase Tolima':'Sulamericana'); }
-        else { dest = t.pos<=32?'Grupos':'UEFA'; }
-        html+=`<tr><td class="pos">${t.pos}</td><td><div class="team"><span class="crest">${initials(t.name)}</span>${t.name}</div></td><td class="num total">${fmt(t.sum)}</td><td class="num hide-sm" style="color:var(--muted);font-size:12px">${dest}</td></tr>`;
+        else { dest = t.pos<=32?'Grupos':(t.pos<=48?'UEFA':'Eliminado'); destColor = t.pos<=32?'var(--zone1)':(t.pos<=48?'var(--muted)':'var(--zoneout)'); }
+        html+=`<tr><td class="pos">${t.pos}</td><td><div class="team"><span class="crest">${initials(t.name)}</span>${t.name}</div></td><td class="num total">${fmt(t.sum)}</td><td class="num hide-sm" style="color:${destColor};font-size:12px">${dest}</td></tr>`;
       });
       html+=`</tbody></table></div>`;
     } else html+=`<div class="card"><div class="meta">As rodadas ${a}–${b} ainda não foram disputadas.</div></div>`;
@@ -858,38 +858,11 @@ function renderBulletin(r){
 }
 
 // gera um PDF de verdade a partir do boletim (client-side, via html2pdf.js) e dispara o download
+// gera um PDF a partir do boletim já renderizado na tela (html2canvas precisa capturar
+// um elemento realmente visível — uma cópia fora da tela, ex.: left:-9999px, sai em branco)
 function downloadBulletin(r,btn){
   const node=document.getElementById('bull-print');
   const filename=`Boletim_ABB_Rodada_${String(r).padStart(2,'0')}.pdf`;
-  const css=`body{font-family:Arial,Helvetica,sans-serif;background:#fff;color:#1c2622;margin:0;max-width:820px}
-  .bull{background:#f4f6f3;border:1px solid #dde3dd;border-radius:14px;padding:24px;margin-bottom:14px}
-  .head{display:flex;justify-content:space-between;align-items:flex-start}
-  .rd{font-size:34px;font-weight:800;line-height:1} .rd small{display:block;font-size:11px;letter-spacing:.2em;color:#1f9d5b;font-weight:700}
-  .lbl{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#90a096;font-weight:700}
-  .meta{font-size:12px;color:#5f6f68}
-  .prizecard{display:flex;gap:12px;margin:16px 0;flex-wrap:wrap}
-  .pz{flex:1;min-width:240px;background:#fff;border:1px solid #dde3dd;border-radius:11px;padding:14px}
-  .pztitle{font-size:12px;font-weight:700;color:#1f9d5b} .pzname{font-size:22px;font-weight:800;margin:4px 0;background:#fff3c4;display:inline-block;padding:2px 8px;border-radius:5px}
-  .pzrow{display:flex;justify-content:space-between;font-size:13px;margin-top:6px} .pzval{font-weight:700;color:#b5862a}
-  .story{font-size:15px;line-height:1.7;color:#34423c}
-  .statline{display:flex;gap:24px;flex-wrap:wrap;margin-top:14px} .statline .v{font-size:24px;font-weight:800} .statline .k{font-size:10px;text-transform:uppercase;color:#90a096}
-  .card{background:#fff;border:1px solid #dde3dd;border-radius:12px;padding:16px;margin-top:12px}
-  .mv{font-size:13px;padding:3px 0} .up{color:#1f9d5b;font-weight:700} .down{color:#d24a40;font-weight:700}
-  .cupdig{margin-top:10px;border-top:1px solid #eee;padding-top:8px} .cupdig-h{font-weight:800;color:#1f9d5b;font-size:14px}
-  .cupdig-p{margin:6px 0} .ph{font-size:11px;text-transform:uppercase;color:#5f6f68;font-weight:700}
-  .pills{display:flex;flex-wrap:wrap;gap:6px;margin-top:4px} .pill{font-size:12px;background:#f4f6f3;border:1px solid #dde3dd;border-radius:20px;padding:3px 10px} .pill.dim{color:#90a096}
-  ol{padding-left:0} li{list-style:none;display:flex;justify-content:space-between;font-size:14px;padding:3px 0}
-  .cup-highlight{background:#fff3c4;border:1px solid #e9c95f;border-radius:11px;padding:14px;margin-top:12px}
-  .cs-title{font-weight:800;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:#8a651f;margin-bottom:6px}
-  .cs-line{font-size:12.5px;line-height:1.6;color:#3b3320;padding:2px 0}
-  .cs-line.dim{color:#8a8362}
-  .cs-line.cs-champion{font-size:14px;color:#8a651f;font-weight:800}`;
-
-  const wrap=document.createElement('div');
-  wrap.style.cssText='position:fixed;left:-9999px;top:0;width:820px;background:#fff;padding:24px';
-  wrap.innerHTML=`<style>${css}</style>${node.innerHTML}<p style="font-size:11px;color:#90a096;margin-top:20px">Gerado automaticamente · ABB League 2026</p>`;
-  document.body.appendChild(wrap);
-
   const label=btn?btn.textContent:'';
   if(btn){ btn.disabled=true; btn.textContent='Gerando PDF…'; }
 
@@ -897,14 +870,13 @@ function downloadBulletin(r,btn){
     margin:10,
     filename,
     image:{type:'jpeg',quality:0.98},
-    html2canvas:{scale:2,useCORS:true,backgroundColor:'#ffffff'},
+    html2canvas:{scale:2,useCORS:true,backgroundColor:'#ffffff',windowWidth:node.scrollWidth,windowHeight:node.scrollHeight},
     jsPDF:{unit:'mm',format:'a4',orientation:'portrait'},
     pagebreak:{mode:['css','legacy']}
-  }).from(wrap).save().then(()=>{
-    document.body.removeChild(wrap);
+  }).from(node).save().then(()=>{
     if(btn){ btn.disabled=false; btn.textContent=label; }
-  }).catch(()=>{
-    document.body.removeChild(wrap);
+  }).catch((err)=>{
+    console.error('Falha ao gerar PDF do boletim:',err);
     if(btn){ btn.disabled=false; btn.textContent=label; }
     alert('Não foi possível gerar o PDF agora. Tente novamente.');
   });

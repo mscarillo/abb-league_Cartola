@@ -31,6 +31,13 @@ OUT_FILE = os.path.join(HERE, "site", "data.json")
 TOTAL_ROUNDS = 38
 GLB_TOKEN = os.environ.get("GLB_TOKEN", "").strip()
 
+# Status do mercado (conforme a API do Cartola):
+#   1 = ABERTO  -> período entre rodadas; "rodada_atual" é a rodada PARA A QUAL
+#                  as escalações estão sendo feitas, ela ainda NÃO foi disputada.
+#   2 = FECHADO -> a rodada "rodada_atual" está em andamento (ou acabou de fechar).
+MERCADO_ABERTO = 1
+MERCADO_FECHADO = 2
+
 
 def http_get(url, retries=3):
     headers = {"User-Agent": "Mozilla/5.0", "Accept": "application/json"}
@@ -102,9 +109,21 @@ def main():
     if not rodada_atual:
         # fallback: tenta preservar o data.json existente
         rodada_atual = TOTAL_ROUNDS
-    # rodada em andamento ainda não fechou: consolidamos até a anterior,
-    # mas tentamos a corrente também (vem null se não disponível).
-    last_to_fetch = min(int(rodada_atual), TOTAL_ROUNDS)
+        status = None
+    rodada_atual = int(rodada_atual)
+
+    # BUG CORRIGIDO: quando o mercado está ABERTO (status 1), "rodada_atual"
+    # ainda não foi disputada — é a rodada para a qual os times estão sendo
+    # escalados agora. Buscar a pontuação dela nesse momento faz a API
+    # devolver um valor obsoleto (repete a pontuação da rodada anterior),
+    # o que duplicava a pontuação de todos os participantes assim que uma
+    # rodada fechava. Só tratamos a rodada atual como "jogável" quando o
+    # mercado está FECHADO (rodada em andamento ou recém-encerrada).
+    if status == MERCADO_ABERTO:
+        last_to_fetch = min(rodada_atual - 1, TOTAL_ROUNDS)
+    else:
+        last_to_fetch = min(rodada_atual, TOTAL_ROUNDS)
+    last_to_fetch = max(last_to_fetch, 0)
 
     teams_out = []
     for t in teams_meta:
@@ -165,6 +184,10 @@ def main():
             prev = json.load(open(OUT_FILE, encoding="utf-8"))
             if isinstance(prev, dict) and prev.get("cups"):
                 out["cups"] = prev["cups"]
+            # Hall of Fame é histórico (temporadas 2012+) e não vem da API do Cartola;
+            # preserva o que já está no data.json a cada atualização automática.
+            if isinstance(prev, dict) and prev.get("hall_of_fame"):
+                out["hall_of_fame"] = prev["hall_of_fame"]
             # se a API não trouxe meses agora, preserva os que já existiam
             if not rmonths and isinstance(prev, dict) and prev.get("round_months"):
                 out["round_months"] = prev["round_months"]

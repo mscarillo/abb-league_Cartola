@@ -89,15 +89,45 @@ function libertadoresClassif(teams, lastRound) {
   };
 }
 
-// Champions fase classificatória: rodadas 20-24. 32 melhores -> grupos; 33-49 -> UEFA.
+// Champions fase classificatória: rodadas 20-24. 32 melhores -> grupos; 33-48 -> UEFA
+// direto nas oitavas (49º em diante, eliminado). Alinhado ao critério já usado na
+// coluna "Destino" do index.html (pos<=32 Grupos, pos<=48 UEFA, senão Eliminado).
 function championsClassif(teams, lastRound) {
   const rank = aggRanking(teams, 20, 24);
   const done = lastRound >= 24;
   return {
     done, rank,
     grupos: rank.slice(0, 32),
-    uefa: rank.slice(32, 49),
+    uefa: rank.slice(32, 48),
   };
+}
+
+// Champions: define as Oitavas de Final automaticamente a partir dos 2 classificados de
+// cada grupo (regra da liga, definida em 28/08/2026 — não é mais sorteio manual como foi
+// na Libertadores): pega os 16 classificados (1º e 2º de cada um dos 8 grupos), rankeia
+// todos juntos pela pontuação da fase de grupos e casa 1ºx16º, 2ºx15º, 3ºx14º ... 8ºx9º
+// (mata-mata espelhado, mesmo padrão usado na Tolima e nas Oitavas da UEFA).
+function seedOitavasFromGrupos(teams, grupos, oitavasRounds) {
+  if (!grupos || !grupos.length) return [];
+  const qualified = [];
+  grupos.forEach(g => {
+    const ranked = g.teams
+      .map(n => ({ name: n, ...matchScore(teams, n, g.rounds) }))
+      .sort((x, y) => y.sum - x.sum);
+    ranked.slice(0, 2).forEach(t => qualified.push({ name: t.name, sum: t.sum }));
+  });
+  qualified.sort((x, y) => y.sum - x.sum);
+  const n = qualified.length; // 16 (8 grupos x 2 classificados)
+  const out = [];
+  for (let i = 0; i < n / 2; i++) {
+    out.push({
+      tag: 'O' + (i + 1),
+      home: qualified[i].name,        // melhor colocado do par
+      away: qualified[n - 1 - i].name, // pior colocado do par
+      rounds: oitavasRounds,
+    });
+  }
+  return out;
 }
 
 // ---------- Boletim da rodada ----------
@@ -399,6 +429,70 @@ function cupRoundSpotlight(cups, teams, r) {
   return out;
 }
 
+// Mata-mata: casamento padrão em bracket espelhado, confirmado comparando os brackets já
+// disputados (Libertadores e Sulamericana batem exatamente igual): Q1=O1xO8, Q2=O2xO7,
+// Q3=O3xO6, Q4=O4xO5; S1=Q1xQ2, S2=Q3xQ4; F1=S1xS2. Dada a fase anterior já resolvida
+// (times definidos) e o molde da fase seguinte (tags/rounds prontos, times ainda null),
+// calcula quem avança — só depois que a fase anterior tiver sido efetivamente disputada.
+const BRACKET_PAIRS = {
+  4: [[0, 7], [1, 6], [2, 5], [3, 4]], // 8 confrontos anteriores -> 4 (oitavas -> quartas)
+  2: [[0, 1], [2, 3]],                 // 4 -> 2 (quartas -> semis)
+  1: [[0, 1]],                         // 2 -> 1 (semis -> final)
+};
+function advanceBracket(teams, prevMatches, nextTemplate, lastRound) {
+  if (!prevMatches || !prevMatches.length || !nextTemplate || !nextTemplate.length) return nextTemplate;
+  const prevRounds = prevMatches[0].rounds;
+  if (!prevRounds || lastRound < prevRounds[1]) return nextTemplate; // fase anterior não terminou
+  const winnerOf = m => {
+    if (!m.home || !m.away) return null;
+    const h = matchScore(teams, m.home, m.rounds), a = matchScore(teams, m.away, m.rounds);
+    if (h.played === 0 || a.played === 0) return null;
+    return h.sum >= a.sum ? m.home : m.away;
+  };
+  const winners = prevMatches.map(winnerOf);
+  const pairs = BRACKET_PAIRS[nextTemplate.length];
+  if (!pairs) return nextTemplate;
+  return nextTemplate.map((m, i) => {
+    const [hi, ai] = pairs[i];
+    return { ...m, home: winners[hi] || null, away: winners[ai] || null };
+  });
+}
+
+// Resolve, para TODAS as copas, as fases de mata-mata ainda não preenchidas manualmente no
+// data.json: Oitavas da Champions via seedOitavasFromGrupos (regra da liga, a partir dos
+// classificados de grupo) e Quartas/Semis/Final de qualquer copa via advanceBracket (bracket
+// espelhado), encadeando fase a fase. Só entra em ação quando a fase ainda está totalmente
+// vazia (home/away null) — um confronto já definido manualmente (ex.: sorteio real feito à
+// mão, como na Libertadores) nunca é sobrescrito. Chame uma vez, logo após carregar o
+// data.json, e use o resultado no lugar de `cups` no restante do site.
+function resolveCupsKO(cups, teams, lastRound) {
+  if (!cups) return cups;
+  const out = {};
+  Object.keys(cups).forEach(key => {
+    const cup = cups[key];
+    const rc = Object.assign({}, cup);
+    let prev = null;
+    ['oitavas', 'quartas', 'semis', 'finais'].forEach(pk => {
+      let matches = cup[pk];
+      if (pk === 'oitavas' && key === 'champions' && cup.grupos && cup.grupos.length) {
+        const gEnd = cup.grupos[0].rounds[1];
+        const allEmpty = !matches || !matches.length || matches.every(m => !m.home && !m.away);
+        if (lastRound >= gEnd && allEmpty) {
+          const oRounds = (matches && matches.length) ? matches[0].rounds : [gEnd + 1, gEnd + 2];
+          matches = seedOitavasFromGrupos(teams, cup.grupos, oRounds);
+        }
+      }
+      if (pk !== 'oitavas' && matches && matches.length && prev && prev.length) {
+        const allEmpty = matches.every(m => !m.home && !m.away);
+        if (allEmpty) matches = advanceBracket(teams, prev, matches, lastRound);
+      }
+      if (matches) { rc[pk] = matches; if (matches.length) prev = matches; }
+    });
+    out[key] = rc;
+  });
+  return out;
+}
+
 if (typeof module !== 'undefined') {
-  module.exports = { abbLeagueTable, roundWinners, monthlyWinners, monthlyWinnersByCalendar, monthOfRound, roundMonthMap, libertadoresClassif, championsClassif, buildBulletin, aggRanking, matchScore, scoreName, phasePlayed, cupDigest, cupRoundSpotlight, prizePlan, PRIZE_ROUND, PRIZE_MONTH, PRIZE_ENTRY, MONTH_NAMES, ROUND_MONTH_FALLBACK };
+  module.exports = { abbLeagueTable, roundWinners, monthlyWinners, monthlyWinnersByCalendar, monthOfRound, roundMonthMap, libertadoresClassif, championsClassif, seedOitavasFromGrupos, advanceBracket, resolveCupsKO, buildBulletin, aggRanking, matchScore, scoreName, phasePlayed, cupDigest, cupRoundSpotlight, prizePlan, PRIZE_ROUND, PRIZE_MONTH, PRIZE_ENTRY, MONTH_NAMES, ROUND_MONTH_FALLBACK };
 }

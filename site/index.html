@@ -506,15 +506,16 @@ function renderCup(key){
     phases.push({label:'Grupos',html:`<div class="card"><div class="meta">A fase de grupos começa na rodada ${(cup.classif?cup.classif.rounds[1]+1:'?')}. Aguardando definição dos classificados.</div></div>`});
   }
 
-  // mata-mata
+  // mata-mata (cup[pk] já vem resolvido — ver resolveCupsKO, chamado uma vez no boot())
   const koPhases=[['oitavas','Oitavas'],['quartas','Quartas'],['semis','Semifinais'],['finais','Final']];
   koPhases.forEach(([pk,plabel])=>{
-    if(!cup[pk] || !cup[pk].length) return;
-    const rounds=cup[pk][0].rounds;
-    const anyTeam=cup[pk].some(m=>m.home||m.away);
+    const matches=cup[pk];
+    if(!matches || !matches.length) return;
+    const rounds=matches[0].rounds;
+    const anyTeam=matches.some(m=>m.home||m.away);
     let html=`<div class="lead" style="margin:4px 0 14px">${plabel} · rodadas ${rounds[0]}–${rounds[1]} · classifica quem somar mais pontos</div>`;
     if(anyTeam){
-      html+=`<div class="kgrid">`+cup[pk].map(m=>matchCard(teams,m,color,pk==='finais','ABB '+meta.name)).join('')+`</div>`;
+      html+=`<div class="kgrid">`+matches.map(m=>matchCard(teams,m,color,pk==='finais','ABB '+meta.name)).join('')+`</div>`;
     } else {
       html+=`<div class="card"><div class="meta">Confrontos definidos após a fase anterior.</div></div>`;
     }
@@ -870,6 +871,11 @@ function setupTabs(){
 async function boot(){
   DATA = await fetch('data.json').then(r=>r.json());
   const R = DATA.last_round;
+  // Resolve Oitavas/Quartas/Semis/Final ainda não preenchidas manualmente no data.json,
+  // usando as regras automáticas da liga (ver resolveCupsKO em logic.js). A partir daqui,
+  // DATA.cups já reflete os confrontos calculados — todo o resto do site usa DATA.cups
+  // normalmente, sem precisar saber se veio do JSON ou foi calculado agora.
+  DATA.cups = resolveCupsKO(DATA.cups, DATA.teams, R);
   $('#m-round').textContent = String(R).padStart(2,'0');
   const ativos = DATA.teams.filter(t => t.scores.some(v => v !== null)).length;
   $('#m-teams').textContent = ativos < DATA.teams.length ? `${DATA.teams.length} (${ativos} em jogo)` : DATA.teams.length;

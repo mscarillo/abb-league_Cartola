@@ -4,7 +4,7 @@
  "total_rounds": 38,
  "last_round": 24,
  "market_status": 1,
- "updated": "28/08/2026 15:10 UTC",
+ "updated": "28/08/2026 00:35 UTC",
  "teams": [
   {
    "id": 2311770,
@@ -3482,9 +3482,114 @@
      24
     ],
     "cut_grupos": 32,
-    "cut_uefa": 49
+    "cut_uefa": 48
    },
-   "grupos": [],
+   "grupos": [
+    {
+     "group": "G1",
+     "rounds": [
+      25,
+      28
+     ],
+     "teams": [
+      "FeCross F.C",
+      "ANDREZAO CAMPEÃO",
+      "Catafllan 49ers",
+      "Lilo FC 10"
+     ]
+    },
+    {
+     "group": "G2",
+     "rounds": [
+      25,
+      28
+     ],
+     "teams": [
+      "Godz MatOs",
+      "TRUGILO F.C",
+      "S.C. VanFooThe Amsterdã",
+      "Patsuzaki Master"
+     ]
+    },
+    {
+     "group": "G3",
+     "rounds": [
+      25,
+      28
+     ],
+     "teams": [
+      "Robson Camarotto FC",
+      "Sou Ronaldo",
+      "BIGPOPOFC",
+      "Biliskov Fc"
+     ]
+    },
+    {
+     "group": "G4",
+     "rounds": [
+      25,
+      28
+     ],
+     "teams": [
+      "Bolonha SCSA",
+      "Re Katuni",
+      "Patsuzaki Junior",
+      "Jaderpan"
+     ]
+    },
+    {
+     "group": "G5",
+     "rounds": [
+      25,
+      28
+     ],
+     "teams": [
+      "SC ANDERSON ARAUJO",
+      "ARDM fc",
+      "leão de fênix",
+      "Peixão S.C"
+     ]
+    },
+    {
+     "group": "G6",
+     "rounds": [
+      25,
+      28
+     ],
+     "teams": [
+      "Trivath",
+      "JOGA10SC",
+      "Saci de Patinete Elétrica United",
+      "Esfarelado"
+     ]
+    },
+    {
+     "group": "G7",
+     "rounds": [
+      25,
+      28
+     ],
+     "teams": [
+      "Bonsucesso P G",
+      "Sel.Sorocabana",
+      "DINHOVASCAO",
+      "FC Timeko"
+     ]
+    },
+    {
+     "group": "G8",
+     "rounds": [
+      25,
+      28
+     ],
+     "teams": [
+      "Engineered to Win FC",
+      "Eletrovolt",
+      "Navy Seals EC",
+      "Bosta Verde Sem Mundial"
+     ]
+    }
+   ],
    "oitavas": [
     {
      "tag": "O1",
@@ -3634,8 +3739,8 @@
    "oitavas": [
     {
      "tag": "O1",
-     "home": null,
-     "away": null,
+     "home": "Tubalões77",
+     "away": "Náutico 1901CNC",
      "rounds": [
       29,
       30
@@ -3643,8 +3748,8 @@
     },
     {
      "tag": "O2",
-     "home": null,
-     "away": null,
+     "home": "SC Corinthians de Madrid",
+     "away": "Coxakury79",
      "rounds": [
       29,
       30
@@ -3652,8 +3757,8 @@
     },
     {
      "tag": "O3",
-     "home": null,
-     "away": null,
+     "home": "katuni02",
+     "away": "Farturinhas FC",
      "rounds": [
       29,
       30
@@ -3661,8 +3766,8 @@
     },
     {
      "tag": "O4",
-     "home": null,
-     "away": null,
+     "home": "Xitos Club",
+     "away": "Trikas Paulistano",
      "rounds": [
       29,
       30
@@ -3670,8 +3775,8 @@
     },
     {
      "tag": "O5",
-     "home": null,
-     "away": null,
+     "home": "Tangue SCCP",
+     "away": "Clube América Central",
      "rounds": [
       29,
       30
@@ -3679,8 +3784,8 @@
     },
     {
      "tag": "O6",
-     "home": null,
-     "away": null,
+     "home": "S.E. Porcomuna",
+     "away": "Obey Team",
      "rounds": [
       29,
       30
@@ -3688,8 +3793,8 @@
     },
     {
      "tag": "O7",
-     "home": null,
-     "away": null,
+     "home": "Street Angels BR",
+     "away": "EC VTNC",
      "rounds": [
       29,
       30
@@ -3697,8 +3802,8 @@
     },
     {
      "tag": "O8",
-     "home": null,
-     "away": null,
+     "home": "FC timekin jr",
+     "away": "C. A. Só Nus Tapa",
      "rounds": [
       29,
       30

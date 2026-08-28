@@ -77,7 +77,8 @@ Depois publique a pasta `site/` onde preferir.
 - **ABB League:** pontos corridos, soma das 38 rodadas.
 - **Libertadores:** classificatória rod. 1–5 (top 24 diretos; 25º–40º fase Tolima;
   41º–48º vão para a Sulamericana; 49º–51º eliminados).
-- **Champions:** classificatória rod. 20–24 (top 32 grupos; 33º–49º vão para a UEFA).
+- **Champions:** classificatória rod. 20–24 (top 32 grupos; 33º–48º vão direto para as
+  oitavas da UEFA; 49º em diante eliminado).
 - **Vencedor de rodada:** maior pontuação de cada rodada.
 - **Vencedor do mês:** maior soma em blocos de 4 rodadas (ajustável em `logic.js`,
   parâmetro `blockSize`).

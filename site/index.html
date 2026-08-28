@@ -7,7 +7,7 @@
 <link rel="icon" type="image/jpeg" href="logo.jpg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Archivo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Oswald:wght@400;500;600;700&family=Archivo:wght@400;500;600;700;800&family=Anton&family=Playfair+Display:ital,wght@0,600;0,700;0,900;1,600;1,700&family=Libre+Baskerville:ital@0;1&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#f0f1f3; --bg2:#e7e9ec; --panel:#ffffff; --panel2:#f5f6f8;
@@ -220,6 +220,76 @@ select{font-family:'Oswald';background:var(--panel);color:var(--txt);border:1px 
 .pill.dim{color:var(--dim)}
 @media(max-width:760px){.g3,.g2{grid-template-columns:1fr}.hide-sm{display:none}h2.sec{font-size:30px}.logo{width:64px}.herotop{gap:14px}.prizecard{flex-direction:column}}
 
+/* ---------- JORNAL (aba "Jornal") — namespace jrn- isolado, não reaproveita nem */
+/* sobrescreve nenhuma classe das outras abas.                                    */
+.jrn-wrap{
+  --paper:#f3ecda; --paper2:#ece2c8; --ink:#1c1a16; --ink2:#3a352c; --hair:rgba(28,26,22,.22);
+  background:var(--paper); color:var(--ink); font-family:'Libre Baskerville',Georgia,serif;
+  border:1px solid var(--ink); border-radius:2px; padding:28px clamp(16px,4vw,46px) 44px;
+  position:relative; overflow:hidden; box-shadow:var(--shadow);
+}
+.jrn-wrap::before{content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='jn'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23jn)' opacity='.05'/%3E%3C/svg%3E");}
+.jrn-wrap>*{position:relative;z-index:1}
+.jrn-masthead{text-align:center;padding:8px 0 12px}
+.jrn-kicker-top{font-family:'Oswald';font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink2);opacity:.7}
+.jrn-h1{font-family:'Anton';font-weight:400;font-size:clamp(40px,8vw,88px);letter-spacing:.01em;line-height:.9;margin:6px 0 4px;color:var(--ink)}
+.jrn-tagline{font-family:'Playfair Display';font-style:italic;font-size:15px;color:var(--ink2)}
+.jrn-rule-thick{height:5px;background:var(--ink)}
+.jrn-rule-thin{height:1.5px;background:var(--ink);margin-top:3px}
+.jrn-dateline{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;
+  font-family:'Oswald';font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink2);
+  padding:9px 2px;border-bottom:3px double var(--ink)}
+.jrn-dateline b{color:var(--red)}
+.jrn-lead{padding:24px 0 10px}
+.jrn-tagkicker{display:inline-block;font-family:'Oswald';font-weight:700;font-size:12px;letter-spacing:.16em;
+  text-transform:uppercase;background:var(--red);color:#fdf7e8;padding:4px 12px;margin-bottom:12px}
+.jrn-lead h2{font-family:'Anton';font-weight:400;font-size:clamp(28px,4.6vw,50px);line-height:.98;letter-spacing:.005em;margin-bottom:10px;color:var(--ink)}
+.jrn-dek{font-family:'Playfair Display';font-style:italic;font-weight:600;font-size:18px;color:var(--ink2);max-width:900px;margin-bottom:14px}
+.jrn-byline{font-family:'Oswald';font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink2);opacity:.65;margin-bottom:16px}
+.jrn-lead-body{column-count:2;column-gap:34px;column-rule:1px solid var(--hair);font-size:15.5px;line-height:1.7;text-align:justify;color:var(--ink)}
+.jrn-lead-body p{margin-bottom:12px;break-inside:avoid}
+.jrn-dropcap::first-letter{font-family:'Anton';font-size:56px;line-height:.78;float:left;padding:4px 8px 0 0;color:var(--red)}
+.jrn-floor{display:grid;grid-template-columns:2fr 1fr;gap:36px;margin-top:22px;align-items:start}
+@media (max-width:820px){.jrn-floor{grid-template-columns:1fr}}
+.jrn-section-title{display:flex;align-items:center;gap:10px;margin:20px 0 14px}
+.jrn-bar{background:var(--ink);color:var(--paper);font-family:'Oswald';font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;padding:6px 12px}
+.jrn-hline{flex:1;height:1.5px;background:var(--ink)}
+.jrn-briefs{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}
+@media (max-width:560px){.jrn-briefs{grid-template-columns:1fr}}
+.jrn-brief{padding:14px 0;border-bottom:1px solid var(--hair)}
+.jrn-brief .jrn-bh{font-family:'Playfair Display';font-weight:700;font-size:16.5px;line-height:1.25;margin-bottom:4px;color:var(--ink)}
+.jrn-brief p{font-size:13.8px;line-height:1.55;color:var(--ink2)}
+.jrn-twocol{column-count:2;column-gap:30px;column-rule:1px solid var(--hair);font-size:14.5px;line-height:1.65;color:var(--ink)}
+.jrn-twocol h3{font-family:'Playfair Display';font-weight:700;font-size:18px;margin:2px 0 6px;break-after:avoid}
+.jrn-twocol p{margin-bottom:10px;text-align:justify;break-inside:avoid}
+.jrn-movelist{list-style:none;font-size:13.5px;margin:6px 0 14px;break-inside:avoid}
+.jrn-movelist li{padding:3px 0;border-bottom:1px dotted var(--hair);display:flex;justify-content:space-between;gap:8px}
+.jrn-movelist .up{color:#2c6b2f;font-weight:700}
+.jrn-movelist .down{color:var(--red);font-weight:700}
+.jrn-box{border:1.5px solid var(--ink);margin-bottom:26px;background:rgba(255,255,255,.28)}
+.jrn-box .jrn-bh{background:var(--ink);color:var(--paper);font-family:'Oswald';font-weight:700;font-size:12.5px;letter-spacing:.14em;text-transform:uppercase;padding:9px 12px}
+.jrn-box .jrn-bb{padding:12px 14px;color:var(--ink)}
+.jrn-stand{width:100%;border-collapse:collapse;font-size:13px}
+.jrn-stand td{padding:5px 2px;border-bottom:1px dotted var(--hair)}
+.jrn-stand td.jrn-pos{font-family:'Oswald';font-weight:700;width:22px;color:var(--red)}
+.jrn-stand td.jrn-pts{text-align:right;font-family:'Oswald';font-weight:600;white-space:nowrap}
+.jrn-stand tr:last-child td{border-bottom:none}
+.jrn-scorebox{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dotted var(--hair);font-size:13px}
+.jrn-scorebox:last-child{border-bottom:none}
+.jrn-scorebox .jrn-n{font-family:'Oswald';font-weight:700;color:var(--ink2);margin-right:6px}
+.jrn-scorebox .jrn-p{font-family:'Oswald';font-weight:700}
+.jrn-agenda-item{font-size:12.8px;line-height:1.55;padding:7px 0;border-bottom:1px dotted var(--hair);color:var(--ink)}
+.jrn-agenda-item:last-child{border-bottom:none}
+.jrn-ad{border:1.5px dashed var(--ink);padding:16px;text-align:center;font-family:'Playfair Display';font-style:italic;font-size:14px;color:var(--ink2);margin-bottom:4px}
+.jrn-ad b{display:block;font-family:'Anton';font-style:normal;font-size:22px;color:var(--red);margin-bottom:4px}
+.jrn-empty-note{font-family:'Playfair Display';font-style:italic;color:var(--ink2);padding:6px 0}
+@media (max-width:640px){
+  .jrn-lead-body{column-count:1}
+  .jrn-twocol{column-count:1}
+  .jrn-dropcap::first-letter{font-size:42px}
+}
+
 </style>
 </head>
 <body>
@@ -247,6 +317,7 @@ select{font-family:'Oswald';background:var(--panel);color:var(--txt);border:1px 
     <button data-v="premios">Premiações</button>
     <button data-v="plano">Premiação R$</button>
     <button data-v="boletim">Boletim da Rodada</button>
+    <button data-v="jornal">Jornal</button>
     <button data-v="hof">Hall of Fame</button>
   </nav>
 
@@ -300,6 +371,26 @@ select{font-family:'Oswald';background:var(--panel);color:var(--txt);border:1px 
       <select id="bull-select"></select>
     </div>
     <div id="bull-target"></div>
+  </section>
+
+  <!-- JORNAL -->
+  <section class="view" id="v-jornal">
+    <h2 class="sec">O Jornal da ABB League <span>O boletim esportivo em formato de jornal</span></h2>
+    <div class="selectrow">
+      <span class="lbl" style="font-family:'Oswald';color:var(--muted)">Escolha a edição:</span>
+      <select id="jrn-select"></select>
+    </div>
+    <div class="jrn-wrap">
+      <div class="jrn-masthead">
+        <div class="jrn-kicker-top">Fundado em 2026 &middot; Circulação semanal &middot; Rodada a rodada</div>
+        <h1 class="jrn-h1">ABB LEAGUE</h1>
+        <div class="jrn-tagline">&ldquo;O Jornal do Cartola mais temido do Brasil&rdquo;</div>
+      </div>
+      <div class="jrn-rule-thick"></div>
+      <div class="jrn-rule-thin"></div>
+      <div class="jrn-dateline" id="jrn-dateline"></div>
+      <div id="jrn-content"></div>
+    </div>
   </section>
 
   <!-- HALL OF FAME -->
@@ -752,7 +843,8 @@ function monthLabel(blockIndex){
 
 function renderBulletin(r){
   const b=buildBulletin(DATA.teams,r);
-  const story=composeStory(b);
+  // narrativa da rodada (ABB League) + uma frase mencionando as 5 copas continentais
+  const story=composeStory(b)+' '+cupsStoryLine(DATA.cups,DATA.teams,r);
 
   // mês real a que esta rodada pertence (calendário CBF / data da API)
   const mo=monthOfRound(DATA,r);
@@ -763,25 +855,12 @@ function renderBulletin(r){
   const monthClosed=(r>=DATA.total_rounds)||(nextMo!==mo.month);
   const mRmin=curMonth?Math.min(...curMonth.rounds):r, mRmax=curMonth?Math.max(...curMonth.rounds):r;
 
-  // destaque do que está rolando nas copas em paralelo, nesta rodada específica
-  const spot=cupRoundSpotlight(DATA.cups,DATA.teams,r);
+  // status detalhado das 5 copas nesta rodada — sempre mostra todas, inclusive fases já
+  // definidas mas ainda não iniciadas (ex.: grupos da Champions, oitavas da UEFA).
+  const overview=cupOverviewLines(DATA.cups,DATA.teams,r);
   let cupSpotlightHtml='';
-  if(spot.length){
-    const lines=spot.map(s=>{
-      if(s.isEnd&&s.isFinal&&s.result&&s.result.winners&&s.result.winners.length){
-        return `<div class="cs-line cs-champion">🏆 <b>${s.cup}</b> — Final decidida nesta rodada! Campeão: <b>${s.result.winners[0]}</b></div>`;
-      }
-      if(s.isEnd&&s.result&&s.result.type==='matomata'&&s.result.winners.length){
-        return `<div class="cs-line">✅ <b>${s.cup}</b> — ${s.phase} concluída nesta rodada. Classificados: ${s.result.winners.join(', ')}</div>`;
-      }
-      if(s.isEnd){
-        return `<div class="cs-line">✅ <b>${s.cup}</b> — ${s.phase} chega ao fim nesta rodada, definindo os classificados.</div>`;
-      }
-      if(s.isStart){
-        return `<div class="cs-line">🔔 <b>${s.cup}</b> — começa a ${s.phase} (rod. ${s.rounds[0]}–${s.rounds[1]}).</div>`;
-      }
-      return `<div class="cs-line dim">⏳ <b>${s.cup}</b> — ${s.phase} em andamento (rod. ${s.rounds[0]}–${s.rounds[1]}).</div>`;
-    }).join('');
+  if(overview.length){
+    const lines=overview.map(o=>`<div class="cs-line${o.kind==='champion'?' cs-champion':''}${o.kind==='dim'?' dim':''}">${o.html}</div>`).join('');
     cupSpotlightHtml=`<div class="cup-highlight"><div class="cs-title">🏟️ Também nas Copas — rodada ${String(r).padStart(2,'0')}</div>${lines}</div>`;
   }
 
@@ -808,8 +887,8 @@ function renderBulletin(r){
     dig.forEach(c=>{
       cupsHtml+=`<div class="cupdig"><div class="cupdig-h">${c.cup}</div>`;
       c.phases.forEach(p=>{
-        const items=p.classif.length
-          ? p.classif.map(x=>`<span class="pill">${x.tag?x.tag+': ':''}${x.name}${x.group?' ('+x.group.replace('G','G')+')':''} <b>${fmt(x.sum)}</b></span>`).join('')
+        const items=p.items&&p.items.length
+          ? p.items.map(t=>`<span class="pill">${t}</span>`).join('')
           : `<span class="pill dim">aguardando</span>`;
         cupsHtml+=`<div class="cupdig-p"><span class="ph">${p.phase} · ${p.status}</span><div class="pills">${items}</div></div>`;
       });
@@ -859,6 +938,184 @@ function composeStory(b){
   return parts.join(' ');
 }
 
+// ============================================================================
+// JORNAL (aba "Jornal") — lê o mesmo DATA já carregado por boot(), sem novo
+// fetch. Todos os identificadores (funções, classes CSS) usam o prefixo jrn/Jrn
+// pra nunca colidir com nada usado pelo Boletim da Rodada ou pelas outras abas.
+// ============================================================================
+const JRN_CUP_META={
+  libertadores:{label:'ABB Libertadores'},
+  sulamericana:{label:'ABB Sul-Americana'},
+  champions:{label:'ABB Champions'},
+  uefa:{label:'ABB UEFA'},
+  mundial:{label:'ABB Mundial'},
+};
+const JRN_CUP_KEYS=['libertadores','sulamericana','champions','uefa','mundial'];
+
+function jrnFinalWinner(teams,f){
+  if(!f||!f.home||!f.away) return null;
+  const h=matchScore(teams,f.home,f.rounds), a=matchScore(teams,f.away,f.rounds);
+  if(h.played===0||a.played===0) return null;
+  return h.sum>=a.sum ? {name:f.home,sum:h.sum} : {name:f.away,sum:a.sum};
+}
+
+// escolhe a manchete principal desta edição: prioriza um título de copa decidido
+// EXATAMENTE nesta rodada; senão, o "mitada" da rodada (ABB League)
+function jrnPickLead(r){
+  for(const key of JRN_CUP_KEYS){
+    const cup=DATA.cups[key];
+    if(!cup||!cup.finais||!cup.finais.length) continue;
+    const f=cup.finais[0];
+    if(f.rounds[1]===r){
+      const w=jrnFinalWinner(DATA.teams,f);
+      if(w){
+        return {
+          kicker:`É CAMPEÃO — ${JRN_CUP_META[key].label.toUpperCase()}`,
+          headline:`${w.name.toUpperCase()} LEVANTA A TAÇA!`,
+          dek:`Com ${fmt(w.sum)} pontos na decisão (rod. ${f.rounds[0]}–${f.rounds[1]}), o time confirma o título da ${JRN_CUP_META[key].label} e entra para a história da temporada.`,
+        };
+      }
+    }
+  }
+  const b=buildBulletin(DATA.teams,r);
+  return {
+    kicker:`RODADA ${String(r).padStart(2,'0')} &middot; A MITADA`,
+    headline:`${b.winner.name.toUpperCase()} CRAVA ${fmt(b.winner.v)} E LEVA A RODADA`,
+    dek:`Com média geral de ${fmt(b.avg)} pontos, ${b.leader.name} segue na ponta da tabela com ${fmt(b.leader.total)} — enquanto ${b.worst.name} amarga a lanterna da rodada, com ${fmt(b.worst.v)}.`,
+    b,
+  };
+}
+
+function jrnLeadBody(r,lead){
+  const b=lead.b||buildBulletin(DATA.teams,r);
+  const cupsLine=cupsStoryLine(DATA.cups,DATA.teams,r);
+  const climb=b.climbers[0] ? `<p>Quem fez a torcida vibrar foi <b>${b.climbers[0].name}</b>, que escalou ${b.climbers[0].delta} posições na tabela geral e chegou ao ${b.climbers[0].pos}º lugar — daquelas rodadas para comentar na roda de bar.</p>` : '';
+  return `
+    <p>A rodada ${r} da ABB League ficou marcada por ${b.winner.name}, que cravou <b>${fmt(b.winner.v)} pontos</b> e ficou com a mitada da semana, muito acima da média geral de ${fmt(b.avg)}. Do outro lado da tabela, ${b.worst.name} não teve a mesma sorte e fechou a rodada na lanterna, com ${fmt(b.worst.v)} pontos.</p>
+    <p>Na ponta da classificação geral, <b>${b.leader.name}</b> seguiu confirmando a boa fase e seguiu na liderança, agora com ${fmt(b.leader.total)} pontos somados ao longo da temporada.</p>
+    ${climb}
+    <p>${cupsLine}</p>
+  `;
+}
+
+function jrnBriefsHtml(r){
+  const lines=cupOverviewLines(DATA.cups,DATA.teams,r);
+  if(!lines.length) return `<div class="jrn-empty-note">Nenhuma copa em andamento nesta edição.</div>`;
+  return `<div class="jrn-briefs">`+lines.map(o=>{
+    // o.html já vem como "🌎 <b>ABB Libertadores</b>: resto" — separa em título + corpo
+    const m=o.html.match(/^(.*?)<\/b>:\s*(.*)$/s);
+    const title=m?m[1]+'</b>':o.html, body=m?m[2]:'';
+    return `<div class="jrn-brief"><div class="jrn-bh">${title}</div><p>${body}</p></div>`;
+  }).join('')+`</div>`;
+}
+
+function jrnStandingsBox(r){
+  const table=abbLeagueTable(DATA.teams,r).slice(0,10);
+  const rows=table.map(t=>`<tr><td class="jrn-pos">${t.pos}</td><td>${t.name}</td><td class="jrn-pts">${fmt(t.total)}</td></tr>`).join('');
+  return `<div class="jrn-box"><div class="jrn-bh">Tabela &middot; Top 10</div><div class="jrn-bb"><table class="jrn-stand">${rows}</table></div></div>`;
+}
+
+function jrnScoreBox(r){
+  const b=buildBulletin(DATA.teams,r);
+  const rows=b.top5.map((t,i)=>`<div class="jrn-scorebox"><span><span class="jrn-n">${i+1}.</span>${t.name}</span><span class="jrn-p">${fmt(t.v)}</span></div>`).join('');
+  return `<div class="jrn-box"><div class="jrn-bh">Placar da Rodada ${String(r).padStart(2,'0')}</div><div class="jrn-bb">${rows}</div></div>`;
+}
+
+function jrnAgendaBox(r){
+  const lines=cupOverviewLines(DATA.cups,DATA.teams,r).filter(o=>o.kind==='dim');
+  if(!lines.length) return '';
+  const items=lines.map(o=>`<div class="jrn-agenda-item">${o.html}</div>`).join('');
+  return `<div class="jrn-box"><div class="jrn-bh">O que vem por a&iacute;</div><div class="jrn-bb">${items}</div></div>`;
+}
+
+function jrnMoversHtml(r){
+  const b=buildBulletin(DATA.teams,r);
+  const up=b.climbers.map(c=>`<li><span>${c.name}</span><span class="up">&#9650; ${c.delta} &rarr; ${c.pos}&ordm;</span></li>`).join('')||'<li>Sem variações na rodada.</li>';
+  const down=b.fallers.map(c=>`<li><span>${c.name}</span><span class="down">&#9660; ${Math.abs(c.delta)} &rarr; ${c.pos}&ordm;</span></li>`).join('')||'<li>Sem variações na rodada.</li>';
+  return `
+    <h3>Sobe e desce da rodada</h3>
+    <p>Confira quem mais avançou e quem mais perdeu posições na tabela geral nesta rodada — o resumo de quem fez a festa e de quem viu o Cartola cobrar a conta.</p>
+    <ul class="jrn-movelist">${up}</ul>
+    <ul class="jrn-movelist">${down}</ul>
+  `;
+}
+
+function jrnMonthHtml(r){
+  const mo=monthOfRound(DATA,r);
+  const months=monthlyWinnersByCalendar(DATA,DATA.teams,r);
+  const cur=months.find(m=>m.month===mo.month);
+  if(!cur||!cur.winner) return '';
+  return `
+    <h3>Cartola do mês</h3>
+    <p>Somando as rodadas de ${mo.name}, quem mais pontuou até aqui foi <b>${cur.winner.name}</b>, com ${fmt(cur.winner.sum)} pontos no acumulado do mês — na disputa por mais um prêmio de R$ ${fmt(PRIZE_MONTH)}.</p>
+  `;
+}
+
+function jrnDigestHtml(r){
+  const dig=cupDigest(DATA.cups,DATA.teams,r);
+  if(!dig.length) return '';
+  const parts=dig.map(c=>{
+    const phases=c.phases.map(p=>{
+      const items=p.items&&p.items.length ? p.items.join(' &middot; ') : 'aguardando';
+      return `<p><b>${p.phase} (${p.status.toLowerCase()}):</b> ${items}</p>`;
+    }).join('');
+    return `<div style="margin-bottom:16px"><h3>${c.cup}</h3>${phases}</div>`;
+  }).join('');
+  return `
+    <div class="jrn-section-title"><div class="jrn-bar">Boletim Oficial das Copas</div><div class="jrn-hline"></div></div>
+    <div style="font-size:13.3px;line-height:1.6;color:var(--ink2)">${parts}</div>
+  `;
+}
+
+function renderJornal(r){
+  const lead=jrnPickLead(r);
+  $('#jrn-dateline').innerHTML=`
+    <span>Edi&ccedil;&atilde;o N&ordm; ${String(r).padStart(3,'0')}</span>
+    <span>Rodada <b>${r}</b> de ${DATA.total_rounds}</span>
+    <span>${DATA.updated||'dados oficiais da API do Cartola FC'}</span>
+  `;
+  $('#jrn-content').innerHTML=`
+    <div class="jrn-lead">
+      <span class="jrn-tagkicker">${lead.kicker}</span>
+      <h2>${lead.headline}</h2>
+      <div class="jrn-dek">${lead.dek}</div>
+      <div class="jrn-byline">Reda&ccedil;&atilde;o ABB League &middot; Rodada ${String(r).padStart(2,'0')}</div>
+      <div class="jrn-lead-body jrn-dropcap">${jrnLeadBody(r,lead)}</div>
+    </div>
+
+    <div class="jrn-section-title"><div class="jrn-bar">Copas em dia</div><div class="jrn-hline"></div></div>
+    ${jrnBriefsHtml(r)}
+
+    <div class="jrn-floor">
+      <div>
+        <div class="jrn-section-title"><div class="jrn-bar">Coluna da Rodada</div><div class="jrn-hline"></div></div>
+        <div class="jrn-twocol">
+          ${jrnMoversHtml(r)}
+          ${jrnMonthHtml(r)}
+        </div>
+        ${jrnDigestHtml(r)}
+      </div>
+      <div>
+        ${jrnStandingsBox(r)}
+        ${jrnScoreBox(r)}
+        ${jrnAgendaBox(r)}
+        <div class="jrn-ad"><b>ABB LEAGUE</b>O jornal oficial da liga, atualizado a cada rodada.</div>
+      </div>
+    </div>
+  `;
+}
+
+function setupJornal(){
+  const sel=$('#jrn-select'); sel.innerHTML='';
+  for(let r=DATA.last_round;r>=1;r--){
+    const o=document.createElement('option');
+    o.value=r; o.textContent=`Edição ${String(r).padStart(3,'0')} · Rodada ${String(r).padStart(2,'0')}`;
+    sel.appendChild(o);
+  }
+  sel.onchange=()=>renderJornal(+sel.value);
+  renderJornal(DATA.last_round);
+}
+
 function setupTabs(){
   const btns=[...document.querySelectorAll('#tabs button')];
   btns.forEach(b=>b.onclick=()=>{
@@ -888,6 +1145,7 @@ async function boot(){
   renderPremios();
   renderPlano();
   setupBulletin();
+  setupJornal();
   renderHallOfFame();
   setupTabs();
   renderFooter();

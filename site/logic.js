@@ -314,89 +314,255 @@ function monthOfRound(data, r) {
 
 // Resultados das copas até uma dada rodada: por fase, lista de confrontos decididos
 // + classificados. Usado no boletim para "vencedores e classificados de cada etapa".
-function cupDigest(cups, teams, lastRound) {
-  if (!cups) return [];
-  const order = [
-    ['libertadores', 'ABB Libertadores'],
-    ['sulamericana', 'ABB Sul-Americana'],
-    ['champions', 'ABB Champions'],
-    ['uefa', 'ABB UEFA'],
-    ['mundial', 'ABB Mundial'],
-  ];
-  const phaseOrder = [
-    ['grupos', 'Fase de Grupos'],
-    ['oitavas', 'Oitavas de Final'],
-    ['quartas', 'Quartas de Final'],
-    ['semis', 'Semifinais'],
-    ['finais', 'Final'],
-  ];
-  const out = [];
-  for (const [key, label] of order) {
-    const cup = cups[key];
-    if (!cup) continue;
-    const phases = [];
-    // grupos: classificados (2 por grupo) se a fase já terminou
-    if (cup.grupos && cup.grupos.length) {
-      const [a, b] = cup.grupos[0].rounds;
-      if (lastRound >= b) {
-        const classif = [];
-        cup.grupos.forEach(g => {
-          const rk = g.teams.map(n => ({ name: n, ...matchScore(teams, n, g.rounds) }))
-            .sort((x, y) => y.sum - x.sum);
-          rk.slice(0, 2).forEach(t => classif.push({ name: t.name, sum: t.sum, group: g.group }));
-        });
-        phases.push({ phase: 'Fase de Grupos', status: 'Encerrada', classif });
-      } else if (lastRound >= a) {
-        phases.push({ phase: 'Fase de Grupos', status: 'Em andamento', classif: [] });
-      }
-    }
-    // mata-mata
-    for (const [pk, plabel] of phaseOrder) {
-      if (pk === 'grupos') continue;
-      if (!cup[pk] || !cup[pk].length) continue;
-      const rounds = cup[pk][0].rounds;
-      if (lastRound < rounds[0]) continue;
-      const done = lastRound >= rounds[1];
-      const winners = [];
-      cup[pk].forEach(m => {
-        if (!m.home && !m.away) return;
-        const a = m.home ? matchScore(teams, m.home, m.rounds) : { sum: 0, played: 0 };
-        const bb = m.away ? matchScore(teams, m.away, m.rounds) : { sum: 0, played: 0 };
-        if (a.played > 0 && bb.played > 0) {
-          const w = a.sum >= bb.sum ? m.home : m.away;
-          const ws = a.sum >= bb.sum ? a.sum : bb.sum;
-          winners.push({ tag: m.tag, name: w, sum: ws });
-        }
-      });
-      phases.push({ phase: plabel, status: done ? 'Encerrada' : 'Em andamento', classif: winners });
-    }
-    if (phases.length) out.push({ cup: label, phases });
+// ---------- Visão geral das copas (usado no Boletim da Rodada) ----------
+// Nomes/ordem/pluralização de cada fase, usados tanto no resumo detalhado quanto na
+// frase corrida do boletim.
+const CUP_ORDER = [
+  ['libertadores', 'ABB Libertadores'],
+  ['sulamericana', 'ABB Sul-Americana'],
+  ['champions', 'ABB Champions'],
+  ['uefa', 'ABB UEFA'],
+  ['mundial', 'ABB Mundial'],
+];
+const CUP_EMOJI = { libertadores: '🌎', sulamericana: '🥈', champions: '⭐', uefa: '🇪🇺', mundial: '🌍' };
+const PHASE_ORDER = ['classif', 'grupos', 'oitavas', 'quartas', 'semis', 'finais'];
+const PHASE_LABEL = { classif: 'Classificatória', grupos: 'Fase de Grupos', oitavas: 'Oitavas de Final', quartas: 'Quartas de Final', semis: 'Semifinais', finais: 'Final' };
+const PHASE_LABEL_LOWER = { classif: 'a classificatória', grupos: 'a fase de grupos', oitavas: 'as oitavas de final', quartas: 'as quartas de final', semis: 'as semifinais', finais: 'a final' };
+const PHASE_PLURAL = { classif: false, grupos: false, oitavas: true, quartas: true, semis: true, finais: false };
+
+function fmtNum(n) {
+  return Number(n).toLocaleString('pt-BR', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+}
+function phaseEntries(cup, pk) {
+  if (pk === 'classif') return (cup.classif && cup.classif.rounds) ? [cup.classif] : [];
+  return cup[pk] || [];
+}
+// "definida" = já sabemos os times (grupos sorteados, ou confronto de mata-mata com
+// home/away preenchidos), mesmo que a fase ainda não tenha sido disputada.
+function phaseIsDefined(pk, entries) {
+  if (!entries.length) return false;
+  if (pk === 'classif' || pk === 'grupos') return true;
+  return entries.some(m => m.home || m.away);
+}
+function firstDefinedPhase(cup) {
+  for (const pk of PHASE_ORDER) {
+    const entries = phaseEntries(cup, pk);
+    if (entries.length) return { pk, entries };
   }
+  return null;
+}
+function phaseAfter(cup, pk0) {
+  const idx = PHASE_ORDER.indexOf(pk0);
+  for (let i = idx + 1; i < PHASE_ORDER.length; i++) {
+    const entries = phaseEntries(cup, PHASE_ORDER[i]);
+    if (entries.length) return { pk: PHASE_ORDER[i], entries };
+  }
+  return null;
+}
+function koWinnerOf(teams, m) {
+  if (!m.home || !m.away) return null;
+  const h = matchScore(teams, m.home, m.rounds), a = matchScore(teams, m.away, m.rounds);
+  if (h.played === 0 || a.played === 0) return null;
+  return h.sum >= a.sum ? m.home : m.away;
+}
+function describePhase(pk, entries) {
+  const rounds = entries[0].rounds;
+  const plural = PHASE_PLURAL[pk];
+  if (phaseIsDefined(pk, entries)) {
+    return `${PHASE_LABEL[pk]} já ${plural ? 'definidas' : 'definida'}${rounds ? ` (rod. ${rounds[0]}–${rounds[1]})` : ''}`;
+  }
+  return `${PHASE_LABEL[pk]} a partir da rodada ${rounds[0]}`;
+}
+// Encontra a fase mais avançada de uma copa que já começou (lastRound >= rounds[0]) e,
+// junto, a próxima fase já conhecida — base de tudo que é mostrado no boletim sobre copas.
+function cupPhaseSnapshot(cup, lastRound) {
+  let current = null;
+  for (let i = PHASE_ORDER.length - 1; i >= 0; i--) {
+    const pk = PHASE_ORDER[i];
+    const entries = phaseEntries(cup, pk);
+    if (!entries.length) continue;
+    const rounds = entries[0].rounds;
+    if (!rounds || lastRound < rounds[0]) continue;
+    current = { pk, entries, rounds, done: lastRound >= rounds[1] };
+    break;
+  }
+  const next = current ? phaseAfter(cup, current.pk) : firstDefinedPhase(cup);
+  return { current, next };
+}
+
+// Uma linha detalhada por copa (usado em "Também nas Copas"): sempre mostra as 5 copas,
+// com o status mais específico possível — inclusive fases já definidas mas ainda não
+// iniciadas (ex.: "Fase de Grupos já definida", "Oitavas de Final já definidas").
+function cupOverviewLines(cups, teams, lastRound) {
+  if (!cups) return [];
+  const out = [];
+  CUP_ORDER.forEach(([key, label]) => {
+    const cup = cups[key];
+    if (!cup) return;
+    const emoji = CUP_EMOJI[key] || '🏆';
+    const { current, next } = cupPhaseSnapshot(cup, lastRound);
+    let text, kind = 'normal';
+    if (!current) {
+      kind = 'dim';
+      if (!next) {
+        text = `ainda sem confrontos definidos.`;
+      } else if (phaseIsDefined(next.pk, next.entries)) {
+        text = `${describePhase(next.pk, next.entries)}, aguardando início.`;
+      } else {
+        text = `ainda não começou — ${describePhase(next.pk, next.entries)}.`;
+      }
+    } else if (current.pk === 'finais' && current.done) {
+      const champ = koWinnerOf(teams, current.entries[0]);
+      kind = 'champion';
+      text = champ ? `🏆 <b>campeã definida: ${champ}</b>!` : `final encerrada, apurando o resultado.`;
+    } else if (current.pk === 'finais') {
+      const f = current.entries[0];
+      text = `disputando a <b>Final</b> (rod. ${current.rounds[0]}–${current.rounds[1]})${f.home && f.away ? `: ${f.home} x ${f.away}` : ''}.`;
+    } else if (current.done) {
+      const lbl = PHASE_LABEL[current.pk] + (PHASE_PLURAL[current.pk] ? ' encerradas' : ' encerrada');
+      text = next ? `${lbl} — ${describePhase(next.pk, next.entries)}.` : `${lbl}.`;
+      if (current.rounds[1] === lastRound) text += ' ✅ (fechou nesta rodada)';
+    } else {
+      text = `${PHASE_LABEL[current.pk]} em andamento (rod. ${current.rounds[0]}–${current.rounds[1]}).`;
+      if (current.rounds[0] === lastRound) text += ' 🔔 (começa nesta rodada)';
+    }
+    out.push({ key, cup: label, kind, html: `${emoji} <b>${label}</b>: ${text}` });
+  });
   return out;
 }
 
-// Fases de copa ativas numa rodada específica (começando, em andamento ou terminando)
-// — usado para destacar, no boletim da rodada, o que está acontecendo nas copas em
-// paralelo aos pontos corridos.
+// Frase corrida (uma linha só, mencionando as 5 copas) para entrar no texto narrativo do
+// boletim (composeStory), ao lado do resumo do desempenho da rodada.
+function cupsStoryLine(cups, teams, lastRound) {
+  if (!cups) return '';
+  const clauses = CUP_ORDER.map(([key, label]) => {
+    const cup = cups[key];
+    if (!cup) return null;
+    const { current } = cupPhaseSnapshot(cup, lastRound);
+    if (!current) return `${label} ainda não começou`;
+    if (current.pk === 'finais' && current.done) {
+      const champ = koWinnerOf(teams, current.entries[0]);
+      return champ ? `${label} já tem campeã definida: <b>${champ}</b>` : `${label} decidiu o título nesta rodada`;
+    }
+    const lbl = PHASE_LABEL_LOWER[current.pk];
+    return current.done ? `${label} encerrou ${lbl}` : `${label} disputa ${lbl} (rod. ${current.rounds[0]}–${current.rounds[1]})`;
+  }).filter(Boolean);
+  if (!clauses.length) return '';
+  const last = clauses.pop();
+  return `Nas copas continentais, ${clauses.join('; ')}; e ${last}.`;
+}
+
+// Resumo "Resultados das Copas até a rodada N": inclui TODAS as copas com algo a mostrar,
+// desde a classificatória (Libertadores/Champions) até a final — inclusive fases já
+// sorteadas/definidas mas ainda não disputadas (ex.: grupos da Champions, oitavas da UEFA).
+function cupDigest(cups, teams, lastRound) {
+  if (!cups) return [];
+  const out = [];
+  CUP_ORDER.forEach(([key, label]) => {
+    const cup = cups[key];
+    if (!cup) return;
+    const phases = [];
+
+    // Classificatória (Libertadores e Champions)
+    if (cup.classif && cup.classif.rounds) {
+      const [a, b] = cup.classif.rounds;
+      if (lastRound >= b) {
+        const rank = aggRanking(teams, a, b).filter(x => x.played > 0);
+        phases.push({ phase: 'Classificatória', status: 'Encerrada', items: classifDestinySummary(key, rank) });
+      } else if (lastRound >= a) {
+        phases.push({ phase: 'Classificatória', status: 'Em andamento', items: [] });
+      }
+    }
+
+    // Fase de grupos
+    if (cup.grupos && cup.grupos.length) {
+      const [a, b] = cup.grupos[0].rounds;
+      if (lastRound >= b) {
+        const items = cup.grupos.map(g => {
+          const rk = g.teams.map(n => ({ name: n, ...matchScore(teams, n, g.rounds) })).sort((x, y) => y.sum - x.sum);
+          const top2 = rk.slice(0, 2).map(t => `${t.name} (${fmtNum(t.sum)})`).join(', ');
+          return `${g.group}: ${top2}`;
+        });
+        phases.push({ phase: 'Fase de Grupos', status: 'Encerrada', items });
+      } else if (lastRound >= a) {
+        phases.push({ phase: 'Fase de Grupos', status: 'Em andamento', items: [] });
+      } else {
+        const items = cup.grupos.map(g => `${g.group}: ${g.teams.join(', ')}`);
+        phases.push({ phase: 'Fase de Grupos', status: 'Sorteada', items });
+      }
+    }
+
+    // Mata-mata: oitavas, quartas, semis, final
+    ['oitavas', 'quartas', 'semis', 'finais'].forEach(pk => {
+      const entries = cup[pk];
+      if (!entries || !entries.length) return;
+      if (!phaseIsDefined(pk, entries)) return; // confrontos ainda não conhecidos
+      const rounds = entries[0].rounds;
+      const started = lastRound >= rounds[0];
+      const done = started && lastRound >= rounds[1];
+      let status, items;
+      if (!started) {
+        status = 'Definida';
+        items = entries.map(m => `${m.tag}: ${m.home || '?'} x ${m.away || '?'}`);
+      } else {
+        status = done ? 'Encerrada' : 'Em andamento';
+        items = entries.map(m => {
+          if (!m.home || !m.away) return `${m.tag}: ${m.home || m.away || '—'}`;
+          const h = matchScore(teams, m.home, m.rounds), aw = matchScore(teams, m.away, m.rounds);
+          if (h.played === 0 && aw.played === 0) return `${m.tag}: ${m.home} x ${m.away}`;
+          if (!done) return `${m.tag}: ${m.home} (${fmtNum(h.sum)}) x ${m.away} (${fmtNum(aw.sum)})`;
+          const w = h.sum >= aw.sum ? m.home : m.away;
+          const ws = h.sum >= aw.sum ? h.sum : aw.sum;
+          return `${m.tag}: ${w} venceu (${fmtNum(ws)} pts)`;
+        });
+      }
+      phases.push({ phase: PHASE_LABEL[pk], status, items });
+    });
+
+    if (phases.length) out.push({ cup: label, phases });
+  });
+  return out;
+}
+
+// "Quem foi pra onde" na classificatória, usando os mesmos cortes já aplicados na coluna
+// "Destino" da tabela de classificatória (ver index.html).
+function classifDestinySummary(key, rank) {
+  if (key === 'libertadores') {
+    const grupos = rank.filter(r => r.pos <= 24).length;
+    const tolima = rank.filter(r => r.pos > 24 && r.pos <= 40).length;
+    const sul = rank.filter(r => r.pos > 40 && r.pos <= 48).length;
+    const elim = rank.filter(r => r.pos > 48).length;
+    return [
+      `${grupos} classificados direto para os Grupos`,
+      `${tolima} na Fase Tolima (repescagem)`,
+      `${sul} classificados direto para a Sul-Americana`,
+      elim ? `${elim} eliminados` : null,
+    ].filter(Boolean);
+  }
+  if (key === 'champions') {
+    const grupos = rank.filter(r => r.pos <= 32).length;
+    const uefa = rank.filter(r => r.pos > 32 && r.pos <= 48).length;
+    const elim = rank.filter(r => r.pos > 48).length;
+    return [
+      `${grupos} classificados para a Fase de Grupos`,
+      `${uefa} classificados direto para as Oitavas da UEFA`,
+      elim ? `${elim} eliminados` : null,
+    ].filter(Boolean);
+  }
+  return [];
+}
+
+// Fases de copa ativas numa rodada específica (começando, em andamento ou terminando) —
+// mantida por compatibilidade (não é mais usada por index.html, que passou a usar
+// cupOverviewLines/cupsStoryLine, mas fica disponível caso seja útil de novo).
 function cupRoundSpotlight(cups, teams, r) {
   if (!cups) return [];
-  const cupOrder = [
-    ['libertadores', 'ABB Libertadores'],
-    ['sulamericana', 'ABB Sul-Americana'],
-    ['champions', 'ABB Champions'],
-    ['uefa', 'ABB UEFA'],
-    ['mundial', 'ABB Mundial'],
-  ];
   const phaseOrder = [
-    ['classif', 'Classificatória'],
-    ['grupos', 'Fase de Grupos'],
-    ['oitavas', 'Oitavas de Final'],
-    ['quartas', 'Quartas de Final'],
-    ['semis', 'Semifinais'],
-    ['finais', 'Final'],
+    ['classif', 'Classificatória'], ['grupos', 'Fase de Grupos'], ['oitavas', 'Oitavas de Final'],
+    ['quartas', 'Quartas de Final'], ['semis', 'Semifinais'], ['finais', 'Final'],
   ];
   const out = [];
-  for (const [ckey, clabel] of cupOrder) {
+  for (const [ckey, clabel] of CUP_ORDER) {
     const cup = cups[ckey];
     if (!cup) continue;
     for (const [pk, plabel] of phaseOrder) {
@@ -494,5 +660,5 @@ function resolveCupsKO(cups, teams, lastRound) {
 }
 
 if (typeof module !== 'undefined') {
-  module.exports = { abbLeagueTable, roundWinners, monthlyWinners, monthlyWinnersByCalendar, monthOfRound, roundMonthMap, libertadoresClassif, championsClassif, seedOitavasFromGrupos, advanceBracket, resolveCupsKO, buildBulletin, aggRanking, matchScore, scoreName, phasePlayed, cupDigest, cupRoundSpotlight, prizePlan, PRIZE_ROUND, PRIZE_MONTH, PRIZE_ENTRY, MONTH_NAMES, ROUND_MONTH_FALLBACK };
+  module.exports = { abbLeagueTable, roundWinners, monthlyWinners, monthlyWinnersByCalendar, monthOfRound, roundMonthMap, libertadoresClassif, championsClassif, seedOitavasFromGrupos, advanceBracket, resolveCupsKO, buildBulletin, aggRanking, matchScore, scoreName, phasePlayed, cupDigest, cupRoundSpotlight, cupOverviewLines, cupsStoryLine, prizePlan, PRIZE_ROUND, PRIZE_MONTH, PRIZE_ENTRY, MONTH_NAMES, ROUND_MONTH_FALLBACK };
 }

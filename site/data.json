@@ -3,39 +3,39 @@
  "league": "ABB LEAGUE 2026",
  "total_rounds": 38,
  "last_round": 26,
- "market_status": 2,
- "updated": "08/09/2026 07:56 UTC",
+ "market_status": 4,
+ "updated": "08/09/2026 14:23 UTC",
  "teams": [
   {
    "id": 2311770,
    "name": "100 Futuro Futebol e Amigos",
    "scores": [
-    78.6,
-    78.55,
-    69.15,
-    65.8,
-    61.72,
-    65.05,
-    56.34,
-    46.15,
-    44.93,
-    49.58,
-    93.21,
-    72.13,
-    92.89,
-    72.54,
-    51.7,
-    78.95,
-    93.21,
-    61.03,
-    27.4,
-    97.81,
-    60.06,
-    54.6,
-    50.67,
-    67.22,
-    65.15,
-    65.15,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
     null,
     null,
     null,
@@ -48,39 +48,38 @@
     null,
     null,
     null
-   ],
-   "patrimonio": 131.33
+   ]
   },
   {
    "id": 44802869,
    "name": "100Anistia-Facada mal dada",
    "scores": [
-    64.06,
-    65.05,
-    53.3,
-    45.09,
-    65.9,
-    59.02,
-    60.01,
-    51.49,
-    43.0,
-    47.77,
-    56.5,
-    49.75,
-    55.4,
-    55.35,
-    54.15,
-    69.7,
-    75.41,
-    46.62,
-    29.65,
-    60.56,
-    58.03,
-    65.76,
-    71.49,
-    82.68,
-    52.94,
-    52.94,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
     null,
     null,
     null,
@@ -93,39 +92,38 @@
     null,
     null,
     null
-   ],
-   "patrimonio": 112.9
+   ]
   },
   {
    "id": 28639740,
    "name": "Abadias EC",
    "scores": [
-    54.52,
-    44.6,
-    55.46,
-    41.11,
-    65.94,
-    56.41,
-    46.62,
-    40.9,
-    61.86,
-    61.35,
-    85.36,
-    86.4,
-    86.59,
-    85.96,
-    56.6,
-    56.34,
-    84.11,
-    86.05,
-    106.33,
-    60.78,
-    67.69,
-    83.85,
-    80.14,
-    60.6,
-    47.9,
-    47.9,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
     null,
     null,
     null,
@@ -138,39 +136,38 @@
     null,
     null,
     null
-   ],
-   "patrimonio": 123.21
+   ]
   },
   {
    "id": 477856,
    "name": "ANDREZAO CAMPEÃO",
    "scores": [
-    69.16,
-    80.98,
-    87.76,
-    86.43,
-    72.82,
-    70.96,
-    78.71,
-    65.05,
-    92.74,
-    60.89,
-    94.26,
-    77.95,
-    97.74,
-    58.55,
-    66.57,
-    81.53,
-    68.22,
-    132.15,
-    126.53,
-    113.06,
-    88.48,
-    77.91,
-    65.85,
-    121.42,
-    102.53,
-    102.53,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
     null,
     null,
     null,
@@ -183,39 +180,38 @@
     null,
     null,
     null
-   ],
-   "patrimonio": 145.22
+   ]
   },
   {
    "id": 1379747,
    "name": "ARDM fc",
    "scores": [
-    58.8,
-    86.04,
-    78.64,
-    90.85,
-    85.94,
-    57.61,
-    66.87,
-    82.25,
-    94.08,
-    31.87,
-    87.86,
-    88.5,
-    98.09,
-    75.54,
-    65.0,
-    65.95,
-    85.42,
-    101.8,
-    116.78,
-    120.91,
-    70.71,
-    83.11,
-    82.45,
-    102.87,
-    93.03,
-    93.03,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
     null,
     null,
     null,
@@ -228,39 +224,38 @@
     null,
     null,
     null
-   ],
-   "patrimonio": 149.41
+   ]
   },
   {
    "id": 3774833,
    "name": "BentoFootball",
    "scores": [
-    55.36,
-    79.1,
-    81.5,
-    73.46,
-    76.74,
-    79.0,
-    66.67,
-    63.8,
-    93.98,
-    37.15,
-    90.98,
-    94.15,
-    86.39,
-    68.75,
-    55.8,
-    76.69,
-    79.62,
-    91.85,
-    35.24,
-    84.45,
-    57.86,
-    58.75,
-    66.66,
-    98.97,
-    60.2,
-    60.2,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
     null,
     null,
     null,
@@ -273,39 +268,38 @@
     null,
     null,
     null
-   ],
-   "patrimonio": 139.96
+   ]
   },
   {
    "id": 408980,
    "name": "BIGPOPOFC",
    "scores": [
-    61.86,
-    93.88,
-    68.2,
-    85.55,
-    80.67,
-    75.3,
-    61.07,
-    65.68,
-    82.66,
-    68.97,
-    89.06,
-    62.8,
-    123.89,
-    62.79,
-    56.2,
-    85.99,
-    65.32,
-    103.6,
-    114.58,
-    102.4,
-    86.4,
-    71.3,
-    82.9,
-    99.77,
-    84.48,
-    84.48,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
     null,
     null,
     null,
@@ -318,39 +312,38 @@
     null,
     null,
     null
-   ],
-   "patrimonio": 136.57
+   ]
   },
   {
    "id": 3743012,
    "name": "Biliskov Fc",
    "scores": [
-    60.61,
-    69.6,
-    71.0,
-    68.88,
-    62.41,
-    74.15,
-    54.17,
-    68.75,
-    68.71,
-    45.75,
-    59.63,
-    78.92,
-    77.02,
-    67.65,
-    73.21,
-    93.85,
-    66.92,
-    93.85,
-    53.64,
-    97.18,
-    48.38,
-    66.16,
-    96.15,
-    122.67,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
     107.13,
-    107.13,
+    68.0,
     null,
     null,
     null,
@@ -364,7 +357,7 @@
     null,
     null
    ],
-   "patrimonio": 149.63
+   "patrimonio": 151.21
   },
   {
    "id": 17970167,
@@ -395,7 +388,7 @@
     72.95,
     102.87,
     93.03,
-    93.03,
+    90.71,
     null,
     null,
     null,
@@ -409,7 +402,7 @@
     null,
     null
    ],
-   "patrimonio": 152.66
+   "patrimonio": 155.77
   },
   {
    "id": 52488,
@@ -440,7 +433,7 @@
     84.5,
     115.2,
     105.29,
-    105.29,
+    101.16,
     null,
     null,
     null,
@@ -454,7 +447,7 @@
     null,
     null
    ],
-   "patrimonio": 140.35
+   "patrimonio": 143.41
   },
   {
    "id": 14377847,
@@ -485,7 +478,7 @@
     53.93,
     125.37,
     98.93,
-    98.93,
+    93.1,
     null,
     null,
     null,
@@ -499,7 +492,7 @@
     null,
     null
    ],
-   "patrimonio": 145.38
+   "patrimonio": 147.71
   },
   {
    "id": 7710744,
@@ -530,7 +523,7 @@
     89.17,
     92.22,
     80.49,
-    80.49,
+    82.66,
     null,
     null,
     null,
@@ -544,7 +537,7 @@
     null,
     null
    ],
-   "patrimonio": 209.24
+   "patrimonio": 212.58
   },
   {
    "id": 5994141,
@@ -575,7 +568,7 @@
     65.05,
     115.57,
     113.63,
-    113.63,
+    99.8,
     null,
     null,
     null,
@@ -589,7 +582,7 @@
     null,
     null
    ],
-   "patrimonio": 157.23
+   "patrimonio": 159.31
   },
   {
    "id": 2627505,
@@ -620,7 +613,7 @@
     63.75,
     100.61,
     81.73,
-    81.73,
+    90.26,
     null,
     null,
     null,
@@ -634,7 +627,7 @@
     null,
     null
    ],
-   "patrimonio": 147.69
+   "patrimonio": 148.47
   },
   {
    "id": 6471880,
@@ -665,7 +658,7 @@
     82.47,
     81.67,
     58.05,
-    58.05,
+    73.73,
     null,
     null,
     null,
@@ -679,7 +672,7 @@
     null,
     null
    ],
-   "patrimonio": 130.46
+   "patrimonio": 130.68
   },
   {
    "id": 13955831,
@@ -710,7 +703,7 @@
     59.84,
     125.08,
     61.47,
-    61.47,
+    68.71,
     null,
     null,
     null,
@@ -724,7 +717,7 @@
     null,
     null
    ],
-   "patrimonio": 128.07
+   "patrimonio": 131.25
   },
   {
    "id": 4017288,
@@ -755,7 +748,7 @@
     52.35,
     103.07,
     107.33,
-    107.33,
+    87.9,
     null,
     null,
     null,
@@ -769,7 +762,7 @@
     null,
     null
    ],
-   "patrimonio": 146.32
+   "patrimonio": 145.13
   },
   {
    "id": 19767,
@@ -800,7 +793,7 @@
     65.26,
     115.07,
     71.64,
-    71.64,
+    96.6,
     null,
     null,
     null,
@@ -814,7 +807,7 @@
     null,
     null
    ],
-   "patrimonio": 145.14
+   "patrimonio": 146.46
   },
   {
    "id": 2308755,
@@ -845,7 +838,7 @@
     16.55,
     13.2,
     21.5,
-    21.5,
+    35.95,
     null,
     null,
     null,
@@ -859,7 +852,7 @@
     null,
     null
    ],
-   "patrimonio": 98.07
+   "patrimonio": 100.73
   },
   {
    "id": 25330214,
@@ -890,7 +883,7 @@
     73.57,
     116.82,
     110.53,
-    110.53,
+    84.9,
     null,
     null,
     null,
@@ -904,7 +897,7 @@
     null,
     null
    ],
-   "patrimonio": 149.38
+   "patrimonio": 148.55
   },
   {
    "id": 28083996,
@@ -935,7 +928,7 @@
     90.41,
     90.38,
     92.58,
-    92.58,
+    85.8,
     null,
     null,
     null,
@@ -949,7 +942,7 @@
     null,
     null
    ],
-   "patrimonio": 139.36
+   "patrimonio": 141.18
   },
   {
    "id": 3023680,
@@ -980,7 +973,7 @@
     59.45,
     107.49,
     105.93,
-    105.93,
+    75.9,
     null,
     null,
     null,
@@ -994,7 +987,7 @@
     null,
     null
    ],
-   "patrimonio": 144.2
+   "patrimonio": 146.79
   },
   {
    "id": 11272750,
@@ -1025,7 +1018,7 @@
     68.87,
     109.5,
     66.95,
-    66.95,
+    98.85,
     null,
     null,
     null,
@@ -1039,7 +1032,7 @@
     null,
     null
    ],
-   "patrimonio": 132.08
+   "patrimonio": 134.17
   },
   {
    "id": 3488259,
@@ -1070,7 +1063,7 @@
     69.67,
     96.62,
     60.05,
-    60.05,
+    81.81,
     null,
     null,
     null,
@@ -1084,7 +1077,7 @@
     null,
     null
    ],
-   "patrimonio": 141.01
+   "patrimonio": 141.46
   },
   {
    "id": 127180,
@@ -1115,7 +1108,7 @@
     83.19,
     124.92,
     93.33,
-    93.33,
+    90.35,
     null,
     null,
     null,
@@ -1129,7 +1122,7 @@
     null,
     null
    ],
-   "patrimonio": 170.51
+   "patrimonio": 171.53
   },
   {
    "id": 541159,
@@ -1160,7 +1153,7 @@
     68.16,
     55.76,
     38.05,
-    38.05,
+    26.24,
     null,
     null,
     null,
@@ -1174,7 +1167,7 @@
     null,
     null
    ],
-   "patrimonio": 120.2
+   "patrimonio": 116.87
   },
   {
    "id": 27045615,
@@ -1205,7 +1198,7 @@
     73.46,
     120.91,
     65.7,
-    65.7,
+    84.89,
     null,
     null,
     null,
@@ -1219,7 +1212,7 @@
     null,
     null
    ],
-   "patrimonio": 118.26
+   "patrimonio": 124.1
   },
   {
    "id": 182622,
@@ -1250,7 +1243,7 @@
     60.2,
     129.32,
     81.95,
-    81.95,
+    87.71,
     null,
     null,
     null,
@@ -1264,7 +1257,7 @@
     null,
     null
    ],
-   "patrimonio": 153.64
+   "patrimonio": 152.24
   },
   {
    "id": 28023935,
@@ -1295,7 +1288,7 @@
     55.35,
     127.71,
     83.8,
-    83.8,
+    87.91,
     null,
     null,
     null,
@@ -1309,7 +1302,7 @@
     null,
     null
    ],
-   "patrimonio": 144.71
+   "patrimonio": 148.09
   },
   {
    "id": 7092608,
@@ -1340,7 +1333,7 @@
     111.64,
     115.44,
     93.08,
-    93.08,
+    105.3,
     null,
     null,
     null,
@@ -1354,7 +1347,7 @@
     null,
     null
    ],
-   "patrimonio": 153.44
+   "patrimonio": 156.39
   },
   {
    "id": 51183958,
@@ -1385,7 +1378,7 @@
     73.16,
     128.2,
     108.23,
-    108.23,
+    82.05,
     null,
     null,
     null,
@@ -1399,7 +1392,7 @@
     null,
     null
    ],
-   "patrimonio": 141.51
+   "patrimonio": 146.14
   },
   {
    "id": 44510051,
@@ -1430,7 +1423,7 @@
     70.77,
     105.12,
     95.01,
-    95.01,
+    90.75,
     null,
     null,
     null,
@@ -1444,7 +1437,7 @@
     null,
     null
    ],
-   "patrimonio": 163.72
+   "patrimonio": 164.46
   },
   {
    "id": 51032391,
@@ -1475,7 +1468,7 @@
     45.15,
     121.92,
     65.48,
-    65.48,
+    81.25,
     null,
     null,
     null,
@@ -1489,7 +1482,7 @@
     null,
     null
    ],
-   "patrimonio": 144.2
+   "patrimonio": 147.28
   },
   {
    "id": 122196,
@@ -1520,7 +1513,7 @@
     59.67,
     104.5,
     83.1,
-    83.1,
+    72.38,
     null,
     null,
     null,
@@ -1534,7 +1527,7 @@
     null,
     null
    ],
-   "patrimonio": 115.85
+   "patrimonio": 115.73
   },
   {
    "id": 26060442,
@@ -1565,7 +1558,7 @@
     68.85,
     81.01,
     93.58,
-    93.58,
+    67.15,
     null,
     null,
     null,
@@ -1579,7 +1572,7 @@
     null,
     null
    ],
-   "patrimonio": 106.19
+   "patrimonio": 106.47
   },
   {
    "id": 49199720,
@@ -1610,7 +1603,7 @@
     63.64,
     98.48,
     94.99,
-    94.99,
+    85.89,
     null,
     null,
     null,
@@ -1624,7 +1617,7 @@
     null,
     null
    ],
-   "patrimonio": 137.72
+   "patrimonio": 135.68
   },
   {
    "id": 481392,
@@ -1655,7 +1648,7 @@
     76.52,
     128.27,
     81.68,
-    81.68,
+    84.31,
     null,
     null,
     null,
@@ -1669,7 +1662,7 @@
     null,
     null
    ],
-   "patrimonio": 160.97
+   "patrimonio": 163.38
   },
   {
    "id": 86050,
@@ -1700,7 +1693,7 @@
     62.91,
     78.9,
     63.21,
-    63.21,
+    88.34,
     null,
     null,
     null,
@@ -1714,7 +1707,7 @@
     null,
     null
    ],
-   "patrimonio": 126.3
+   "patrimonio": 129.88
   },
   {
    "id": 775951,
@@ -1745,7 +1738,7 @@
     18.1,
     51.01,
     37.75,
-    37.75,
+    76.74,
     null,
     null,
     null,
@@ -1759,7 +1752,7 @@
     null,
     null
    ],
-   "patrimonio": 97.21
+   "patrimonio": 102.16
   },
   {
    "id": 1041831,
@@ -1790,7 +1783,7 @@
     68.47,
     103.42,
     94.38,
-    94.38,
+    69.31,
     null,
     null,
     null,
@@ -1804,7 +1797,7 @@
     null,
     null
    ],
-   "patrimonio": 162.61
+   "patrimonio": 163.01
   },
   {
    "id": 1733099,
@@ -1835,7 +1828,7 @@
     53.12,
     106.37,
     68.88,
-    68.88,
+    95.35,
     null,
     null,
     null,
@@ -1849,7 +1842,7 @@
     null,
     null
    ],
-   "patrimonio": 185.8
+   "patrimonio": 186.84
   },
   {
    "id": 221760,
@@ -1880,7 +1873,7 @@
     88.85,
     95.62,
     71.7,
-    71.7,
+    71.91,
     null,
     null,
     null,
@@ -1894,7 +1887,7 @@
     null,
     null
    ],
-   "patrimonio": 137.84
+   "patrimonio": 141.2
   },
   {
    "id": 229469,
@@ -1925,7 +1918,7 @@
     71.9,
     67.11,
     33.4,
-    33.4,
+    44.09,
     null,
     null,
     null,
@@ -1939,7 +1932,7 @@
     null,
     null
    ],
-   "patrimonio": 101.46
+   "patrimonio": 102.51
   },
   {
    "id": 44860921,
@@ -1970,7 +1963,7 @@
     64.2,
     69.7,
     32.85,
-    32.85,
+    45.35,
     null,
     null,
     null,
@@ -1984,7 +1977,7 @@
     null,
     null
    ],
-   "patrimonio": 115.97
+   "patrimonio": 117.0
   },
   {
    "id": 51032347,
@@ -2015,7 +2008,7 @@
     69.31,
     127.32,
     87.65,
-    87.65,
+    99.0,
     null,
     null,
     null,
@@ -2029,7 +2022,7 @@
     null,
     null
    ],
-   "patrimonio": 151.04
+   "patrimonio": 155.13
   },
   {
    "id": 716649,
@@ -2060,7 +2053,7 @@
     75.25,
     109.57,
     98.49,
-    98.49,
+    94.56,
     null,
     null,
     null,
@@ -2074,7 +2067,7 @@
     null,
     null
    ],
-   "patrimonio": 160.58
+   "patrimonio": 162.62
   },
   {
    "id": 49315880,
@@ -2105,7 +2098,7 @@
     60.08,
     92.07,
     51.39,
-    51.39,
+    65.7,
     null,
     null,
     null,
@@ -2119,7 +2112,7 @@
     null,
     null
    ],
-   "patrimonio": 154.26
+   "patrimonio": 155.19
   },
   {
    "id": 49198075,
@@ -2150,7 +2143,7 @@
     44.43,
     87.47,
     66.29,
-    66.29,
+    63.9,
     null,
     null,
     null,
@@ -2164,7 +2157,7 @@
     null,
     null
    ],
-   "patrimonio": 130.34
+   "patrimonio": 131.49
   },
   {
    "id": 93550,
@@ -2195,7 +2188,7 @@
     73.47,
     101.17,
     107.05,
-    107.05,
+    77.18,
     null,
     null,
     null,
@@ -2209,7 +2202,7 @@
     null,
     null
    ],
-   "patrimonio": 122.04
+   "patrimonio": 122.92
   },
   {
    "id": 3142153,
@@ -2240,7 +2233,7 @@
     93.5,
     101.91,
     105.05,
-    105.05,
+    64.89,
     null,
     null,
     null,
@@ -2254,7 +2247,7 @@
     null,
     null
    ],
-   "patrimonio": 135.36
+   "patrimonio": 134.61
   },
   {
    "id": 1321339,
@@ -2285,7 +2278,7 @@
     64.34,
     104.82,
     78.34,
-    78.34,
+    89.21,
     null,
     null,
     null,
@@ -2299,7 +2292,7 @@
     null,
     null
    ],
-   "patrimonio": 147.25
+   "patrimonio": 149.63
   },
   {
    "id": 117054,
@@ -2330,7 +2323,7 @@
     81.17,
     88.18,
     74.96,
-    74.96,
+    54.72,
     null,
     null,
     null,
@@ -2344,7 +2337,7 @@
     null,
     null
    ],
-   "patrimonio": 128.02
+   "patrimonio": 127.3
   },
   {
    "id": 3146592,
@@ -2375,7 +2368,7 @@
     81.15,
     116.67,
     116.23,
-    116.23,
+    84.0,
     null,
     null,
     null,
@@ -2389,7 +2382,7 @@
     null,
     null
    ],
-   "patrimonio": 160.29
+   "patrimonio": 160.35
   },
   {
    "id": 4624216,
@@ -2420,7 +2413,7 @@
     52.95,
     108.37,
     98.93,
-    98.93,
+    88.0,
     null,
     null,
     null,
@@ -2434,7 +2427,7 @@
     null,
     null
    ],
-   "patrimonio": 147.72
+   "patrimonio": 148.74
   },
   {
    "id": 114935,
@@ -2465,7 +2458,7 @@
     49.75,
     67.99,
     68.78,
-    68.78,
+    96.11,
     null,
     null,
     null,
@@ -2479,7 +2472,7 @@
     null,
     null
    ],
-   "patrimonio": 124.08
+   "patrimonio": 129.64
   },
   {
    "id": 5651,
@@ -2510,7 +2503,7 @@
     79.51,
     124.27,
     81.58,
-    81.58,
+    62.5,
     null,
     null,
     null,
@@ -2524,7 +2517,7 @@
     null,
     null
    ],
-   "patrimonio": 213.55
+   "patrimonio": 216.69
   },
   {
    "id": 25756302,
@@ -2555,7 +2548,7 @@
     69.37,
     121.47,
     98.13,
-    98.13,
+    100.71,
     null,
     null,
     null,
@@ -2569,7 +2562,7 @@
     null,
     null
    ],
-   "patrimonio": 164.1
+   "patrimonio": 166.71
   },
   {
    "id": 3388760,
@@ -2600,7 +2593,7 @@
     67.55,
     91.78,
     74.12,
-    74.12,
+    72.91,
     null,
     null,
     null,
@@ -2614,7 +2607,7 @@
     null,
     null
    ],
-   "patrimonio": 131.37
+   "patrimonio": 132.25
   },
   {
    "id": 4462410,
@@ -2645,7 +2638,7 @@
     67.07,
     94.12,
     71.38,
-    71.38,
+    63.21,
     null,
     null,
     null,
@@ -2659,7 +2652,7 @@
     null,
     null
    ],
-   "patrimonio": 135.78
+   "patrimonio": 133.95
   },
   {
    "id": 49119502,
@@ -2690,7 +2683,7 @@
     75.86,
     103.22,
     76.13,
-    76.13,
+    96.0,
     null,
     null,
     null,
@@ -2704,7 +2697,7 @@
     null,
     null
    ],
-   "patrimonio": 166.14
+   "patrimonio": 168.91
   },
   {
    "id": 25444345,
@@ -2735,7 +2728,7 @@
     67.77,
     62.1,
     49.14,
-    49.14,
+    47.18,
     null,
     null,
     null,
@@ -2749,7 +2742,7 @@
     null,
     null
    ],
-   "patrimonio": 119.85
+   "patrimonio": 121.09
   },
   {
    "id": 44775139,
@@ -2780,7 +2773,7 @@
     55.96,
     106.8,
     84.84,
-    84.84,
+    92.03,
     null,
     null,
     null,
@@ -2794,7 +2787,7 @@
     null,
     null
    ],
-   "patrimonio": 127.47
+   "patrimonio": 128.88
   },
   {
    "id": 172758,
@@ -2825,7 +2818,7 @@
     66.07,
     131.67,
     121.93,
-    121.93,
+    90.8,
     null,
     null,
     null,
@@ -2839,7 +2832,7 @@
     null,
     null
    ],
-   "patrimonio": 162.26
+   "patrimonio": 161.73
   },
   {
    "id": 369167,
@@ -2870,7 +2863,7 @@
     77.05,
     124.92,
     104.08,
-    104.08,
+    80.6,
     null,
     null,
     null,
@@ -2884,7 +2877,7 @@
     null,
     null
    ],
-   "patrimonio": 164.64
+   "patrimonio": 162.74
   },
   {
    "id": 28805572,
@@ -2915,7 +2908,7 @@
     74.06,
     110.87,
     104.2,
-    104.2,
+    92.76,
     null,
     null,
     null,
@@ -2929,7 +2922,7 @@
     null,
     null
    ],
-   "patrimonio": 132.46
+   "patrimonio": 136.11
   },
   {
    "id": 51032449,
@@ -2960,7 +2953,7 @@
     52.85,
     90.67,
     64.64,
-    64.64,
+    72.2,
     null,
     null,
     null,
@@ -2974,7 +2967,7 @@
     null,
     null
    ],
-   "patrimonio": 139.63
+   "patrimonio": 139.82
   },
   {
    "id": 387161,
@@ -3005,7 +2998,7 @@
     48.55,
     105.34,
     73.9,
-    73.9,
+    98.46,
     null,
     null,
     null,
@@ -3019,7 +3012,7 @@
     null,
     null
    ],
-   "patrimonio": 135.83
+   "patrimonio": 142.51
   }
  ],
  "round_months": {

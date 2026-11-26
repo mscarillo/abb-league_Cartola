@@ -656,6 +656,26 @@ function resolveCupsKO(cups, teams, lastRound) {
     });
     out[key] = rc;
   });
+
+  // ABB Mundial: a final é sempre Campeão da Libertadores x Campeão da Champions.
+  // Cada vaga é preenchida assim que a final da respectiva copa termina; enquanto não
+  // termina, o slot fica null com um rótulo (homeSlot/awaySlot) para exibição.
+  // Um confronto já preenchido manualmente no data.json nunca é sobrescrito.
+  if (out.mundial && out.mundial.finais && out.mundial.finais.length) {
+    const champOf = key => {
+      const f = out[key] && out[key].finais && out[key].finais[0];
+      if (!f || !f.rounds || lastRound < f.rounds[1]) return null;
+      return koWinnerOf(teams, f);
+    };
+    const libChamp = champOf('libertadores'), ucChamp = champOf('champions');
+    out.mundial = Object.assign({}, out.mundial, {
+      finais: out.mundial.finais.map((m, i) => {
+        if (i > 0 || m.home || m.away) return m;
+        return { ...m, home: libChamp, away: ucChamp,
+                 homeSlot: 'Campeão Libertadores', awaySlot: 'Campeão Champions' };
+      }),
+    });
+  }
   return out;
 }
 

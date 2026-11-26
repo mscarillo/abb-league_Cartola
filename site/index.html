@@ -502,8 +502,8 @@ function matchCard(teams,m,color,isFinal,cupLabel){
   const winHome=decided&&a.sum>=b.sum, winAway=decided&&b.sum>a.sum;
   const champDecided=!!isFinal&&decided; // final já tem campeão definido
   const rtxt=`R${String(m.rounds[0]).padStart(2,'0')}–${String(m.rounds[1]).padStart(2,'0')}`;
-  const line=(name,sc,win)=>{
-    if(!name) return `<div class="kteam empty">—</div>`;
+  const line=(name,sc,win,slot)=>{
+    if(!name) return `<div class="kteam empty">${slot?`<span class="kn" style="color:var(--dim)">${slot} <small>(a definir)</small></span>`:'—'}</div>`;
     const champ=champDecided&&win;
     return `<div class="kteam${win?' win':''}${champ?' champion':''}">
       ${champ?TROPHY_BIG:''}
@@ -512,8 +512,8 @@ function matchCard(teams,m,color,isFinal,cupLabel){
   };
   return `<div class="kmatch${champDecided?' final-decided':''}">
     <div class="ktag">${m.tag} <span>${rtxt}</span></div>
-    ${line(m.home,a,winHome)}
-    ${line(m.away,b,winAway)}
+    ${line(m.home,a,winHome,m.homeSlot)}
+    ${line(m.away,b,winAway,m.awaySlot)}
     ${champDecided?`<div class="champion-tag">${TROPHY_ICON} CAMPEÃO ${(cupLabel||'').toUpperCase()}</div>`:''}
   </div>`;
 }
@@ -604,7 +604,10 @@ function renderCup(key){
     if(!matches || !matches.length) return;
     const rounds=matches[0].rounds;
     const anyTeam=matches.some(m=>m.home||m.away);
-    let html=`<div class="lead" style="margin:4px 0 14px">${plabel} · rodadas ${rounds[0]}–${rounds[1]} · classifica quem somar mais pontos</div>`;
+    const leadTxt = key==='mundial'
+      ? `Final do Mundial · rodadas ${rounds[0]}–${rounds[1]} · Campeão da Libertadores × Campeão da Champions · leva a taça quem somar mais pontos`
+      : `${plabel} · rodadas ${rounds[0]}–${rounds[1]} · classifica quem somar mais pontos`;
+    let html=`<div class="lead" style="margin:4px 0 14px">${leadTxt}</div>`;
     if(anyTeam){
       html+=`<div class="kgrid">`+matches.map(m=>matchCard(teams,m,color,pk==='finais','ABB '+meta.name)).join('')+`</div>`;
     } else {
